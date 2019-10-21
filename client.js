@@ -1,9 +1,29 @@
 const socket = io('http://192.168.0.15:3000');
 //Chicos la ip aqui tambien cambia, son la misma ip en ambos archivos
+const noSeUser = document.querySelector('.deficionUsuario');
+const clienteUser = document.querySelector('.usuarioCliente');
+const asesorUser = document.querySelector('.asesorCliente');
+const enviarUsuario = document.querySelector('.enviarUsuario');
+const selectUser = document.querySelector('.selectorUsuario');
+
 const infoForm = document.querySelector('.formularioCliente');
 const enviar = document.querySelector('.enviar');
 
 const infoShow = document.querySelector('.informacionCliente');
+
+
+function definicionUsuario(){
+    let usuario = selectUser.value;
+
+    if(usuario === 'Cliente'){
+        noSeUser.style.display= 'none';
+        clienteUser.style.display= 'block';
+    }else{
+        noSeUser.style.display= 'none';
+        asesorUser.style.display= 'block';
+    }
+}
+enviarUsuario.addEventListener('click', definicionUsuario);
 
 socket.on('envioAlCliente', data => {
     mostrarDatos(data);

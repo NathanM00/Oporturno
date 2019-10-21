@@ -8,32 +8,50 @@
     <title>Document</title>
     <script defer src="http://192.168.0.15:3000/socket.io/socket.io.js"></script>
     <!-- Gente esa ip era la mia en el momento en que lo cree, esa ip deben cambiarla si van a hacer las pruebas, el puerto si es el 3000, pero la ip cambia -->
+    <link rel="stylesheet" href="styles.css">
     <script defer src="client.js"></script>
 </head>
 
 <body>
-    <form class="formularioCliente">
 
-        <h1>Hola, Bienvenido a Oporturno</h1>
+    <h1>Hola, Bienvenido a Oporturno</h1>
 
-        <h2>Datos del cliente</h2>
-        <input type="text" placeholder="Nombre" name="nombre">
-        <input type="text" placeholder="Cedula" name="cedula">
-        <input type="text" placeholder="Celular" name="celular">
-
-        <h2>Motivo de su visita</h2>
-        <select name="motivo" id="">
-            <option>Giro</option>
-            <option>Seguro</option>
-            <option>Otro producto</option>
+    <div class="deficionUsuario">
+        <h2>Eres un asesor o un cliente?</h2>
+        <select name="" id="" class="selectorUsuario">
+            <option>-</option>
+            <option>Cliente</option>
+            <option>Asesor</option>
         </select>
-
-        <button type="submit" class="enviar">Enviar</button>
-    </form>
-
-    <div class="informacionCliente">
-
+        <button type="submit" class="enviarUsuario">Enviar</button>
     </div>
+
+    <section class="usuarioCliente">
+        <form class="formularioCliente">
+
+            <h2>Datos del cliente</h2>
+            <input type="text" placeholder="Nombre" name="nombre">
+            <input type="text" placeholder="Cedula" name="cedula">
+            <input type="text" placeholder="Celular" name="celular">
+
+            <h2>Motivo de su visita</h2>
+            <select name="motivo" id="">
+                <option>Giro</option>
+                <option>Seguro</option>
+                <option>Otro producto</option>
+            </select>
+
+            <button type="submit" class="enviar">Enviar</button>
+        </form>
+    </section>
+
+    <div class="asesorCliente">
+            <h2>Informacion de los clientes</h2>
+        <div class="informacionCliente">
+
+        </div>
+    </div>
+
 
 </body>
 
