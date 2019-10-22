@@ -6,8 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script defer src="http://192.168.0.15:3000/socket.io/socket.io.js"></script>
-    <!-- Gente esa ip era la mia en el momento en que lo cree, esa ip deben cambiarla si van a hacer las pruebas, el puerto si es el 3000, pero la ip cambia -->
+
+    <script type="text/javascript">
+
+        var myIP;
+        window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;//compatibility for Firefox and chrome
+        var pc = new RTCPeerConnection({ iceServers: [] }), noop = function () { };
+        pc.createDataChannel('');//create a bogus data channel
+        pc.createOffer(pc.setLocalDescription.bind(pc), noop);// create offer and set local description
+        pc.onicecandidate = function (ice) {
+            if (ice && ice.candidate && ice.candidate.candidate) {
+                myIP = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/.exec(ice.candidate.candidate)[1];
+                console.log('my IP: ', myIP);
+
+                var nuevoScript = document.createElement('script');
+                nuevoScript.type= 'text/javascrip';
+                nuevoScript.src= 'http://'+myIP+':3000/socket.io/socket.io.js';
+
+                document.head.appendChild(nuevoScript);
+
+                pc.onicecandidate = noop;
+            }
+        };
+    </script>
+
     <link rel="stylesheet" href="styles.css">
     <script defer src="client.js"></script>
 </head>
@@ -46,12 +68,11 @@
     </section>
 
     <div class="usuarioAsesor">
-            <h2>Informacion de los clientes</h2>
+        <h2>Informacion de los clientes</h2>
         <div class="informacionCliente">
 
         </div>
     </div>
-
 
 </body>
 
