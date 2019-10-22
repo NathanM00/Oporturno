@@ -1,4 +1,3 @@
-
     const socket = io('http://172.30.192.254:3000');
     //Chicos la ip aqui tambien cambia, son la misma ip en ambos archivos
     const noSeUser = document.querySelector('.deficionUsuario');
