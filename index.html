@@ -10,6 +10,7 @@
     <!-- Gente esa ip era la mia en el momento en que lo cree, esa ip deben cambiarla si van a hacer las pruebas, el puerto si es el 3000, pero la ip cambia -->
     <link rel="stylesheet" href="styles.css">
     <script defer src="client.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -18,12 +19,14 @@
 
     <div class="deficionUsuario">
         <h2>Eres un asesor o un cliente?</h2>
-        <select name="" id="" class="selectorUsuario">
-            <option>-</option>
-            <option>Cliente</option>
-            <option>Asesor</option>
-        </select>
-        <button type="submit" class="enviarUsuario">Enviar</button>
+        <div class="selectorUser_client">
+            <select name="" id="" class="selectorUsuario">
+                <option>-</option>
+                <option>Cliente</option>
+                <option>Asesor</option>
+            </select>
+            <button type="submit" class="enviarUsuario">Enviar</button>
+        </div>
     </div>
 
     <section class="usuarioCliente">
@@ -46,7 +49,7 @@
     </section>
 
     <div class="usuarioAsesor">
-            <h2>Informacion de los clientes</h2>
+        <h2>Informacion de los clientes</h2>
         <div class="informacionCliente">
 
         </div>
