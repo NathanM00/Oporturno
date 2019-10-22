@@ -11,6 +11,7 @@
     
     const infoShow = document.querySelector('.informacionCliente');
     
+    var turno =0;
 
     function definicionUsuario(){
         let usuario = selectUser.value;
@@ -30,12 +31,13 @@
     });
     
     enviar.addEventListener('click', e => {
-        console.log('enviando');
+        turno +=1;
         var data = {
             nombre: infoForm.nombre.value,
             cedula: infoForm.cedula.value,
             celular: infoForm.celular.value,
             motivo: infoForm.motivo.value,
+            turno: turno,
         }
     
         socket.emit('enviarALServer', data);
@@ -55,6 +57,9 @@
             titular3.innerText = 'Celular';
             const titular4 = document.createElement('th');
             titular4.innerText = 'Motivo de visita';
+            const titular5 = document.createElement('th');
+            titular5.innerText = 'Turno';
+
             const fila = document.createElement('tr');
             const casillaNombre = document.createElement('td');
             casillaNombre.innerText = data.nombre;
@@ -64,17 +69,21 @@
             casillaCelular.innerText = data.celular;
             const casillaMotivo = document.createElement('td');
             casillaMotivo.innerText = data.motivo;
+            const casillaTurno = document.createElement('td');
+            casillaTurno.innerText = ""+data.turno;
         
             tabla.appendChild(titular1);
             tabla.appendChild(titular2);
             tabla.appendChild(titular3);
             tabla.appendChild(titular4);
-        
+            tabla.appendChild(titular5);
+
             fila.appendChild(casillaNombre);
             fila.appendChild(casillaCedula);
             fila.appendChild(casillaCelular);
             fila.appendChild(casillaMotivo);
-        
+            fila.appendChild(casillaTurno);
+
             infoShow.appendChild(tabla);
             tabla.appendChild(fila);
         }
