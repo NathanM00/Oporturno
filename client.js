@@ -1,4 +1,4 @@
-const socket = io('http://192.168.0.15:3000');
+const socket = io('http://172.30.176.83:3000');
 //Chicos la ip aqui tambien cambia, son la misma ip en ambos archivos
 
 const enviarUsuario = document.querySelector('.enviarUsuario');
@@ -11,7 +11,6 @@ const navBar = document.querySelector('.navBar');
 const textoNav = document.querySelector('.textoNav');
 
 const infoForm = document.querySelector('.formularioCliente');
-const infoShow = document.querySelector('.informacionCliente');
 
 const inputDoc = document.querySelector('.inputDoc');
 const doc = document.querySelectorAll('.doc');
@@ -43,7 +42,9 @@ var tipoDocumento = '';
 var tipoTramite = '';
 var detalleTramite = '';
 var extrasTramite = '';
-
+var statusCliente = {
+    status: 'Es un cliente nuevo',
+};
 
 //Se quita el splash al hacerle click siendo el cliente
 function quitarSplash() {
@@ -203,7 +204,9 @@ function extrasGiro(tipoGiro) {
 
 //Todo lo que tiene que ver con el envio de informacion
 socket.on('envioAlCliente', data => {
-    mostrarDatos(data);
+    if (data.cedula !== undefined) {
+        mostrarDatos(data);
+    }
 });
 
 function enviarDatosCliente() {
@@ -218,66 +221,136 @@ function enviarDatosCliente() {
     data = '';
 }
 
-
 socket.on('envioDeTurnoCliente', turno => {
     darTurno(turno);
 });
 
-function darTurno(turno){
-    if(turno !== undefined){
+function darTurno(turno) {
+    if (turno !== undefined) {
         let turnoCliente = document.createElement('h2');
-        turnoCliente.innerHTML= 'Tu turno es: '+turno;
+        turnoCliente.innerHTML = 'Tu turno es: ' + turno;
         pantallaTurno.appendChild(turnoCliente);
     }
 }
 
+function mostrarDatos(cliente) {
 
-function mostrarDatos(data) {
+    let dataCliente = cliente;
+    //Cargar el archivo
+    $.ajax({
+        url: "/dataBaseClientes.csv",
+        dataType: "text"
+    }).done(successFunction);
 
-    console.log(data);
-    if (data.cedula !== undefined) {
+    function successFunction(data) {
 
-        const tabla = document.createElement('table');
+        let arregloDeLista;
+        let dataLinea;
 
-        const titular1 = document.createElement('th');
-        titular1.innerText = 'Cedula';
-        const titular2 = document.createElement('th');
-        titular2.innerText = 'Tipo de tramite';
-        const titular3 = document.createElement('th');
-        titular3.innerText = 'Detalles del tramite';
-        const titular4 = document.createElement('th');
-        titular4.innerText = 'Extras del tramite';
-        const titular5 = document.createElement('th');
-        titular5.innerText = 'Turno';
+        //Division por saltos de linea
+        var datosFila = data.split("\n");
+        //Arreglo donde se guarda la nueva información
+        var informacion = [];
 
-        const fila = document.createElement('tr');
+        for (let index = 1; index < datosFila.length; index++) {
+            //Lectura de una linea
+            dataLinea = datosFila[index];
 
-        const casillaCedula = document.createElement('td');
-        casillaCedula.innerText = data.cedula;
-        const casillaTramite = document.createElement('td');
-        casillaTramite.innerText = data.tramite;
-        const casillaDetalle = document.createElement('td');
-        casillaDetalle.innerText = data.detalle;
-        const casillaExtra = document.createElement('td');
-        casillaExtra.innerText = "" + data.extras;
-        const casillaTurno = document.createElement('td');
-        casillaTurno.innerText = "" + data.turno;
+            //Division por ;
+            arregloDeLista = dataLinea.split(";");
 
-        tabla.appendChild(titular1);
-        tabla.appendChild(titular2);
-        tabla.appendChild(titular3);
-        tabla.appendChild(titular4);
-        tabla.appendChild(titular5);
+            informacion.push(arregloDeLista);
 
-        fila.appendChild(casillaCedula);
-        fila.appendChild(casillaTramite);
-        fila.appendChild(casillaDetalle);
-        fila.appendChild(casillaExtra);
-        fila.appendChild(casillaTurno);
+            for (let index = 0; index < informacion.length; index++) {
+                let infoDB = informacion[index];
+                if (infoDB[1] === dataCliente.cedula) {
+                    statusCliente = infoDB;
+                    console.log(statusCliente);
+                    statusCliente.status = 'Es un cliente antiguo';
+                    textoNombre.innerText = statusCliente[2];
+                }
+            }
+            //Recomendaciones a partir de giros
+            console.log(statusCliente);
+            if (cliente.tramite === 'Giros' && cliente.detalle === 'Recibo') {
+                textoRecomendacion.innerText = "Pago seguro";
+                textoRecomendacion2.innerText = "Repatriación";
+                if (statusCliente[13] > 2) {
+                    textoRecomendacion3.innerText = "Cuenta de ahorro";
+                } else {
+                    textoRecomendacion3.innerText = "";
+                }
+            } else if (cliente.tramite === 'Divisas' || (cliente.tramite === 'Giros' && cliente.detalle === 'Envío')) {
+                textoRecomendacion.innerText = "Cuenta de ahorro";
+                textoRecomendacion2.innerText = "Repatriación";
+                textoRecomendacion3.innerText = "";
+            } else if (cliente.tramite === 'Seguros') {
+                textoRecomendacion.innerText = "Vida grupo";
+                textoRecomendacion2.innerText = "Cuenta de ahorro";
+                textoRecomendacion3.innerText = "Vida tranquila";
+            } else if (cliente.tramite === 'Créditos') {
 
-        tabla.appendChild(fila);
-        infoShow.appendChild(tabla);
+                if (statusCliente[21] === 'si' || statusCliente[22] === 'si' || statusCliente[23] === 'si') {
+                    textoRecomendacion.innerText = "Vida grupo";
+                    textoRecomendacion2.innerText = "Cuenta de ahorro";
+                } else {
+                    textoRecomendacion.innerText = "Credioro";
+                    textoRecomendacion2.innerText = "Tarjeta la 14";
+                }
+                textoRecomendacion3.innerText = "";
+
+            } else if (cliente.tramite === 'Repatriación') {
+                textoRecomendacion.innerText = "Giros";
+                textoRecomendacion2.innerText = "Cuenta de ahorro";
+                textoRecomendacion3.innerText = "";
+            } else if (cliente.tramite === 'Cuenta de ahorro') {
+                textoRecomendacion.innerText = "Seguros";
+                if (statusCliente[15] > 1000000) {
+                    textoRecomendacion2.innerText = "CDT";
+                } else {
+                    textoRecomendacion2.innerText = "";
+                }
+                textoRecomendacion3.innerText = "";
+            }
+            textoStatus.innerText = "" + statusCliente.status;
+            statusCliente.status = 'Es un cliente nuevo';
+        }
     }
 
-}
+    const infoCliente = document.querySelector('.informacion');
+    const infoRecomen = document.querySelector('.recomendacion');
+    const infoList = document.querySelector('.listaClientes');
 
+    const textoCedula = document.createElement('p');
+    textoCedula.innerText = cliente.cedula;
+    const textoNombre = document.createElement('p');
+    const textoTramite = document.createElement('p');
+    textoTramite.innerText = cliente.tramite;
+    const textoDetalle = document.createElement('p');
+    textoDetalle.innerText = cliente.detalle;
+    const textoExtra = document.createElement('p');
+    textoExtra.innerText = "" + cliente.extras;
+    const textoTurno = document.createElement('p');
+    textoTurno.innerText = "" + cliente.turno;
+    const textoStatus = document.createElement('p');
+    const textoRecomendacion = document.createElement('p');
+    const textoRecomendacion2 = document.createElement('p');
+    const textoRecomendacion3 = document.createElement('p');
+
+    infoCliente.appendChild(textoCedula);
+    infoCliente.appendChild(textoTramite);
+    infoCliente.appendChild(textoDetalle);
+    infoCliente.appendChild(textoExtra);
+    infoCliente.appendChild(textoStatus);
+
+    const trajetaCliente = document.createElement('div');
+    trajetaCliente.className = 'tarjetaCliente';
+    trajetaCliente.appendChild(textoNombre);
+    trajetaCliente.appendChild(textoTramite);
+
+    infoList.appendChild(trajetaCliente);
+    infoRecomen.appendChild(textoRecomendacion);
+    infoRecomen.appendChild(textoRecomendacion2);
+    infoRecomen.appendChild(textoRecomendacion3);
+
+}

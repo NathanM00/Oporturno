@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!-- Esa ip deben cambiarla si van a hacer las pruebas, el puerto si es el 3000, pero la ip cambia segun la del pc-->
-    <script defer="" src="http://192.168.0.15:3000/socket.io/socket.io.js"></script>
+    <script defer="" src="http://172.30.176.83:3000/socket.io/socket.io.js"></script>
     <script defer="" src="client.js"></script>
 
     <link rel="stylesheet" href="styles.css">
@@ -65,6 +65,9 @@
                     <input type="button" class="tecla" value="8" />
                     <input type="button" class="tecla" value="9" />
                     <input type="button" class="tecla" value="Ingresar" />
+                    <input type="button" class="tecla" value="" />
+                    <input type="button" class="tecla" value="0" />
+                    <input type="button" class="tecla" value="" />
                 </div>
 
             </div>
@@ -77,7 +80,7 @@
                     <input type="button" class="tramite" value="Créditos" />
                     <input type="button" class="tramite" value="Seguros" />
                     <input type="button" class="tramite" value="Cuenta de ahorro" />
-                    <input type="button" class="tramite" value="Recaudos" />
+                    <input type="button" class="tramite" value="Repatriación" />
                     <input type="button" class="tramite" value="Asesoría" />
                     <input type="button" class="tramite" value="Otro" />
                 </div>
@@ -152,11 +155,28 @@
     </section>
 
     <div class="usuarioAsesor">
-        <h2>Informacion de los clientes</h2>
         <div class="informacionCliente">
+            <h2>Lista clientes</h2>
+            <div class="listaClientes">
+
+            </div>
+
+        </div>
+        <div class="perfilacion">
+            <h2>Perfilación</h2>
+
+            <div class="recomendacion">
+                <h2>Ofrecer</h2>
+
+            </div>
+            <div class="informacion">
+                <h2>Información</h2>
+
+            </div>
 
         </div>
     </div>
+    <script src="/librerias/jquery-3.4.1.js"></script>
 
 </body>
 
