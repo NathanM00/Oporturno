@@ -7,16 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!-- Esa ip deben cambiarla si van a hacer las pruebas, el puerto si es el 3000, pero la ip cambia segun la del pc-->
-    <script defer="" src="http://172.30.192.254:3000/socket.io/socket.io.js"></script>
+    <script defer="" src="http://192.168.0.15:3000/socket.io/socket.io.js"></script>
     <script defer="" src="client.js"></script>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <h1>Hola, Bienvenido a Oporturno</h1>
+    <div class="splash">
+        <p class="textoSplah">Toca la pantalla para pedir un turno</p>
+    </div>
+
+    <nav class="navBar">
+        <img alt="logo de giros" />
+        <img alt="logo de western" />
+
+        <h1 class="textoNav">Define que usuario eres</h1>
+
+        <img alt="signo interrogacion" />
+    </nav>
 
     <div class="deficionUsuario">
+        <h1>Hola, Bienvenido a Oporturno</h1>
         <h2>Eres un asesor o un cliente?</h2>
         <select name="" id="" class="selectorUsuario">
             <option>-</option>
@@ -29,19 +42,112 @@
     <section class="usuarioCliente">
         <form class="formularioCliente">
 
-            <h2>Datos del cliente</h2>
-            <input type="text" placeholder="Nombre" name="nombre">
-            <input type="text" placeholder="Cedula" name="cedula">
-            <input type="text" placeholder="Celular" name="celular">
+            <div class="botonesDocs">
+                <h2 class="">Seleccionar tipo de documento</h2>
+                <input type="button" class="doc" value="Cedula de Ciudadania" />
+                <input type="button" class="doc" value="Tarjeta de Identidad" />
+                <input type="button" class="doc" value="Numero de pasaporte" />
+            </div>
 
-            <h2>Motivo de su visita</h2>
-            <select name="motivo" id="">
-                <option>Giro</option>
-                <option>Seguro</option>
-                <option>Otro producto</option>
-            </select>
+            <div class="tecladoDoc">
+                <h2 class="">Ingresa tu número de documento</h2>
+                <input type="text" class="inputDoc" placeholder="Numero del documento" name="cedula" />
+                <div class="teclas">
+                    <input type="button" class="tecla" value="1" />
+                    <input type="button" class="tecla" value="2" />
+                    <input type="button" class="tecla" value="3" />
+                    <input type="button" class="tecla" value="Cancelar" />
+                    <input type="button" class="tecla" value="4" />
+                    <input type="button" class="tecla" value="5" />
+                    <input type="button" class="tecla" value="6" />
+                    <input type="button" class="tecla" value="Corregir" />
+                    <input type="button" class="tecla" value="7" />
+                    <input type="button" class="tecla" value="8" />
+                    <input type="button" class="tecla" value="9" />
+                    <input type="button" class="tecla" value="Ingresar" />
+                </div>
 
-            <button type="submit" class="enviar">Enviar</button>
+            </div>
+
+            <div class="tramites">
+                <h2>¿Qué trámite vienes a realizar?</h2>
+                <div class="botonesTramites">
+                    <input type="button" class="tramite" value="Giros" />
+                    <input type="button" class="tramite" value="Divisas" />
+                    <input type="button" class="tramite" value="Créditos" />
+                    <input type="button" class="tramite" value="Seguros" />
+                    <input type="button" class="tramite" value="Cuenta de ahorro" />
+                    <input type="button" class="tramite" value="Recaudos" />
+                    <input type="button" class="tramite" value="Asesoría" />
+                    <input type="button" class="tramite" value="Otro" />
+                </div>
+            </div>
+
+            <div class="giros">
+
+                <div class="girosIndefinido">
+                        <h2>¿Qué trámite vienes a realizar?</h2>
+
+                        <input type="button" class="giro" value="Envío" />
+                        <input type="button" class="giro" value="Recibo" />
+                </div>
+
+                <div class="girosEnvio">
+                    <h2>¿A qué país envías?</h2>
+
+                    <input type="button" class="pais" value="Estados Unidos" />
+                    <input type="button" class="pais" value="Chile" />
+                    <input type="button" class="pais" value="Panamá" />
+                    <input type="button" class="pais" value="México" />
+                    <input type="button" class="pais" value="Ecuador" />
+                    <input type="button" class="pais" value="Otro" />
+                </div>
+
+                <div class="girosRecibo">
+                    <h2>Ingresa el código del giro</h2>
+                    <input type="text" class="inputCod" placeholder="Numero del codigo" name="codigo" />
+                    <div class="teclasCodigo">
+                        <input type="button" class="teclaCodigo" value="1" />
+                        <input type="button" class="teclaCodigo" value="2" />
+                        <input type="button" class="teclaCodigo" value="3" />
+                        <input type="button" class="teclaCodigo" value="Cancelar" />
+                        <input type="button" class="teclaCodigo" value="4" />
+                        <input type="button" class="teclaCodigo" value="5" />
+                        <input type="button" class="teclaCodigo" value="6" />
+                        <input type="button" class="teclaCodigo" value="Corregir" />
+                        <input type="button" class="teclaCodigo" value="7" />
+                        <input type="button" class="teclaCodigo" value="8" />
+                        <input type="button" class="teclaCodigo" value="9" />
+                        <input type="button" class="teclaCodigo" value="Ingresar" />
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="divisas">
+
+                <h2>¿Compras o vendes divisas?</h2>
+
+                <input type="button" class="divisa" value="Compra" />
+                <input type="button" class="divisa" value="Venta" />
+            </div>
+
+            <div class="seguros">
+                <h2> Selecciona el tipo de seguro</h2>
+
+                <input type="button" class="seguro" value="Repatriación" />
+                <input type="button" class="seguro" value="Familia segura" />
+                <input type="button" class="seguro" value="Vida tranquila" />
+                <input type="button" class="seguro" value="Vida grupo" />
+                <input type="button" class="seguro" value="Otro" />
+
+            </div>
+
+            <div class="turno">
+
+            </div>
+
         </form>
     </section>
 

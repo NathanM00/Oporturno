@@ -1,38 +1,98 @@
-.usuarioCliente{
+nav{
+    width: 100%;
     display: none;
+    height: 15%;
+    background-color: #ffdc05;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
 }
 
+.textoNav{
+    color: #575757;
+}
+.usuarioCliente{
+    display: none;
+    width: 100%;
+    height: 85%;
+    margin: 0;
+}
+.botonesDoc{
+    width: 50%;
+    height: 100%;
+    flex-basis: 50%;
+}
+
+.tecladoDoc{
+    width: 50%;
+    height: 100%;
+    flex-basis: 50%;
+    background-color: lightgray;
+}
+.tecladoCod{
+    width: 50%;
+    height: 100%;
+    flex-basis: 50%;
+    background-color: lightgray;
+}
+.formularioCliente{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 .usuarioAsesor{
     display: none;
 }
-
 body{
     font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background-color: #134149;
+    margin: 0;
+    height: 800px;
+    width: 1440px;
 }
+.giros{
+    display: none;
 
+    &Envio{
+        display: none;
+    }
 
-
+    &Recibo{
+        display: none;
+    }
+}
+.tramites{
+    display: none;
+}
+.divisas{
+    display: none;
+}
+.seguros{
+    display: none;
+}
+.turno{
+    display: flex;
+}
 input{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
 }
-
 button{
     box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.01);
     border-radius: 10px;
     width: 200px;
-    color: white;
-    background-color: #008A9F;
+    background-color: white;
+}
+
+.splash{
+    display: flex;
+    width: 90%;
+    height: 90%;
+    background-color: #ffdc05;
+    flex-basis: 90%;
 }
 
 .deficionUsuario{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -43,7 +103,9 @@ button{
     flex-direction: row;
     
 }
-
+.enviar{
+    display: none;
+}
 .selectorUsuario{
     width: 400px;
     margin-right: 10px;
