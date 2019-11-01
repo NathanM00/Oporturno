@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!-- Esa ip deben cambiarla si van a hacer las pruebas, el puerto si es el 3000, pero la ip cambia segun la del pc-->
-    <script defer="" src="http://172.30.176.83:3000/socket.io/socket.io.js"></script>
+    <script defer="" src="http://192.168.1.10:3000/socket.io/socket.io.js"></script>
     <script defer="" src="client.js"></script>
 
     <link rel="stylesheet" href="styles.css">
@@ -15,9 +15,6 @@
 
 <body>
 
-    <div class="splash">
-        <p class="textoSplah">Toca la pantalla para pedir un turno</p>
-    </div>
 
     <nav class="navBar">
         <img alt="logo de giros" />
@@ -27,6 +24,10 @@
 
         <img alt="signo interrogacion" />
     </nav>
+
+    <div class="splash">
+        <p class="textoSplah">Toca la pantalla para pedir un turno</p>
+    </div>
 
     <div class="deficionUsuario">
         <h1>Hola, Bienvenido a Oporturno</h1>
@@ -42,7 +43,7 @@
     <section class="usuarioCliente">
         <form class="formularioCliente">
 
-            <div class="botonesDocs">
+            <div class="botonesDoc">
                 <h2 class="">Seleccionar tipo de documento</h2>
                 <input type="button" class="doc" value="Cedula de Ciudadania" />
                 <input type="button" class="doc" value="Tarjeta de Identidad" />
@@ -148,7 +149,7 @@
             </div>
 
             <div class="turno">
-
+                <h2 class="turnoCliente"></h2>
             </div>
 
         </form>

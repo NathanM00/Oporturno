@@ -1,4 +1,4 @@
-const socket = io('http://172.30.176.83:3000');
+const socket = io('http://192.168.1.10:3000');
 //Chicos la ip aqui tambien cambia, son la misma ip en ambos archivos
 
 const enviarUsuario = document.querySelector('.enviarUsuario');
@@ -27,7 +27,7 @@ const teclaCod = document.querySelectorAll('.teclaCodigo');
 const inputCod = document.querySelector('.inputCod');
 
 const pantallaDoc1 = document.querySelector('.tecladoDoc');
-const pantallaDoc2 = document.querySelector('.botonesDocs');
+const pantallaDoc2 = document.querySelector('.botonesDoc');
 const pantallaTramite = document.querySelector('.tramites');
 const pantallaGiros = document.querySelector('.giros');
 const pantallaIndefinido = document.querySelector('.girosIndefinido');
@@ -36,6 +36,9 @@ const pantallaRecibo = document.querySelector('.girosRecibo');
 const pantallaDivisas = document.querySelector('.divisas');
 const pantallaSeguros = document.querySelector('.seguros');
 const pantallaTurno = document.querySelector('.turno');
+const turnoCliente = document.querySelector('.turnoCliente');
+
+var usuario;
 
 var numeroDocumento = '';
 var tipoDocumento = '';
@@ -46,50 +49,56 @@ var statusCliente = {
     status: 'Es un cliente nuevo',
 };
 
-//Se quita el splash al hacerle click siendo el cliente
-function quitarSplash() {
-    splash.style.display = 'none';
-    noSeUser.style.display = 'flex';
-    navBar.style.display = 'flex';
-}
-splash.addEventListener('click', quitarSplash);
-
 //Se define si es cliente o asesor al inicio de la jornada
 function definicionUsuario() {
-    let usuario = selectUser.value;
-
+    usuario = selectUser.value;
     if (usuario === 'Cliente') {
+        console.log(usuario);
         noSeUser.style.display = 'none';
-        clienteUser.style.display = 'block';
-        textoNav.innerHTML = 'Ingresar Documento';
+        splash.style.display = 'flex';
         definicionDocumento();
     } else {
+        console.log(usuario);
         noSeUser.style.display = 'none';
         asesorUser.style.display = 'block';
+        navBar.style.display = 'flex';
         textoNav.innerHTML = 'Clientes';
     }
 }
 enviarUsuario.addEventListener('click', definicionUsuario);
+
+//Se quita el splash al hacerle click siendo el cliente
+function quitarSplash() {
+    pantallaTurno.style.display = 'none';
+    textoNav.innerHTML = 'Ingresar Documento';
+    splash.style.display = 'none';
+    pantallaDoc1.style.display = 'flex';
+    pantallaDoc2.style.display = 'flex';
+    clienteUser.style.display = 'flex';
+    infoForm.style.display = 'flex';
+    navBar.style.display = 'flex';
+}
+splash.addEventListener('click', quitarSplash);
 
 //Todo lo que tiene que ver la parte del documento
 function definicionDocumento() {
     // Se define el numero del documento
     for (let index = 0; index < tecla.length; index++) {
         tecla[index].addEventListener('click', () => {
-
+            console.log('tecla');
             let valor = tecla[index].value;
             if (valor === 'Cancelar') {
-                numeroDocumento = '';
+                inputDoc.value = '';
             } else if (valor === 'Corregir') {
-                numeroDocumento = numeroDocumento.slice(0, -1);
+                inputDoc.value = inputDoc.value.slice(0, -1);
             } else if (valor === 'Ingresar') {
                 pantallaDoc1.style.display = 'none';
                 pantallaDoc2.style.display = 'none';
                 pantallaTramite.style.display = 'flex';
+                numeroDocumento = inputDoc.value;
             } else {
-                numeroDocumento += valor;
+                inputDoc.value += valor;
             }
-            inputDoc.value = numeroDocumento;
         });
     }
 
@@ -97,7 +106,6 @@ function definicionDocumento() {
     for (let index = 0; index < doc.length; index++) {
         doc[index].addEventListener('click', () => {
             tipoDocumento = doc[index].value;
-
         });
     }
 
@@ -227,9 +235,19 @@ socket.on('envioDeTurnoCliente', turno => {
 
 function darTurno(turno) {
     if (turno !== undefined) {
-        let turnoCliente = document.createElement('h2');
+        pantallaTurno.style.display = 'flex';
         turnoCliente.innerHTML = 'Tu turno es: ' + turno;
-        pantallaTurno.appendChild(turnoCliente);
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+          }
+          
+          async function pausa() {
+            await sleep(5000);
+            console.log('siguiente cliente');
+            splash.style.display = 'flex';
+          }
+          pausa();
     }
 }
 
@@ -260,7 +278,7 @@ function mostrarDatos(cliente) {
             arregloDeLista = dataLinea.split(";");
 
             informacion.push(arregloDeLista);
-
+            //determinar si es cliente antiguo
             for (let index = 0; index < informacion.length; index++) {
                 let infoDB = informacion[index];
                 if (infoDB[1] === dataCliente.cedula) {
@@ -321,6 +339,7 @@ function mostrarDatos(cliente) {
     const infoRecomen = document.querySelector('.recomendacion');
     const infoList = document.querySelector('.listaClientes');
 
+    //los datos del cliente, aqui ven que quieren que se vea o no etc etc
     const textoCedula = document.createElement('p');
     textoCedula.innerText = cliente.cedula;
     const textoNombre = document.createElement('p');
