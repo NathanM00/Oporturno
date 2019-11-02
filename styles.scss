@@ -42,6 +42,7 @@ nav{
     display: none;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 100%;
 }
 .usuarioAsesor{
     display: none;
@@ -151,4 +152,77 @@ button{
         
         border: 1px solid #595959;
         transform: rotate(90deg);
+    }
+
+    .botonesTramites{
+        .tramite{
+        background: #FAFAFA;
+        border: 5px solid #0FADD0;
+        box-sizing: border-box;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        width: 435px;
+        height: 180px;
+        margin: 20px;
+
+        font-weight: bold;
+        font-size: 45px;
+        line-height: 75px;
+        text-align: center;
+        color: #1093A5;
+
+
+        }
+
+        .tramite:hover {
+        background: #00A9CE;
+        border: 5px solid #28B2D1;
+        box-sizing: border-box;
+        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        cursor: pointer;
+        color: #FAFAFA;
+        }
+    }
+
+
+    .giros{
+        width: 100%;
+    }
+
+    .girosIndefinido{
+
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        width: 100%;
+
+        .giro{
+        background: #FAFAFA;
+        border: 5px solid #0FADD0;
+        box-sizing: border-box;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        width: 435px;
+        height: 180px;
+        margin: 20px;
+
+        font-weight: bold;
+        font-size: 45px;
+        line-height: 75px;
+        text-align: center;
+        color: #1093A5;
+
+
+        }
+
+        .giro:hover {
+        background: #00A9CE;
+        border: 5px solid #28B2D1;
+        box-sizing: border-box;
+        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        cursor: pointer;
+        color: #FAFAFA;
+        }
     }
