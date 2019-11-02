@@ -1,16 +1,29 @@
 nav{
     width: 100%;
     display: none;
-    height: 15%;
+    height: 120px;
     background-color: #ffdc05;
     justify-content: space-evenly;
     align-items: center;
     margin: 0;
 }
 
+.navBar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: flex-start;
+}
+
 .textoNav{
     text-align: center;    
     color: #404040;
+    font-size: 35pt;
+    font-style: bold;
+    margin: 25px 0 0 0;
+    padding-left: 170px;
 }
 .usuarioCliente{
     display: none;
@@ -244,38 +257,64 @@ button{
     height: 30px;
 }
 
+.div-logos{
+    display: flex;
+}
 
 #giros-logo{    
-    position: absolute;
+    
     width: 139px;
     height: 81px;
-    left: 22px;
-    top: 21px;
+    margin: 20px;
+    margin-left: 50px;
+
+ 
     }
     
     #western-logo{
-    position: absolute;
+    
     width: 134.35px;
     height: 71px;
-    left: 199px;
-    top: 28px;
+    /*position: absolute;*/
+    margin-top: 25px;
+    padding-left: 20px;
+    margin-right: 20px;
+    border-left: solid black 2px;
+  
+    
+  
+    }
+
+    .div-back{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #00A9CE;
+        width: 214px;
+        height: 122px;
+
+        h2{
+            color: white;
+            margin-left: 20px;
+        }
+    }
+
+    #back-vector{
+        width: 20px;
+        height: 34px;
     }
     
     #signo-interrogacion{
-    position: absolute;
+    
     width: 60px;
     height: 64px;
-    left: 1350px;
-    top: 29px;
+ 
     }
     
     #line-div{
-        position: absolute;
-        width: 83px;
-        height: 0px;
-        left: 137px;
-        top: 60px;
         
+        width: 83px;
+        height: 0px;   
         border: 1px solid #595959;
         transform: rotate(90deg);
     }
