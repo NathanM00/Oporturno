@@ -1,4 +1,4 @@
-const socket = io('http://192.168.1.53:3000');
+const socket = io('http://192.168.0.14:3000');
 //Chicos la ip aqui tambien cambia, son la misma ip en ambos archivos
 
 const enviarUsuario = document.querySelector('.enviarUsuario');

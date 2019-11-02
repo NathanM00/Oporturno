@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!-- Esa ip deben cambiarla si van a hacer las pruebas, el puerto si es el 3000, pero la ip cambia segun la del pc-->
-    <script defer="" src="http://192.168.1.53:3000/socket.io/socket.io.js"></script>
+    <script defer="" src="http://192.168.0.14:3000/socket.io/socket.io.js"></script>
     <script defer="" src="client.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
 
@@ -18,12 +18,13 @@
 
 
     <nav class="navBar">
-        <img alt="logo de giros" />
-        <img alt="logo de western" />
+        <img src="src/gyf-logo.png" alt="logo de giros" id="giros-logo" />
+        <div id="line-div"></div>
+        <img src="src/wu-logo.png" alt="logo de western" id="western-logo" />
 
         <h1 class="textoNav">Define que usuario eres</h1>
 
-        <img alt="signo interrogacion" />
+        <img src="src/signo-interrogacion.png" alt="signo interrogacion" id="signo-interrogacion"/>
     </nav>
 
     <div class="splash">
