@@ -9,7 +9,8 @@ nav{
 }
 
 .textoNav{
-    color: #575757;
+    text-align: center;    
+    color: #404040;
 }
 .usuarioCliente{
     display: none;
@@ -115,3 +116,39 @@ button{
     border-radius: 5px;
     height: 30px;
 }
+
+
+#giros-logo{    
+    position: absolute;
+    width: 139px;
+    height: 81px;
+    left: 22px;
+    top: 21px;
+    }
+    
+    #western-logo{
+    position: absolute;
+    width: 134.35px;
+    height: 71px;
+    left: 199px;
+    top: 28px;
+    }
+    
+    #signo-interrogacion{
+    position: absolute;
+    width: 60px;
+    height: 64px;
+    left: 1350px;
+    top: 29px;
+    }
+    
+    #line-div{
+        position: absolute;
+        width: 83px;
+        height: 0px;
+        left: 137px;
+        top: 60px;
+        
+        border: 1px solid #595959;
+        transform: rotate(90deg);
+    }
