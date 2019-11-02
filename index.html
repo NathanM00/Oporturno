@@ -9,6 +9,7 @@
     <!-- Esa ip deben cambiarla si van a hacer las pruebas, el puerto si es el 3000, pero la ip cambia segun la del pc-->
     <script defer="" src="http://192.168.0.14:3000/socket.io/socket.io.js"></script>
     <script defer="" src="client.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -45,31 +46,46 @@
         <form class="formularioCliente">
 
             <div class="botonesDoc">
-                <h2 class="">Seleccionar tipo de documento</h2>
-                <input type="button" class="doc" value="Cedula de Ciudadania" />
+                <h2 class="docuType">Seleccionar tipo de documento</h2>
+                <input type="button" class="doc" value="Cédula de Ciudadania" />
                 <input type="button" class="doc" value="Tarjeta de Identidad" />
-                <input type="button" class="doc" value="Numero de pasaporte" />
+                <input type="button" class="doc" value="Número de pasaporte" />
             </div>
 
             <div class="tecladoDoc">
-                <h2 class="">Ingresa tu número de documento</h2>
-                <input type="text" class="inputDoc" placeholder="Numero del documento" name="cedula" />
+                <h2 class="docuNum">Ingresa tu número de documento</h2>
+                <input type="text" class="inputDoc" placeholder="Número del documento" name="cedula" />
+
                 <div class="teclas">
-                    <input type="button" class="tecla" value="1" />
-                    <input type="button" class="tecla" value="2" />
-                    <input type="button" class="tecla" value="3" />
-                    <input type="button" class="tecla" value="Cancelar" />
-                    <input type="button" class="tecla" value="4" />
-                    <input type="button" class="tecla" value="5" />
-                    <input type="button" class="tecla" value="6" />
-                    <input type="button" class="tecla" value="Corregir" />
-                    <input type="button" class="tecla" value="7" />
-                    <input type="button" class="tecla" value="8" />
-                    <input type="button" class="tecla" value="9" />
-                    <input type="button" class="tecla" value="Ingresar" />
-                    <input type="button" class="tecla" value="" />
-                    <input type="button" class="tecla" value="0" />
-                    <input type="button" class="tecla" value="" />
+                    <section class="numKeys">
+                        <section class="fila">
+                            <input type="button" class="tecla" value="1" />
+                            <input type="button" class="tecla" value="2" />
+                            <input type="button" class="tecla" value="3" />
+                        </section>
+
+                        <section class="fila">
+                            <input type="button" class="tecla" value="4" />
+                            <input type="button" class="tecla" value="5" />
+                            <input type="button" class="tecla" value="6" />
+                        </section>
+
+                        <section class="fila">
+                            <input type="button" class="tecla" value="7" />
+                            <input type="button" class="tecla" value="8" />
+                            <input type="button" class="tecla" value="9" />
+                        </section>
+
+                        <section class="fila">
+                            <input type="button" class="tecla" value="0" />
+                        </section>
+                    </section>
+
+                    <section class="columna">
+                        <input type="button" class="tecla" id="cancelar" value="Cancelar" />
+                        <input type="button" class="tecla" id="corregir" value="Corregir" />
+                        <input type="button" class="tecla" id="ingresar" value="Ingresar" />
+                    </section>
                 </div>
 
             </div>
@@ -93,8 +109,8 @@
                 <div class="girosIndefinido">
                         <!--<h2>¿Qué trámite vienes a realizar?</h2>-->
 
-                        <input type="button" class="giro" value="Envío" />
-                        <input type="button" class="giro" value="Recibo" />
+                    <input type="button" class="giro" value="Envío" />
+                    <input type="button" class="giro" value="Recibo" />
                 </div>
 
                 <div class="girosEnvio">
