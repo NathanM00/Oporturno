@@ -31,6 +31,12 @@ nav{
     height: 100%;
     margin: 0;
 }
+.usuarioPantalla{
+    display: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
 .botonesDoc{
     display: none;
     flex-direction: column;
@@ -198,6 +204,18 @@ body{
     }
 
     &Recibo{
+        display: none;
+    }
+}
+
+.creditos{
+    display: none;
+
+    &Indefinido{
+        display: none;
+    }
+
+    &Credioro{
         display: none;
     }
 }

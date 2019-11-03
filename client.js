@@ -1,14 +1,16 @@
-const socket = io('http://192.168.0.14:3000');
+const socket = io('http://192.168.1.10:3000');
 //Chicos la ip aqui tambien cambia, son la misma ip en ambos archivos
 
 const enviarUsuario = document.querySelector('.enviarUsuario');
 const asesorUser = document.querySelector('.usuarioAsesor');
+const pantallaUser= document.querySelector('.usuarioPantalla');
 const noSeUser = document.querySelector('.deficionUsuario');
 const clienteUser = document.querySelector('.usuarioCliente');
 const selectUser = document.querySelector('.selectorUsuario');
 const splash = document.querySelector('.splash');
 const navBar = document.querySelector('.navBar');
 const textoNav = document.querySelector('.textoNav');
+const turnero = document.querySelector('.turnero');
 
 const infoForm = document.querySelector('.formularioCliente');
 
@@ -19,9 +21,11 @@ const tecla = document.querySelectorAll('.tecla');
 const tramite = document.querySelectorAll('.tramite');
 
 const giro = document.querySelectorAll('.giro');
+const credito = document.querySelectorAll('.credito');
 const divisa = document.querySelectorAll('.divisa');
 const seguro = document.querySelectorAll('.seguro');
 const pais = document.querySelectorAll('.pais');
+const credioro = document.querySelectorAll('.credioro');
 
 const teclaCod = document.querySelectorAll('.teclaCodigo');
 const inputCod = document.querySelector('.inputCod');
@@ -30,13 +34,18 @@ const pantallaDoc1 = document.querySelector('.tecladoDoc');
 const pantallaDoc2 = document.querySelector('.botonesDoc');
 const pantallaTramite = document.querySelector('.tramites');
 const pantallaGiros = document.querySelector('.giros');
-const pantallaIndefinido = document.querySelector('.girosIndefinido');
+const pantallaGiroInde = document.querySelector('.girosIndefinido');
+const pantallaCreInde = document.querySelector('.creditosIndefinido');
+const pantallaCredioro = document.querySelector('.creditosCredioro');
 const pantallaEnvio = document.querySelector('.girosEnvio');
 const pantallaRecibo = document.querySelector('.girosRecibo');
 const pantallaDivisas = document.querySelector('.divisas');
 const pantallaSeguros = document.querySelector('.seguros');
+const pantallaCreditos = document.querySelector('.creditos');
 const pantallaTurno = document.querySelector('.turno');
+
 const turnoCliente = document.querySelector('.turnoCliente');
+const turnoMensaje = document.querySelector('.turnoMensaje');
 
 var usuario;
 
@@ -57,12 +66,18 @@ function definicionUsuario() {
         noSeUser.style.display = 'none';
         splash.style.display = 'flex';
         definicionDocumento();
-    } else {
+    } else if (usuario === 'Asesor'){
         console.log(usuario);
         noSeUser.style.display = 'none';
         asesorUser.style.display = 'block';
         navBar.style.display = 'flex';
         textoNav.innerHTML = 'Clientes';
+    } else if (usuario === 'Pantalla'){
+        console.log(usuario);
+        noSeUser.style.display = 'none';
+        pantallaUser.style.display = 'block';
+        navBar.style.display = 'flex';
+        textoNav.innerHTML = 'Turnos';
     }
 }
 enviarUsuario.addEventListener('click', definicionUsuario);
@@ -125,13 +140,13 @@ function definicionTramite(elTramite) {
 
     if (elTramite === 'Giros') {
         pantallaGiros.style.display = 'flex';
-        pantallaIndefinido.style.display = 'flex';
+        pantallaGiroInde.style.display = 'flex';
 
         //Se define el tipo de giro a realizar
         for (let index = 0; index < giro.length; index++) {
             giro[index].addEventListener('click', () => {
                 detalleTramite = giro[index].value;
-                pantallaIndefinido.style.display = 'none';
+                pantallaGiroInde.style.display = 'none';
                 extrasGiro(detalleTramite);
             });
         }
@@ -159,6 +174,19 @@ function definicionTramite(elTramite) {
                 extrasTramite = 'Ningun extra';
                 enviarDatosCliente();
                 pantallaSeguros.style.display = 'none';
+            });
+        }
+
+    } else if (elTramite === 'Créditos') {
+        pantallaCreditos.style.display = 'flex';
+        pantallaCreInde.style.display = 'flex';
+        //Se define el tipo de credito a realizar
+        for (let index = 0; index < credito.length; index++) {
+            credito[index].addEventListener('click', () => {
+                detalleTramite = credito[index].value;
+                console.log(detalleTramite);
+                pantallaCreInde.style.display = 'none';
+                extrasCredito(detalleTramite);
             });
         }
 
@@ -210,10 +238,32 @@ function extrasGiro(tipoGiro) {
     }
 }
 
+
+//Se definen cosas como el codigo o pais del giro
+function extrasCredito(tipoCredito) {
+
+    if (tipoCredito == 'Credioro') {
+        pantallaCredioro.style.display = 'flex';
+        //Se define el pais del giro a enviar
+        for (let index = 0; index < credioro.length; index++) {
+            credioro[index].addEventListener('click', () => {
+                extrasTramite = credioro[index].value;
+                enviarDatosCliente();
+                pantallaCredioro.style.display = 'none';
+                pantallaCreditos.style.display = 'none';
+            });
+        } 
+    } else{
+        extrasTramite = 'Ningun extra';
+        enviarDatosCliente();
+    }
+}
+
 //Todo lo que tiene que ver con el envio de informacion
 socket.on('envioAlCliente', data => {
     if (data.cedula !== undefined) {
         mostrarDatos(data);
+        mostrarTurnos(data);
     }
 });
 
@@ -237,15 +287,25 @@ function darTurno(turno) {
     if (turno !== undefined) {
         pantallaTurno.style.display = 'flex';
         turnoCliente.innerHTML = 'Tu turno es: ' + turno;
-
+        
+        if(tipoTramite === 'Asesoría'){
+            turnoMensaje.innerHTML = 'Recuerda que por Teleágil puedes realizar diferentes tipos de consultas sin necesidad de coger un turno. Acércate a él, podría ser más rápido.';
+        } else if(tipoTramite === 'Recaudos'){
+            turnoMensaje.innerHTML = 'Recuerda tomar el volante donde se encuentran nuestros convenios para realizar recaudos.';
+        }
+        
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
           }
           
           async function pausa() {
-            await sleep(5000);
+            await sleep(8000);
             console.log('siguiente cliente');
             splash.style.display = 'flex';
+            pantallaTurno.style.display = 'none';
+            turnoMensaje.innerHTML = '';
+            inputDoc.value = '';
+            inputCod.value = '';
           }
           pausa();
     }
@@ -335,26 +395,26 @@ function mostrarDatos(cliente) {
         }
     }
 
-    const infoCliente = document.querySelector('.informacion');
-    const infoRecomen = document.querySelector('.recomendacion');
-    const infoList = document.querySelector('.listaClientes');
+    let infoCliente = document.querySelector('.informacion');
+    let infoRecomen = document.querySelector('.recomendacion');
+    let infoList = document.querySelector('.listaClientes');
 
     //los datos del cliente, aqui ven que quieren que se vea o no etc etc
-    const textoCedula = document.createElement('p');
+    let textoCedula = document.createElement('p');
     textoCedula.innerText = cliente.cedula;
-    const textoNombre = document.createElement('p');
-    const textoTramite = document.createElement('p');
+    let textoNombre = document.createElement('p');
+    let textoTramite = document.createElement('p');
     textoTramite.innerText = cliente.tramite;
-    const textoDetalle = document.createElement('p');
+    let textoDetalle = document.createElement('p');
     textoDetalle.innerText = cliente.detalle;
-    const textoExtra = document.createElement('p');
+    let textoExtra = document.createElement('p');
     textoExtra.innerText = "" + cliente.extras;
-    const textoTurno = document.createElement('p');
+    let textoTurno = document.createElement('p');
     textoTurno.innerText = "" + cliente.turno;
-    const textoStatus = document.createElement('p');
-    const textoRecomendacion = document.createElement('p');
-    const textoRecomendacion2 = document.createElement('p');
-    const textoRecomendacion3 = document.createElement('p');
+    let textoStatus = document.createElement('p');
+    let textoRecomendacion = document.createElement('p');
+    let textoRecomendacion2 = document.createElement('p');
+    let textoRecomendacion3 = document.createElement('p');
 
     infoCliente.appendChild(textoCedula);
     infoCliente.appendChild(textoTramite);
@@ -362,7 +422,7 @@ function mostrarDatos(cliente) {
     infoCliente.appendChild(textoExtra);
     infoCliente.appendChild(textoStatus);
 
-    const trajetaCliente = document.createElement('div');
+    let trajetaCliente = document.createElement('div');
     trajetaCliente.className = 'tarjetaCliente';
     trajetaCliente.appendChild(textoNombre);
     trajetaCliente.appendChild(textoTramite);
@@ -372,4 +432,11 @@ function mostrarDatos(cliente) {
     infoRecomen.appendChild(textoRecomendacion2);
     infoRecomen.appendChild(textoRecomendacion3);
 
+}
+
+function mostrarTurnos(cliente){
+    let turno = document.createElement('p');
+    turno.innerText = cliente.turno;
+
+    turnero.appendChild(turno);
 }

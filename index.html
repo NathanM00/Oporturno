@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!-- Esa ip deben cambiarla si van a hacer las pruebas, el puerto si es el 3000, pero la ip cambia segun la del pc-->
-    <script defer="" src="http://192.168.0.14:3000/socket.io/socket.io.js"></script>
+    <script defer="" src="http://192.168.1.10:3000/socket.io/socket.io.js"></script>
     <script defer="" src="client.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
 
@@ -46,6 +46,7 @@
             <option>-</option>
             <option>Cliente</option>
             <option>Asesor</option>
+            <option>Pantalla</option>
         </select>
         <button type="submit" class="enviarUsuario">Enviar</button>
     </div>
@@ -150,7 +151,22 @@
                         <input type="button" class="teclaCodigo" value="Ingresar" />
                     </div>
                 </div>
+            </div>
 
+            <div class="creditos">
+
+                <div class="creditosIndefinido">
+                    <h2>Selecciona el tipo de crédito</h2>
+                    <input type="button" class="credito" value="Credioro" />
+                    <input type="button" class="credito" value="Tarjeta de crédito" />
+                    <input type="button" class="credito" value="Otro" />
+                </div>
+
+                <div class="creditosCredioro">
+                    <h2>¿Deseas adquirir o pagar Credioro?</h2>
+                    <input type="button" class="credioro" value="Adquisición" />
+                    <input type="button" class="credioro" value="Pago" />
+                </div>
 
             </div>
 
@@ -175,6 +191,7 @@
 
             <div class="turno">
                 <h2 class="turnoCliente"></h2>
+                <h2 class="turnoMensaje"></h2>
             </div>
 
         </form>
@@ -202,6 +219,16 @@
 
         </div>
     </div>
+
+    <div class="usuarioPantalla">
+
+        <div class="turnero">
+
+        </div>
+        
+    </div>
+
+
     <script src="/librerias/jquery-3.4.1.js"></script>
 
 </body>
