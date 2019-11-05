@@ -1,4 +1,4 @@
-const socket = io('http://172.30.193.36:3000');
+const socket = io('http://172.30.129.174:3000');
 //Chicos la ip aqui tambien cambia, son la misma ip en ambos archivos
 
 const enviarUsuario = document.querySelector('.enviarUsuario');
@@ -69,7 +69,7 @@ function definicionUsuario() {
     } else if (usuario === 'Asesor'){
         console.log(usuario);
         noSeUser.style.display = 'none';
-        asesorUser.style.display = 'block';
+        asesorUser.style.display = 'flex';
         navBar.style.display = 'flex';
         textoNav.innerHTML = 'Clientes';
     } else if (usuario === 'Pantalla'){
