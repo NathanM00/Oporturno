@@ -1,4 +1,4 @@
-const socket = io('http://172.30.193.36:3000');
+const socket = io('http://172.30.170.77:3000');
 //Chicos la ip aqui tambien cambia, son la misma ip en ambos archivos
 
 const enviarUsuario = document.querySelector('.enviarUsuario');
@@ -45,6 +45,7 @@ const pantallaCreditos = document.querySelector('.creditos');
 const pantallaTurno = document.querySelector('.turno');
 
 const turnoCliente = document.querySelector('.turnoCliente');
+const numTurno = document.querySelector('.numTurno');
 const turnoMensaje = document.querySelector('.turnoMensaje');
 
 var usuario;
@@ -286,6 +287,7 @@ socket.on('envioDeTurnoCliente', turno => {
 function darTurno(turno) {
     if (turno !== undefined) {
         pantallaTurno.style.display = 'flex';
+        numTurno.innerHTML = turno;
         turnoCliente.innerHTML = 'Tu turno es: ' + turno;
         
         if(tipoTramite === 'Asesoría'){
