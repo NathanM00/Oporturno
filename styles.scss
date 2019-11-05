@@ -205,7 +205,10 @@ nav{
 }
 .usuarioAsesor{
     display: none;
+    flex-direction: column;
+    height: 100%;
 }
+
 body{
     //font-family: 'Roboto', sans-serif;
     font-family: 'Open Sans', sans-serif;
@@ -462,8 +465,9 @@ button{
         }
     }
 
-    .girosEnvio{
-        align-items: center;
+    .informacionCliente{
+        width: 40%;
+        height: 100%;
     }
 
     .paises-internos{
@@ -475,4 +479,9 @@ button{
 
     .creditosIndefinido{
         align-items: center;
+    }
+
+    .perfilacion{
+        width: 60%;
+        height: 100%;
     }
