@@ -199,7 +199,10 @@ nav{
 }
 .usuarioAsesor{
     display: none;
+    flex-direction: column;
+    height: 100%;
 }
+
 body{
     //font-family: 'Roboto', sans-serif;
     font-family: 'Open Sans', sans-serif;
@@ -452,3 +455,15 @@ button{
         color: #FAFAFA;
         }
     }
+
+    .informacionCliente{
+        width: 40%;
+        height: 100%;
+    }
+
+    .perfilacion{
+        width: 60%;
+        height: 100%;
+    }
+        
+    
