@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,36 +10,36 @@
     <script defer="" src="http://172.30.18.87:3000/socket.io/socket.io.js"></script>
     <script defer="" src="client.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
-
+ 
     <link rel="stylesheet" href="styles.css">
 </head>
-
+ 
 <body>
     <nav class="navBar">
-
+ 
         <div class="div-back">
             <img src="src/back.png" alt="Atrás" id="back-vector">
             <h2>Atrás</h2>
         </div>
-
+ 
         <h1 class="textoNav">Define que usuario eres</h1>
-
+ 
         <div class="div-logos">
             <img src="src/gyf-logo.png" alt="logo de giros" id="giros-logo" />
-
+ 
             <img src="src/wu-logo.png" alt="logo de western" id="western-logo" />
         </div>
-
+ 
         <!--<img src="src/signo-interrogacion.png" alt="signo interrogacion" id="signo-interrogacion"/>-->
     </nav>
-
+ 
     <div class="splash">
         <div class="splash-interno">
             <h1>Bienvenido a Giros y Finanzas</h1>
             <p class="textoSplah">Toca la pantalla para pedir un turno</p>
         </div>
     </div>
-
+ 
     <div class="deficionUsuario">
         <h1>Hola, Bienvenido a Oporturno</h1>
         <h2>Eres un asesor o un cliente?</h2>
@@ -51,21 +51,21 @@
         </select>
         <button type="submit" class="enviarUsuario">Enviar</button>
     </div>
-
+ 
     <section class="usuarioCliente">
         <form class="formularioCliente">
-
+ 
             <div class="botonesDoc">
                 <h2 class="docuType">Seleccionar tipo de documento</h2>
                 <button type="button" class="doc" value="Cédula de Ciudadania" >Cédula de Ciudadania</button>
                 <button type="button" class="doc" value="Tarjeta de Identidad" >Tarjeta de Identidad</button>
                 <button type="button" class="doc" value="Número de pasaporte" >Número de pasaporte</button>
             </div>
-
+ 
             <div class="tecladoDoc">
                 <h2 class="docuNum">Ingresa tu número de documento</h2>
                 <input type="text" class="inputDoc" placeholder="Número del documento" name="cedula" />
-
+ 
                 <div class="teclas">
                     <section class="numKeys">
                         <section class="fila">
@@ -73,33 +73,33 @@
                             <button type="button" class="tecla" value="2" >2</button>
                             <button type="button" class="tecla" value="3" >3</button>
                         </section>
-
+ 
                         <section class="fila">
                             <button type="button" class="tecla" value="4" >4</button>
                             <button type="button" class="tecla" value="5" >5</button>
                             <button type="button" class="tecla" value="6" >6</button>
                         </section>
-
+ 
                         <section class="fila">
                             <button type="button" class="tecla" value="7" >7</button>
                             <button type="button" class="tecla" value="8" >8</button>
                             <button type="button" class="tecla" value="9" >9</button>
                         </section>
-
+ 
                         <section class="fila">
                             <button type="button" class="tecla" value="0" >0</button>
                         </section>
                     </section>
-
+ 
                     <section class="columna">
                         <button type="button" class="tecla" id="cancelar" value="Cancelar" >Cancelar</button>
                         <button type="button" class="tecla" id="corregir" value="Corregir" >Corregir</button>
                         <button type="button" class="tecla" id="ingresar" value="Ingresar" >Ingresar</button>
                     </section>
                 </div>
-
+ 
             </div>
-
+ 
             <div class="tramites">
                 <!--<h2>¿Qué trámite vienes a realizar?</h2>-->
                 <div class="botonesTramites">
@@ -113,16 +113,16 @@
                     <button type="button" class="tramite" value="Otros" >Otros</button>
                 </div>
             </div>
-
+ 
             <div class="giros">
-
+ 
                 <div class="girosIndefinido">
                     <!--<h2>¿Qué trámite vienes a realizar?</h2>-->
-
+ 
                     <button type="button" class="giro" value="Envío" >Envío</button>
                     <button type="button" class="giro" value="Recibo" >Recibo</button>
                 </div>
-
+ 
                 <div class="girosEnvio">
                     <!--<h2>¿A qué país envías?</h2>-->
                     <div class="paises-internos">
@@ -134,7 +134,7 @@
                         <button type="button" class="pais" value="Otro">Otro</button>
                     </div>
                 </div>
-
+ 
                 <div class="girosRecibo">
                     <!--<h2>Ingresa el código del giro</h2>-->
                     <input type="text" class="inputCod" placeholder="Numero del codigo" name="codigo" />
@@ -146,110 +146,110 @@
                                 <button type="button" class="teclaCodigo" value="2" >2</button>
                                 <button type="button" class="teclaCodigo" value="3" >3</button>
                             </section>
-
+ 
                             <section class="fila">
                                 <button type="button" class="teclaCodigo" value="4" >4</button>
                                 <button type="button" class="teclaCodigo" value="5" >5</button>
                                 <button type="button" class="teclaCodigo" value="6" >6</button>
                             </section>
-
+ 
                             <section class="fila">
                                 <button type="button" class="teclaCodigo" value="7" >7</button>
                                 <button type="button" class="teclaCodigo" value="8" >8</button>
                                 <button type="button" class="teclaCodigo" value="9" >9</button>
                             </section>
-
+ 
                             <button type="button" class="teclaCodigo" value="0" >0</button>
                         </section>
-
+ 
                         <section class="columna">
                             <button type="button" class="teclaCodigo" id="codCancelar" value="Cancelar" >Cancelar</button>
                             <button type="button" class="teclaCodigo" id="codCorregir" value="Corregir" >Corregir</button>
                             <button type="button" class="teclaCodigo" id="codIngresar" value="Ingresar" >Ingresar</button>
                         </section>
-
+ 
                     </div>
                 </div>
             </div>
-
+ 
             <div class="creditos">
-
+ 
                 <div class="creditosIndefinido">
                     <!--<h2>Selecciona el tipo de crédito</h2>-->
                     <button type="button" class="credito" value="Credioro" >Credioro</button>
                     <button type="button" class="credito" value="Tarjeta de crédito" >Tarjeta de crédito</button>
                     <button type="button" class="credito" value="Otro" >Otro</button>
                 </div>
-
+ 
                 <div class="creditosCredioro">
                     <!--<h2>¿Deseas adquirir o pagar Credioro?</h2>-->
                     <button type="button" class="credioro" value="Adquisición">Adquisición</button>
                     <button type="button" class="credioro" value="Pago">Pago</button>
                 </div>
-
+ 
             </div>
-
+ 
             <div class="divisas">
-
+ 
                 <!--<h2>¿Compras o vendes divisas?</h2>-->
-
+ 
                 <button type="button" class="divisa" value="Compra" >Compra</button>
                 <button type="button" class="divisa" value="Venta" >Venta</button>
             </div>
-
+ 
             <div class="seguros">
                 <!--<h2> Selecciona el tipo de seguro</h2>-->
-
+ 
                 <button type="button" class="seguro" value="Repatriación" >Repatriación</button>
                 <button type="button" class="seguro" value="Familia segura" >Familia segura</button>
                 <button type="button" class="seguro" value="Vida tranquila" >Vida tranquila</button>
                 <button type="button" class="seguro" value="Vida grupo" >Vida grupo</button>
                 <button type="button" class="seguro" value="Otro" >Otro</button>
-
+ 
             </div>
-
+ 
             <div class="turno">
                 <h2 class="turnoCliente"></h2>
                 <h2 class="turnoMensaje"></h2>
             </div>
-
+ 
         </form>
     </section>
-
+ 
     <div class="usuarioAsesor">
         <div class="informacionCliente">
             <h2>Lista clientes</h2>
             <div class="listaClientes">
-
+ 
             </div>
-
+ 
         </div>
         <div class="perfilacion">
             <h2>Perfilación</h2>
-
+ 
             <div class="recomendacion">
                 <h2>Ofrecer</h2>
-
+ 
             </div>
             <div class="informacion">
                 <h2>Información</h2>
-
+ 
             </div>
-
+ 
         </div>
     </div>
-
+ 
     <div class="usuarioPantalla">
-
+ 
         <div class="turnero">
-
+ 
         </div>
-
+ 
     </div>
-
-
+ 
+ 
     <script src="/librerias/jquery-3.4.1.js"></script>
-
+ 
 </body>
-
+ 
 </html>

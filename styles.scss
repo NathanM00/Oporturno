@@ -492,11 +492,30 @@ button{
     .perfilacion{
         width: 60%;
         height: 100%;
-        background-color: #FAFAFA;
+    }
 
-        font-style: normal;
-        font-weight: bold;
-        font-size: 30px;
-        line-height: 41px;
-        color: #008CA0;
+
+    .ticket-img{
+        width: 70%;
+    }
+
+
+    .turno{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: 400px;
+    }
+
+    .numTurno{
+        position: absolute;
+        font-size: 200pt;
+        color: #00A9CE;
+        top: -150px;
+        left: 200px;
+        bottom: 500px;
+    }
+
+    .contenedor-ticket{
+        position: relative;
     }
