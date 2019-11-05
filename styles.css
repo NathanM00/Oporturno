@@ -251,6 +251,7 @@ nav {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
+  width: 100%;
 }
 
 body {
@@ -431,7 +432,7 @@ button {
           align-items: center;
   background: #00A9CE;
   width: 214px;
-  height: 122px;
+  height: 120px;
 }
 
 .div-back h2 {
@@ -554,6 +555,12 @@ button {
 .informacionCliente {
   width: 40%;
   height: 100%;
+  margin: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 41px;
+  color: #008CA0;
 }
 
 .paises-internos {
