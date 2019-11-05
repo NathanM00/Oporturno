@@ -83,7 +83,7 @@ nav{
     color: #008CA0;
 }
 
-.inputDoc{
+.inputDoc, .inputCod{
     width: 500px;
     height: 86px;
     border-radius: 9px;
@@ -99,7 +99,7 @@ nav{
     color: gray;
 }
 
-.tecladoDoc{
+.tecladoDoc, .girosRecibo{
     display: none;
     flex-direction: column;
     align-items: center;
@@ -125,7 +125,7 @@ nav{
     margin: 50px 0 195px 0;
 }
 
-.tecla{
+.tecla, .teclaCodigo{
     width: 134px;
     height: 134px;
     margin-right: 40px;
@@ -142,12 +142,12 @@ nav{
     color: #FFFFFF;
 }
 
-.teclas{
+.teclas, .teclasCodigo{
     display: contents;
 }
 
 //285px
-#cancelar{
+#cancelar, #codCancelar{
     width: 200px;
     height: 134px;
     margin-bottom: 22px;
@@ -161,7 +161,7 @@ nav{
     color: #FFFFFF;
 }
 
-#corregir{
+#corregir, #codCorregir{
     width: 200px;
     height: 134px;
     margin-bottom: 22px;
@@ -175,7 +175,7 @@ nav{
     color: #FFFFFF;
 }
 
-#ingresar{
+#ingresar, #codIngresar{
     width: 200px;
     height: 134px;
     margin-bottom: 22px;
@@ -196,6 +196,8 @@ nav{
     background-color: #F6F6F6;
 }
 .formularioCliente{
+    justify-content: center;
+    align-items: center;
     display: none;
     flex-direction: row;
     flex-wrap: wrap;
@@ -388,7 +390,7 @@ button{
  
     }
 
-        .tramite, .pais, .credito, .seguro, .enviarUsuario{
+        .tramite, .pais, .credito, .seguro, .enviarUsuario, .credioro{
         background: #FAFAFA;
         border: 5px solid #0FADD0;
         box-sizing: border-box;
@@ -406,7 +408,7 @@ button{
 
         }
 
-        .tramite:hover, .pais:hover, .credito:hover, .seguro:hover, .enviarUsuario:hover{
+        .tramite:hover, .pais:hover, .credito:hover, .seguro:hover, .enviarUsuario:hover, .credioro:hover{
         background: #00A9CE;
         border: 5px solid #28B2D1;
         box-sizing: border-box;
@@ -469,4 +471,8 @@ button{
         height: 450px;
         padding-left: 15px;
         padding-top: 20px;
+    }
+
+    .creditosIndefinido{
+        align-items: center;
     }

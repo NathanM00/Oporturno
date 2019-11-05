@@ -17,8 +17,8 @@
 <body>
 
 
-    <nav class="navBar"> 
-        
+    <nav class="navBar">
+
         <div class="div-back">
             <img src="src/back.png" alt="Atrás" id="back-vector">
             <h2>Atrás</h2>
@@ -27,10 +27,10 @@
         <h1 class="textoNav">Define que usuario eres</h1>
 
         <div class="div-logos">
-                <img src="src/gyf-logo.png" alt="logo de giros" id="giros-logo" />
-               
-                <img src="src/wu-logo.png" alt="logo de western" id="western-logo" />
-            </div>
+            <img src="src/gyf-logo.png" alt="logo de giros" id="giros-logo" />
+
+            <img src="src/wu-logo.png" alt="logo de western" id="western-logo" />
+        </div>
 
         <!--<img src="src/signo-interrogacion.png" alt="signo interrogacion" id="signo-interrogacion"/>-->
     </nav>
@@ -119,7 +119,7 @@
             <div class="giros">
 
                 <div class="girosIndefinido">
-                        <!--<h2>¿Qué trámite vienes a realizar?</h2>-->
+                    <!--<h2>¿Qué trámite vienes a realizar?</h2>-->
 
                     <input type="button" class="giro" value="Envío" />
                     <input type="button" class="giro" value="Recibo" />
@@ -128,31 +128,48 @@
                 <div class="girosEnvio">
                     <!--<h2>¿A qué país envías?</h2>-->
                     <div class="paises-internos">
-                    <input type="button" class="pais" value="Estados Unidos" />
-                    <input type="button" class="pais" value="Chile" />
-                    <input type="button" class="pais" value="Panamá" />
-                    <input type="button" class="pais" value="México" />
-                    <input type="button" class="pais" value="Ecuador" />
-                    <input type="button" class="pais" value="Otro" />
-                </div>
+                        <input type="button" class="pais" value="Estados Unidos" />
+                        <input type="button" class="pais" value="Chile" />
+                        <input type="button" class="pais" value="Panamá" />
+                        <input type="button" class="pais" value="México" />
+                        <input type="button" class="pais" value="Ecuador" />
+                        <input type="button" class="pais" value="Otro" />
+                    </div>
                 </div>
 
                 <div class="girosRecibo">
-                    <h2>Ingresa el código del giro</h2>
+                    <!--<h2>Ingresa el código del giro</h2>-->
                     <input type="text" class="inputCod" placeholder="Numero del codigo" name="codigo" />
+                    
                     <div class="teclasCodigo">
-                        <input type="button" class="teclaCodigo" value="1" />
-                        <input type="button" class="teclaCodigo" value="2" />
-                        <input type="button" class="teclaCodigo" value="3" />
-                        <input type="button" class="teclaCodigo" value="Cancelar" />
-                        <input type="button" class="teclaCodigo" value="4" />
-                        <input type="button" class="teclaCodigo" value="5" />
-                        <input type="button" class="teclaCodigo" value="6" />
-                        <input type="button" class="teclaCodigo" value="Corregir" />
-                        <input type="button" class="teclaCodigo" value="7" />
-                        <input type="button" class="teclaCodigo" value="8" />
-                        <input type="button" class="teclaCodigo" value="9" />
-                        <input type="button" class="teclaCodigo" value="Ingresar" />
+                        <section class="numKeys">
+                            <section class="fila">
+                                <input type="button" class="teclaCodigo" value="1" />
+                                <input type="button" class="teclaCodigo" value="2" />
+                                <input type="button" class="teclaCodigo" value="3" />
+                            </section>
+
+                            <section class="fila">
+                                <input type="button" class="teclaCodigo" value="4" />
+                                <input type="button" class="teclaCodigo" value="5" />
+                                <input type="button" class="teclaCodigo" value="6" />
+                            </section>
+
+                            <section class="fila">
+                                <input type="button" class="teclaCodigo" value="7" />
+                                <input type="button" class="teclaCodigo" value="8" />
+                                <input type="button" class="teclaCodigo" value="9" />
+                            </section>
+
+                            <input type="button" class="teclaCodigo" value="0" />
+                        </section>
+
+                        <section class="columna">
+                            <input type="button" class="teclaCodigo" id="codCancelar" value="Cancelar" />
+                            <input type="button" class="teclaCodigo" id="codCorregir" value="Corregir" />
+                            <input type="button" class="teclaCodigo" id="codIngresar" value="Ingresar" />
+                        </section>
+
                     </div>
                 </div>
             </div>
@@ -160,14 +177,14 @@
             <div class="creditos">
 
                 <div class="creditosIndefinido">
-                    <h2>Selecciona el tipo de crédito</h2>
+                    <!--<h2>Selecciona el tipo de crédito</h2>-->
                     <input type="button" class="credito" value="Credioro" />
                     <input type="button" class="credito" value="Tarjeta de crédito" />
                     <input type="button" class="credito" value="Otro" />
                 </div>
 
                 <div class="creditosCredioro">
-                    <h2>¿Deseas adquirir o pagar Credioro?</h2>
+                    <!--<h2>¿Deseas adquirir o pagar Credioro?</h2>-->
                     <input type="button" class="credioro" value="Adquisición" />
                     <input type="button" class="credioro" value="Pago" />
                 </div>
@@ -176,14 +193,14 @@
 
             <div class="divisas">
 
-                <h2>¿Compras o vendes divisas?</h2>
+                <!--<h2>¿Compras o vendes divisas?</h2>-->
 
                 <input type="button" class="divisa" value="Compra" />
                 <input type="button" class="divisa" value="Venta" />
             </div>
 
             <div class="seguros">
-                <h2> Selecciona el tipo de seguro</h2>
+                <!--<h2> Selecciona el tipo de seguro</h2>-->
 
                 <input type="button" class="seguro" value="Repatriación" />
                 <input type="button" class="seguro" value="Familia segura" />
@@ -229,7 +246,7 @@
         <div class="turnero">
 
         </div>
-        
+
     </div>
 
 
