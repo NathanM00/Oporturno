@@ -1,0 +1,607 @@
+html {
+  height: 100%;
+}
+
+nav {
+  width: 100%;
+  display: none;
+  height: 120px;
+  background-color: #ffdc05;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+}
+
+.navBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.textoNav {
+  text-align: center;
+  color: #404040;
+  font-size: 35pt;
+  font-style: bold;
+  margin: 25px 0 0 0;
+  padding-left: 170px;
+}
+
+.usuarioCliente {
+  display: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.usuarioPantalla {
+  display: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.botonesDoc {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+  height: 100%;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+.docuType {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 65px;
+  color: #008CA0;
+}
+
+.doc {
+  width: 516px;
+  height: 166px;
+  background-color: white;
+  -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  border: 4px solid #00A9CE;
+  border-radius: 10px;
+  margin-bottom: 43px;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 65px;
+  color: #1093A5;
+}
+
+.docuNum {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 65px;
+  color: #008CA0;
+}
+
+.inputDoc, .inputCod {
+  width: 500px;
+  height: 86px;
+  border-radius: 9px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border: none;
+  border-bottom: 2px solid #00A9CE;
+  margin-bottom: 50px;
+  margin-left: -40px;
+  font-size: 25pt;
+  padding-left: 10px;
+  text-align: center;
+  color: gray;
+}
+
+.tecladoDoc, .girosRecibo {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 70%;
+  height: 100%;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  background-color: #F6F6F6;
+}
+
+/*.numKeys{
+    display: flex;
+    justify-content: center;
+}*/
+.fila {
+  margin-bottom: 22px;
+}
+
+.columna {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 50px 0 195px 0;
+}
+
+.tecla, .teclaCodigo {
+  width: 134px;
+  height: 134px;
+  margin-right: 40px;
+  background: #00A9CE;
+  border: 1px solid #00A9CE;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 98px;
+  color: #FFFFFF;
+}
+
+.teclas, .teclasCodigo {
+  display: contents;
+}
+
+#cancelar, #codCancelar {
+  width: 200px;
+  height: 134px;
+  margin-bottom: 22px;
+  background: #F16E6E;
+  border: none;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 54px;
+  color: #FFFFFF;
+}
+
+#corregir, #codCorregir {
+  width: 200px;
+  height: 134px;
+  margin-bottom: 22px;
+  background: #FFD233;
+  border: none;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 54px;
+  color: #FFFFFF;
+}
+
+#ingresar, #codIngresar {
+  width: 200px;
+  height: 134px;
+  margin-bottom: 22px;
+  background: #68CA7E;
+  border: none;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 54px;
+  color: #FFFFFF;
+}
+
+.tecladoCod {
+  width: 50%;
+  height: 100%;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  background-color: #F6F6F6;
+}
+
+.formularioCliente {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+.usuarioAsesor {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.giros {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.girosEnvio {
+  display: none;
+}
+
+.girosRecibo {
+  display: none;
+}
+
+.creditos {
+  display: none;
+}
+
+.creditosIndefinido {
+  display: none;
+}
+
+.creditosCredioro {
+  display: none;
+}
+
+.tramites {
+  display: none;
+}
+
+.divisas {
+  display: none;
+}
+
+.seguros {
+  display: none;
+}
+
+.turno {
+  display: none;
+}
+
+/*input{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}*/
+button {
+  -webkit-box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.01);
+          box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.01);
+  border-radius: 10px;
+  width: 200px;
+  background-color: white;
+}
+
+.splash {
+  display: none;
+  width: 100;
+  height: 1200px;
+  background-color: #ffdc05;
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.splash-interno {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #F6F6F6;
+  -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  font-size: 50pt;
+  color: #00A9CE;
+  padding: 200px;
+  height: 500px;
+}
+
+.splash-interno:hover {
+  cursor: pointer;
+}
+
+.deficionUsuario {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 250%;
+}
+
+.selectorUser_client {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.enviar {
+  display: none;
+}
+
+.selectorUsuario {
+  width: 700px;
+  margin-right: 10px;
+  border-radius: 5px;
+  height: 60px;
+  font-size: 40pt;
+}
+
+.div-logos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#giros-logo {
+  width: 139px;
+  height: 81px;
+  margin: 20px;
+  margin-left: 50px;
+}
+
+#western-logo {
+  width: 134.35px;
+  height: 71px;
+  /*position: absolute;*/
+  margin-top: 25px;
+  padding-left: 20px;
+  margin-right: 20px;
+  border-left: solid black 2px;
+}
+
+.div-back {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #00A9CE;
+  width: 214px;
+  height: 122px;
+}
+
+.div-back h2 {
+  color: white;
+  margin-left: 20px;
+}
+
+#back-vector {
+  width: 20px;
+  height: 34px;
+}
+
+#signo-interrogacion {
+  width: 60px;
+  height: 64px;
+}
+
+#line-div {
+  width: 83px;
+  height: 0px;
+  border: 1px solid #595959;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.tramites {
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.botonesTramites {
+  width: 1450px;
+  padding-left: 15px;
+  padding-top: 20px;
+}
+
+.tramite, .pais, .credito, .seguro, .enviarUsuario, .credioro {
+  background: #FAFAFA;
+  border: 5px solid #0FADD0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 435px;
+  height: 180px;
+  margin: 20px;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 75px;
+  text-align: center;
+  color: #1093A5;
+}
+
+.tramite:hover, .pais:hover, .credito:hover, .seguro:hover, .enviarUsuario:hover, .credioro:hover {
+  background: #00A9CE;
+  border: 5px solid #28B2D1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  color: #FAFAFA;
+}
+
+.giros {
+  width: 100%;
+}
+
+.girosIndefinido {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.girosIndefinido .giro {
+  background: #FAFAFA;
+  border: 5px solid #0FADD0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 435px;
+  height: 180px;
+  margin: 20px;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 75px;
+  text-align: center;
+  color: #1093A5;
+}
+
+.girosIndefinido .giro:hover {
+  background: #00A9CE;
+  border: 5px solid #28B2D1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  color: #FAFAFA;
+}
+
+.informacionCliente {
+  width: 40%;
+  height: 100%;
+}
+
+.paises-internos {
+  width: 1450px;
+  height: 450px;
+  padding-left: 15px;
+  padding-top: 20px;
+}
+
+.creditosIndefinido {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.perfilacion {
+  width: 60%;
+  height: 100%;
+}
+
+.ticket-img {
+  width: 70%;
+}
+
+.turno {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 400px;
+}
+
+.numTurno {
+  position: absolute;
+  font-size: 200pt;
+  color: #00A9CE;
+  top: -150px;
+  left: 200px;
+  bottom: 500px;
+}
+
+.contenedor-ticket {
+  position: relative;
+}
+/*# sourceMappingURL=styles.css.map */
