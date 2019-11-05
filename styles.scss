@@ -258,11 +258,31 @@ button{
 
 .splash{
     display: none;
-    width: 90%;
-    height: 90%;
+    width: 100;
+    height: 1200px;
     background-color: #ffdc05;
     flex-basis: 90%;
-}
+    justify-content: center;
+    align-items: center;
+
+
+    }
+    .splash-interno{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #F6F6F6;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        font-size: 50pt;
+        color: #00A9CE;
+        padding: 200px;
+        height: 500px;
+    }
+
+    .splash-interno:hover{
+        cursor: pointer;
+    }
 
 .deficionUsuario{
     display: flex;
@@ -359,7 +379,9 @@ button{
         padding-left: 15px;
         padding-top: 20px;
  
-        .tramite{
+    }
+
+        .tramite, .pais, .credito, .seguro{
         background: #FAFAFA;
         border: 5px solid #0FADD0;
         box-sizing: border-box;
@@ -375,10 +397,9 @@ button{
         text-align: center;
         color: #1093A5;
 
-
         }
 
-        .tramite:hover {
+        .tramite:hover, .pais:hover, .credito:hover, .seguro:hover{
         background: #00A9CE;
         border: 5px solid #28B2D1;
         box-sizing: border-box;
@@ -387,7 +408,7 @@ button{
         cursor: pointer;
         color: #FAFAFA;
         }
-    }
+    
 
 
     .giros{
