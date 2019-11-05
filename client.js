@@ -1,4 +1,4 @@
-const socket = io('http://172.30.129.174:3000');
+const socket = io('http://172.30.18.87:3000');
 //Chicos la ip aqui tambien cambia, son la misma ip en ambos archivos
 
 const enviarUsuario = document.querySelector('.enviarUsuario');
@@ -69,7 +69,7 @@ function definicionUsuario() {
     } else if (usuario === 'Asesor'){
         console.log(usuario);
         noSeUser.style.display = 'none';
-        asesorUser.style.display = 'flex';
+        asesorUser.style.display = 'block';
         navBar.style.display = 'flex';
         textoNav.innerHTML = 'Clientes';
     } else if (usuario === 'Pantalla'){
@@ -145,13 +145,14 @@ function definicionTramite(elTramite) {
         //Se define el tipo de giro a realizar
         for (let index = 0; index < giro.length; index++) {
             giro[index].addEventListener('click', () => {
+                console.log('aaaaa');
                 detalleTramite = giro[index].value;
                 pantallaGiroInde.style.display = 'none';
                 extrasGiro(detalleTramite);
             });
         }
 
-    } else if (elTramite === 'Divisas') {
+    } else if (elTramite === 'Cambio de divisas') {
         pantallaDivisas.style.display = 'flex';
 
         //Se define el tipo de divisa a realizar
