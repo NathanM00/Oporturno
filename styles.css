@@ -1,5 +1,7 @@
 html {
   height: 100%;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
 }
 
 nav {
@@ -47,9 +49,12 @@ nav {
 
 .usuarioCliente {
   display: none;
-  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   height: 100%;
-  margin: 0;
+  width: 100%;
 }
 
 .usuarioPantalla {
@@ -59,7 +64,20 @@ nav {
   margin: 0;
 }
 
-.botonesDoc {
+.pantallaDocumento {
+  width: 100%;
+  height: 100%;
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.pantallaDocumento .botonesDoc {
+  width: 40%;
+  height: 100%;
+  padding: 15px;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -68,13 +86,55 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 30%;
+  text-align: center;
+}
+
+.pantallaDocumento .botonesDoc #lineDoc {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.pantallaDocumento .botonesDoc #lineDoc #yellowDoc {
+  width: 114px;
+  margin: 0;
+  margin-right: 5px;
+  border: 2px solid #FFDD00;
+}
+
+.pantallaDocumento .botonesDoc #lineDoc #greenDoc {
+  width: 249px;
+  margin: 0;
+  border: 2px solid #008CA0;
+}
+
+.pantallaDocumento .tecladoDoc {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px;
+  width: 60%;
   height: 100%;
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  background-color: #F6F6F6;
 }
 
 .docuType {
+  margin-bottom: 30px;
   font-style: normal;
   font-weight: 600;
   font-size: 48px;
@@ -108,7 +168,7 @@ nav {
 }
 
 .inputDoc, .inputCod {
-  width: 500px;
+  width: 740px;
   height: 86px;
   border-radius: 9px;
   border-bottom-right-radius: 0;
@@ -123,7 +183,9 @@ nav {
   color: gray;
 }
 
-.tecladoDoc, .girosRecibo {
+.girosRecibo {
+  width: 100%;
+  height: 100%;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -132,17 +194,35 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 70%;
-  height: 100%;
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #F6F6F6;
 }
 
-/*.numKeys{
-    display: flex;
-    justify-content: center;
-}*/
+.tecladoContainer, .teclasCodigo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.numKeys {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .fila {
   margin-bottom: 22px;
 }
@@ -151,11 +231,11 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  margin: 50px 0 195px 0;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 20px;
 }
 
 .tecla, .teclaCodigo {
@@ -176,10 +256,9 @@ nav {
   color: #FFFFFF;
 }
 
-.teclas, .teclasCodigo {
-  display: contents;
-}
-
+/*.teclas, .teclasCodigo{
+    display: contents;
+}*/
 #cancelar, #codCancelar {
   width: 200px;
   height: 134px;
@@ -228,28 +307,17 @@ nav {
 }
 
 .formularioCliente {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.usuarioAsesor {
   display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 100%;
-}
-
-.usuarioAsesor {
-  display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   height: 100%;
   width: 100%;
 }
@@ -278,6 +346,8 @@ body {
 
 .creditos {
   display: none;
+  height: 100%;
+  width: 100%;
 }
 
 .creditosIndefinido {
@@ -286,6 +356,14 @@ body {
 
 .creditosCredioro {
   display: none;
+  height: 100%;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .tramites {
@@ -294,10 +372,46 @@ body {
 
 .divisas {
   display: none;
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .seguros {
   display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.seguros .btnSegContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.seguros .btnSegContainer .filaBtinSeg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .turno {
@@ -475,7 +589,7 @@ button {
   padding-top: 20px;
 }
 
-.tramite, .pais, .credito, .seguro, .enviarUsuario, .credioro {
+.tramite, .pais, .credito, .seguro, .enviarUsuario, .credioro, .divisa {
   background: #FAFAFA;
   border: 5px solid #0FADD0;
   -webkit-box-sizing: border-box;
@@ -486,10 +600,13 @@ button {
   width: 435px;
   height: 180px;
   margin: 20px;
+  /*display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;*/
   font-weight: bold;
   font-size: 45px;
   line-height: 75px;
-  text-align: center;
   color: #1093A5;
 }
 
@@ -553,12 +670,18 @@ button {
 }
 
 .informacionCliente {
-  width: 40%;
+  width: 30%;
   height: 100%;
   margin: 0;
+  padding: 15px;
+}
+
+.informacionCliente .asClientListTitle {
+  margin-top: 10px;
+  font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 41px;
   color: #008CA0;
 }
@@ -571,14 +694,250 @@ button {
 }
 
 .creditosIndefinido {
+  width: 100%;
+  height: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .perfilacion {
-  width: 60%;
+  width: 70%;
   height: 100%;
+  padding: 15px;
+  padding-left: 20px;
+  background-color: #F3F3F3;
+}
+
+.perfilacion .clientData {
+  width: 100%;
+  height: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 40px;
+}
+
+.perfilacion .clientData .cliente {
+  width: 38%;
+  margin-right: 40px;
+}
+
+.perfilacion .clientData .servicios {
+  width: 62%;
+}
+
+.perfilacion .perfilacionTitulo, .perfilacion .clienteTitulo, .perfilacion .clienteProduc {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 41px;
+  color: #008CA0;
+}
+
+.perfilacion .clienteTitulo, .perfilacion .clienteProduc {
+  margin-bottom: 20px;
+}
+
+.perfilacion .colorLine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 28px;
+}
+
+.perfilacion .colorLine .yellow {
+  width: 40px;
+  margin: 0;
+  margin-right: 5px;
+  border: 2px solid #FFDD00;
+}
+
+.perfilacion .colorLine .green {
+  width: 85px;
+  margin: 0;
+  border: 2px solid #008CA0;
+}
+
+.perfilacion .recomendacion {
+  height: 25%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.perfilacion .recomendacion .opcion1, .perfilacion .recomendacion .opcion2, .perfilacion .recomendacion .opcion3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 85%;
+  width: 40%;
+  padding: 15px;
+  margin-right: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.perfilacion .recomendacion .opcion1 .ofrecerTitulo, .perfilacion .recomendacion .opcion2 .ofrecerTitulo, .perfilacion .recomendacion .opcion3 .ofrecerTitulo {
+  margin-top: 0;
+  margin-bottom: 7px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 41px;
+  color: #FFE220;
+}
+
+.perfilacion .recomendacion .opcion1 .opcionTitulo, .perfilacion .recomendacion .opcion2 .opcionTitulo, .perfilacion .recomendacion .opcion3 .opcionTitulo {
+  margin: 0;
+  margin-bottom: 5px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 34px;
+  color: #AAAAAA;
+}
+
+.perfilacion .recomendacion .opcion1 hr, .perfilacion .recomendacion .opcion2 hr, .perfilacion .recomendacion .opcion3 hr {
+  width: 100%;
+  border: 0.5px solid #ACACAC;
+}
+
+.perfilacion .recomendacion .opcion1 .textoRecomendacion, .perfilacion .recomendacion .opcion2 .textoRecomendacion, .perfilacion .recomendacion .opcion3 .textoRecomendacion {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 38px;
+  color: #008CA0;
+}
+
+.perfilacion .recomendacion .opcion3 {
+  margin-right: 0;
+}
+
+.perfilacion #infoCliente {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 85%;
+  height: 68%;
+  margin-bottom: 0;
+  padding: 15px;
+}
+
+.perfilacion #infoCliente .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.perfilacion #infoCliente .user .userInfo {
+  margin-left: 15px;
+}
+
+.perfilacion #infoCliente .separarInfo {
+  width: 100%;
+  border: 0.5px solid #ACACAC;
+}
+
+.perfilacion #infoCliente .descripTramite {
+  margin-top: 10px;
+}
+
+.perfilacion .informacion {
+  margin-bottom: 25px;
+  padding: 15px 25px 15px 25px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.perfilacion .informacion .informacionTitulo {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 41px;
+  color: #008CA0;
+}
+
+.perfilacion .informacion .cedulaInfo {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 34px;
+  color: #008CA0;
+}
+
+.perfilacion .informacion .tramiteInfo {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 41px;
+  color: #878787;
+}
+
+.perfilacion .informacion .detalleInfo {
+  margin: 0;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 41px;
+  color: #878787;
+}
+
+.perfilacion .informacion .extraInfo {
+  margin: 0;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 41px;
+  color: #AAAAAA;
 }
 
 .ticket-img {

@@ -1,5 +1,7 @@
 html{
     height: 100%;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
 }
 
 nav{
@@ -31,9 +33,9 @@ nav{
 }
 .usuarioCliente{
     display: none;
-    width: 100%;
+    flex-direction: row;
     height: 100%;
-    margin: 0;
+    width: 100%;
 }
 .usuarioPantalla{
     display: none;
@@ -41,16 +43,62 @@ nav{
     height: 100%;
     margin: 0;
 }
-.botonesDoc{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    width: 30%;
+
+.pantallaDocumento{
+    width: 100%;
     height: 100%;
-    flex-basis: 50%;
+    display: none;
+    flex-direction: row;
+
+    .botonesDoc{
+        width: 40%;
+        height: 100%;
+        padding: 15px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        //flex-basis: 50%;
+
+        #lineDoc{
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 50px;
+
+            #yellowDoc{
+                width: 114px;
+                margin: 0;
+                margin-right: 5px;
+                border: 2px solid #FFDD00;
+
+            }
+
+            #greenDoc{
+                width: 249px;
+                margin: 0;
+                border: 2px solid #008CA0;
+            }
+        }
+    }
+
+    .tecladoDoc{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        width: 60%;
+        height: 100%;
+        //flex-basis: 50%;
+        background-color: #F6F6F6;
+    }
 }
 
+
 .docuType{
+    margin-bottom: 30px;
     font-style: normal;
     font-weight: 600;
     font-size: 48px;
@@ -80,11 +128,11 @@ nav{
     font-weight: 600;
     font-size: 48px;
     line-height: 65px;
-    color: #008CA0;
+    color: #008CA0;   
 }
 
 .inputDoc, .inputCod{
-    width: 500px;
+    width: 740px;
     height: 86px;
     border-radius: 9px;
     border-bottom-right-radius: 0;
@@ -99,21 +147,27 @@ nav{
     color: gray;
 }
 
-.tecladoDoc, .girosRecibo{
+.girosRecibo{
+    width: 100%;
+    height: 100%;
     display: none;
     flex-direction: column;
     align-items: center;
-    width: 70%;
-    height: 100%;
-    flex-basis: 50%;
+    justify-content: center;
     background-color: #F6F6F6;
 }
 
-
-/*.numKeys{
+.tecladoContainer, .teclasCodigo{
     display: flex;
-    justify-content: center;
-}*/
+    flex-direction: row;
+}
+
+
+.numKeys{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .fila{
     margin-bottom: 22px;
@@ -121,8 +175,8 @@ nav{
 
 .columna{
     display: flex;
-    flex-direction: row;
-    margin: 50px 0 195px 0;
+    flex-direction: column;
+    margin-left: 20px;
 }
 
 .tecla, .teclaCodigo{
@@ -142,9 +196,9 @@ nav{
     color: #FFFFFF;
 }
 
-.teclas, .teclasCodigo{
+/*.teclas, .teclasCodigo{
     display: contents;
-}
+}*/
 
 //285px
 #cancelar, #codCancelar{
@@ -196,16 +250,17 @@ nav{
     background-color: #F6F6F6;
 }
 .formularioCliente{
-    justify-content: center;
-    align-items: center;
-    display: none;
-    flex-direction: row;
-    flex-wrap: wrap;
     width: 100%;
+    height: 100%;
+    display: none;
+    //flex-direction: row;
+    //flex-wrap: wrap;
+    //justify-content: center;
+    //align-items: center;
 }
 .usuarioAsesor{
     display: none;
-    flex-direction: column;
+    flex-direction: row;
     height: 100%;
     width: 100%;
 }
@@ -232,6 +287,8 @@ body{
 
 .creditos{
     display: none;
+    height: 100%;
+    width: 100%;
 
     &Indefinido{
         display: none;
@@ -239,6 +296,10 @@ body{
 
     &Credioro{
         display: none;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
     }
 }
 .tramites{
@@ -246,9 +307,28 @@ body{
 }
 .divisas{
     display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }
 .seguros{
     display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    .btnSegContainer{
+        display: flex;
+        flex-direction: column;
+        //flex-wrap: wrap;
+
+        .filaBtinSeg{
+            display: flex;
+            flex-direction: row;
+        }
+    }
 }
 .turno{
     display: none;
@@ -394,7 +474,7 @@ button{
  
     }
 
-        .tramite, .pais, .credito, .seguro, .enviarUsuario, .credioro{
+        .tramite, .pais, .credito, .seguro, .enviarUsuario, .credioro, .divisa{
         background: #FAFAFA;
         border: 5px solid #0FADD0;
         box-sizing: border-box;
@@ -404,10 +484,15 @@ button{
         height: 180px;
         margin: 20px;
 
+        /*display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;*/
+
         font-weight: bold;
         font-size: 45px;
         line-height: 75px;
-        text-align: center;
+        //text-align: center;
         color: #1093A5;
 
         }
@@ -467,15 +552,20 @@ button{
     }
 
     .informacionCliente{
-        width: 40%;
+        width: 30%;
         height: 100%;
         margin: 0;
+        padding: 15px;
 
-        font-style: normal;
-        font-weight: normal;
-        font-size: 30px;
-        line-height: 41px;
-        color: #008CA0;
+        .asClientListTitle{
+            margin-top: 10px;
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 25px;
+            line-height: 41px;
+            color: #008CA0;
+        }
     }
 
     .paises-internos{
@@ -486,12 +576,222 @@ button{
     }
 
     .creditosIndefinido{
+        width: 100%;
+        height: 100%;
         align-items: center;
+        justify-content: center;
     }
 
     .perfilacion{
-        width: 60%;
+        width: 70%;
         height: 100%;
+        padding: 15px;
+        padding-left: 20px;
+        background-color: #F3F3F3;
+
+        .clientData{
+            width: 100%;
+            height: 35%;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 40px;
+
+            .cliente{
+                width: 38%;
+                margin-right: 40px;
+            }
+
+            .servicios{
+                width: 62%;
+            }
+        }
+
+        .perfilacionTitulo, .clienteTitulo, .clienteProduc{
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 25px;
+            line-height: 41px;
+
+            color: #008CA0;
+        }
+
+        .clienteTitulo, .clienteProduc{
+            margin-bottom: 20px;
+        }
+
+        .colorLine{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 28px;
+
+            .yellow{
+                width: 40px;
+                margin: 0;
+                margin-right: 5px;
+                border: 2px solid #FFDD00;
+
+            }
+
+            .green{
+                width: 85px;
+                margin: 0;
+                border: 2px solid #008CA0;
+            }
+        }
+
+        .recomendacion{
+            height: 25%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+
+            .opcion1, .opcion2, .opcion3{
+                display: flex;
+                flex-direction: column;
+                height: 85%;
+                width: 40%;
+                padding: 15px;
+                margin-right: 10px;
+                align-items: center;
+                background: #FFFFFF;
+                box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+                border-radius: 10px;
+
+                .ofrecerTitulo{
+                    margin-top: 0;
+                    margin-bottom: 7px;
+                    font-family: Open Sans;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 25px;
+                    line-height: 41px;
+                
+                    color: #FFE220;
+                }
+
+                .opcionTitulo{
+                    margin: 0;
+                    margin-bottom: 5px;
+                    font-family: Open Sans;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 20px;
+                    line-height: 34px;
+                    
+                    color: #AAAAAA;
+                }
+
+                hr{
+                    width: 100%;
+                    border: 0.5px solid #ACACAC;
+                }
+
+                .textoRecomendacion{
+                    font-family: Open Sans;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 25px;
+                    line-height: 38px;
+
+                    color: #008CA0;
+                }
+
+            }
+
+            .opcion3{
+                margin-right: 0;
+            }
+        }
+
+        #infoCliente{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 85%;
+            height: 68%;
+            margin-bottom: 0;
+            padding: 15px;
+
+            .user{
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 10px;
+
+                .userInfo{
+                    margin-left: 15px;
+                }
+            }
+
+            .separarInfo{
+                width: 100%;
+                border: 0.5px solid #ACACAC;
+            }
+
+            .descripTramite{
+                margin-top: 10px;
+            }
+        }
+
+        .informacion{
+            margin-bottom: 25px;
+            padding: 15px 25px 15px 25px;
+            background: #FFFFFF;
+            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+
+            .informacionTitulo{
+                margin-top: 0;
+                margin-bottom: 15px;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 25px;
+                line-height: 41px;
+
+                color: #008CA0;
+            }
+
+            .cedulaInfo{
+                font-style: normal;
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 34px;
+
+                color: #008CA0;
+
+            }
+
+            .tramiteInfo{
+                font-style: normal;
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 41px;
+               
+                color: #878787;
+            }
+
+            .detalleInfo{
+                margin: 0;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 25px;
+                line-height: 41px;
+
+                color: #878787;
+            }
+
+            .extraInfo{
+                margin: 0;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 25px;
+                line-height: 41px;
+
+                color: #AAAAAA;
+            }
+        }
     }
 
 

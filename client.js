@@ -1,4 +1,4 @@
-const socket = io('http://172.30.18.87:3000');
+const socket = io('http://192.168.1.53:3000');
 //Chicos la ip aqui tambien cambia, son la misma ip en ambos archivos
 
 const enviarUsuario = document.querySelector('.enviarUsuario');
@@ -30,6 +30,7 @@ const credioro = document.querySelectorAll('.credioro');
 const teclaCod = document.querySelectorAll('.teclaCodigo');
 const inputCod = document.querySelector('.inputCod');
 
+const pantallaDocumento = document.querySelector('.pantallaDocumento');
 const pantallaDoc1 = document.querySelector('.tecladoDoc');
 const pantallaDoc2 = document.querySelector('.botonesDoc');
 const pantallaTramite = document.querySelector('.tramites');
@@ -70,7 +71,8 @@ function definicionUsuario() {
     } else if (usuario === 'Asesor'){
         console.log(usuario);
         noSeUser.style.display = 'none';
-        asesorUser.style.display = 'block';
+        //asesorUser.style.display = 'block';
+        asesorUser.style.display = 'flex';
         navBar.style.display = 'flex';
         textoNav.innerHTML = 'Clientes';
     } else if (usuario === 'Pantalla'){
@@ -86,8 +88,9 @@ enviarUsuario.addEventListener('click', definicionUsuario);
 //Se quita el splash al hacerle click siendo el cliente
 function quitarSplash() {
     pantallaTurno.style.display = 'none';
-    textoNav.innerHTML = 'Ingresar Documento';
+    textoNav.innerHTML = 'Ingresa tu Documento';
     splash.style.display = 'none';
+    pantallaDocumento.style.display = 'flex';
     pantallaDoc1.style.display = 'flex';
     pantallaDoc2.style.display = 'flex';
     clienteUser.style.display = 'flex';
@@ -108,6 +111,7 @@ function definicionDocumento() {
             } else if (valor === 'Corregir') {
                 inputDoc.value = inputDoc.value.slice(0, -1);
             } else if (valor === 'Ingresar') {
+                pantallaDocumento.style.display = 'none';
                 pantallaDoc1.style.display = 'none';
                 pantallaDoc2.style.display = 'none';
                 pantallaTramite.style.display = 'flex';
@@ -399,31 +403,56 @@ function mostrarDatos(cliente) {
     }
 
     let infoCliente = document.querySelector('.informacion');
+    let userInfo = document.querySelector('.userInfo');
+    let tramiteInfo = document.querySelector('.tramiteInfo');
     let infoRecomen = document.querySelector('.recomendacion');
+    let opcion1 = document.querySelector('.opcion1');
+    let opcion2 = document.querySelector('.opcion2');
+    let opcion3 = document.querySelector('.opcion3');
     let infoList = document.querySelector('.listaClientes');
 
     //los datos del cliente, aqui ven que quieren que se vea o no etc etc
     let textoCedula = document.createElement('p');
-    textoCedula.innerText = cliente.cedula;
+    textoCedula.className = 'cedulaInfo';
+    textoCedula.innerText = 'C.C ' + cliente.cedula;
+
     let textoNombre = document.createElement('p');
+
     let textoTramite = document.createElement('p');
+    textoTramite.className = 'tramiteInfo';
     textoTramite.innerText = cliente.tramite;
+
     let textoDetalle = document.createElement('p');
+    textoDetalle.className = 'detalleInfo';
     textoDetalle.innerText = cliente.detalle;
+
     let textoExtra = document.createElement('p');
+    textoExtra.className = 'extraInfo';
     textoExtra.innerText = "" + cliente.extras;
+
     let textoTurno = document.createElement('p');
     textoTurno.innerText = "" + cliente.turno;
+
     let textoStatus = document.createElement('p');
+    textoStatus.className = 'statusCliente';
+
     let textoRecomendacion = document.createElement('p');
     let textoRecomendacion2 = document.createElement('p');
     let textoRecomendacion3 = document.createElement('p');
 
-    infoCliente.appendChild(textoCedula);
+    textoRecomendacion.className = 'textoRecomendacion';
+    textoRecomendacion2.className = 'textoRecomendacion';
+    textoRecomendacion3.className = 'textoRecomendacion';
+
+    infoCliente.appendChild(textoStatus);
+    userInfo.appendChild(textoCedula);
+    tramiteInfo.appendChild(textoTramite);
+    tramiteInfo.appendChild(textoDetalle);
+    tramiteInfo.appendChild(textoExtra);
+    /*infoCliente.appendChild(textoCedula);
     infoCliente.appendChild(textoTramite);
     infoCliente.appendChild(textoDetalle);
-    infoCliente.appendChild(textoExtra);
-    infoCliente.appendChild(textoStatus);
+    infoCliente.appendChild(textoExtra);*/
 
     let trajetaCliente = document.createElement('div');
     trajetaCliente.className = 'tarjetaCliente';
@@ -431,9 +460,13 @@ function mostrarDatos(cliente) {
     trajetaCliente.appendChild(textoTramite);
 
     infoList.appendChild(trajetaCliente);
-    infoRecomen.appendChild(textoRecomendacion);
+    /*infoRecomen.appendChild(textoRecomendacion);
     infoRecomen.appendChild(textoRecomendacion2);
-    infoRecomen.appendChild(textoRecomendacion3);
+    infoRecomen.appendChild(textoRecomendacion3);*/
+
+    opcion1.appendChild(textoRecomendacion);
+    opcion2.appendChild(textoRecomendacion2);
+    opcion3.appendChild(textoRecomendacion3);
 
 }
 
