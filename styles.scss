@@ -518,7 +518,8 @@ button{
         line-height: 75px;
         text-align: right;
         color: #1093A5;
-        padding-right: 80px;
+        padding-right: 50px;
+        line-height: 1;
         }
 
         .tramite:hover, .pais:hover, .credito:hover, .seguro:hover, .credioro:hover{
@@ -530,6 +531,9 @@ button{
         cursor: pointer;
         color: #FAFAFA;
         }
+
+
+        //ICONOS DE LOS BOTONES ------------------------------------------------------
 
         #giros-btn{
             background-image: url(/src/giros-icon.png);
@@ -546,6 +550,154 @@ button{
             background-position-x: 40px;
             background-size: 100px;
         }
+
+//-------------------------------------------------------------
+
+        #divisas-btn{
+            background-image: url(/src/divisas-icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #divisas-btn:hover{
+            background-image: url(/src/divisas-icon-w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+
+        //-------------------------------------------------------------
+        #creditos-btn{
+            background-image: url(/src/creditos-icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #creditos-btn:hover{
+            background-image: url(/src/creditos-icon-w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+        //-------------------------------------------------------------
+
+        #seguros-btn{
+            background-image: url(/src/seguros-icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #seguros-btn:hover{
+            background-image: url(/src/seguros-icon-w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+         //-------------------------------------------------------------
+
+         #recaudos-btn{
+            background-image: url(/src/recaudos-icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #recaudos-btn:hover{
+            background-image: url(/src/recaudos-icon-w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+          //-------------------------------------------------------------
+
+          #ahorros-btn{
+            background-image: url(/src/ahorros-icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #ahorros-btn:hover{
+            background-image: url(/src/ahorros-icon-w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        
+          //-------------------------------------------------------------
+
+          #asesoria-btn{
+            background-image: url(/src/asesoria-icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #asesoria-btn:hover{
+            background-image: url(/src/asesoria-icon-w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+          //-------------------------------------------------------------
+
+          #otros-btn{
+            background-image: url(/src/otros-icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #otros-btn:hover{
+            background-image: url(/src/otros-icon-w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+
+
+          //-------------------------------------------------------------
+
+          #envio-btn{
+            background-image: url(/src/encioIcon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #envio-btn:hover{
+            background-image: url(/src/encioIcon\ \(1\).png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+
 
 
 
