@@ -1,9 +1,9 @@
-const socket = io('http://192.168.0.14:3000');
+const socket = io('http://192.168.1.3:3000');
 //Chicos la ip aqui tambien cambia, son la misma ip en ambos archivos
 
 const enviarUsuario = document.querySelector('.enviarUsuario');
 const asesorUser = document.querySelector('.usuarioAsesor');
-const pantallaUser= document.querySelector('.usuarioPantalla');
+const pantallaUser = document.querySelector('.usuarioPantalla');
 const noSeUser = document.querySelector('.deficionUsuario');
 const clienteUser = document.querySelector('.usuarioCliente');
 const selectUser = document.querySelector('.selectorUsuario');
@@ -45,9 +45,12 @@ const pantallaSeguros = document.querySelector('.seguros');
 const pantallaCreditos = document.querySelector('.creditos');
 const pantallaTurno = document.querySelector('.turno');
 
+const serviciosAdq= document.querySelector('.serviciosAdq');
 const turnoCliente = document.querySelector('.turnoCliente');
 const numTurno = document.querySelector('.numTurno');
 const turnoMensaje = document.querySelector('.turnoMensaje');
+
+const botonAtras = document.querySelector('.div-back');
 
 var usuario;
 
@@ -57,8 +60,11 @@ var tipoTramite = '';
 var detalleTramite = '';
 var extrasTramite = '';
 var statusCliente = {
-    status: 'Es un cliente nuevo',
+    24: 'Es un cliente nuevo',
 };
+
+var pantallaActual;
+var pantallaAnterior;
 
 //Se define si es cliente o asesor al inicio de la jornada
 function definicionUsuario() {
@@ -68,14 +74,14 @@ function definicionUsuario() {
         noSeUser.style.display = 'none';
         splash.style.display = 'flex';
         definicionDocumento();
-    } else if (usuario === 'Asesor'){
+    } else if (usuario === 'Asesor') {
         console.log(usuario);
         noSeUser.style.display = 'none';
         //asesorUser.style.display = 'block';
         asesorUser.style.display = 'flex';
         navBar.style.display = 'flex';
         textoNav.innerHTML = 'Clientes';
-    } else if (usuario === 'Pantalla'){
+    } else if (usuario === 'Pantalla') {
         console.log(usuario);
         noSeUser.style.display = 'none';
         pantallaUser.style.display = 'block';
@@ -88,6 +94,7 @@ enviarUsuario.addEventListener('click', definicionUsuario);
 //Se quita el splash al hacerle click siendo el cliente
 function quitarSplash() {
     pantallaTurno.style.display = 'none';
+    botonAtras.style.visibility = 'visible';
     textoNav.innerHTML = 'Ingresa tu Documento';
     splash.style.display = 'none';
     pantallaDocumento.style.display = 'flex';
@@ -136,8 +143,54 @@ function definicionDocumento() {
             definicionTramite(tipoTramite);
         });
     }
+}
+
+
+function irAtras() {
+    if (pantallaDocumento.style.display !== 'none') {
+        pantallaAnterior = splash;
+        pantallaActual = pantallaDocumento;
+    } else if (pantallaTramite.style.display !== 'none') {
+        pantallaAnterior = pantallaDocumento;
+        pantallaActual = pantallaTramite;
+        pantallaDoc1.style.display = 'flex';
+        pantallaDoc2.style.display = 'flex';
+    } else if (pantallaGiros.style.display !== 'none') {
+
+        if (pantallaEnvio.style.display !== 'none') {
+            pantallaAnterior = pantallaGiroInde;
+            pantallaActual = pantallaEnvio;
+        } else if (pantallaRecibo.style.display !== 'none') {
+            pantallaAnterior = pantallaGiroInde;
+            pantallaActual = pantallaRecibo;
+        } else {
+            pantallaAnterior = pantallaTramite;
+            pantallaActual = pantallaGiros;
+        }
+
+    } else if (pantallaCreditos.style.display !== 'none') {
+
+        if (pantallaCredioro.style.display !== 'none') {
+            pantallaAnterior = pantallaCreInde;
+            pantallaActual = pantallaCredioro;
+        } else {
+            pantallaAnterior = pantallaTramite;
+            pantallaActual = pantallaCreditos;
+        }
+
+    } else if (pantallaSeguros.style.display !== 'none') {
+        pantallaAnterior = pantallaTramite;
+        pantallaActual = pantallaSeguros;
+    } else if (pantallaDivisas.style.display !== 'none') {
+        pantallaAnterior = pantallaTramite;
+        pantallaActual = pantallaDivisas;
+    }
+
+    pantallaActual.style.display = 'none';
+    pantallaAnterior.style.display = 'flex';
 
 }
+botonAtras.addEventListener('click', irAtras);
 
 //Todo lo que tiene que ver con la parte del tramite
 function definicionTramite(elTramite) {
@@ -150,7 +203,6 @@ function definicionTramite(elTramite) {
         //Se define el tipo de giro a realizar
         for (let index = 0; index < giro.length; index++) {
             giro[index].addEventListener('click', () => {
-                console.log('aaaaa');
                 detalleTramite = giro[index].value;
                 pantallaGiroInde.style.display = 'none';
                 extrasGiro(detalleTramite);
@@ -186,6 +238,7 @@ function definicionTramite(elTramite) {
     } else if (elTramite === 'Créditos') {
         pantallaCreditos.style.display = 'flex';
         pantallaCreInde.style.display = 'flex';
+
         //Se define el tipo de credito a realizar
         for (let index = 0; index < credito.length; index++) {
             credito[index].addEventListener('click', () => {
@@ -215,6 +268,7 @@ function extrasGiro(tipoGiro) {
             pais[index].addEventListener('click', () => {
                 extrasTramite = pais[index].value;
                 enviarDatosCliente();
+
                 pantallaEnvio.style.display = 'none';
                 pantallaGiros.style.display = 'none';
             });
@@ -249,6 +303,7 @@ function extrasGiro(tipoGiro) {
 function extrasCredito(tipoCredito) {
 
     if (tipoCredito == 'Credioro') {
+
         pantallaCredioro.style.display = 'flex';
         //Se define el pais del giro a enviar
         for (let index = 0; index < credioro.length; index++) {
@@ -258,8 +313,8 @@ function extrasCredito(tipoCredito) {
                 pantallaCredioro.style.display = 'none';
                 pantallaCreditos.style.display = 'none';
             });
-        } 
-    } else{
+        }
+    } else {
         extrasTramite = 'Ningun extra';
         enviarDatosCliente();
     }
@@ -294,27 +349,29 @@ function darTurno(turno) {
         pantallaTurno.style.display = 'flex';
         numTurno.innerHTML = turno;
         turnoCliente.innerHTML = 'Tu turno es: ' + turno;
-        
-        if(tipoTramite === 'Asesoría'){
+        botonAtras.style.visibility = 'hidden';
+
+        if (tipoTramite === 'Asesoría') {
             turnoMensaje.innerHTML = 'Recuerda que por Teleágil puedes realizar diferentes tipos de consultas sin necesidad de coger un turno. Acércate a él, podría ser más rápido.';
-        } else if(tipoTramite === 'Recaudos'){
+        } else if (tipoTramite === 'Recaudos') {
             turnoMensaje.innerHTML = 'Recuerda tomar el volante donde se encuentran nuestros convenios para realizar recaudos.';
         }
-        
+
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
-          }
-          
-          async function pausa() {
+        }
+
+        async function pausa() {
             await sleep(8000);
             console.log('siguiente cliente');
             splash.style.display = 'flex';
+            botonAtras.style.visivility = 'hidden';
             pantallaTurno.style.display = 'none';
             turnoMensaje.innerHTML = '';
             inputDoc.value = '';
             inputCod.value = '';
-          }
-          pausa();
+        }
+        pausa();
     }
 }
 
@@ -331,32 +388,39 @@ function mostrarDatos(cliente) {
 
         let arregloDeLista;
         let dataLinea;
+        let servicios='';
 
         //Division por saltos de linea
         var datosFila = data.split("\n");
         //Arreglo donde se guarda la nueva información
         var informacion = [];
 
-        for (let index = 1; index < datosFila.length; index++) {
+        for (let index = 0; index < datosFila.length; index++) {
             //Lectura de una linea
             dataLinea = datosFila[index];
 
             //Division por ;
             arregloDeLista = dataLinea.split(";");
-
             informacion.push(arregloDeLista);
             //determinar si es cliente antiguo
             for (let index = 0; index < informacion.length; index++) {
                 let infoDB = informacion[index];
                 if (infoDB[1] === dataCliente.cedula) {
                     statusCliente = infoDB;
-                    console.log(statusCliente);
-                    statusCliente.status = 'Es un cliente antiguo';
+                    statusCliente[24] = 'Es un cliente antiguo';
+                    textoStatus.innerText = statusCliente[24];
                     textoNombre.innerText = statusCliente[2];
+                    for (let index = 13; index < 24; index++) {
+                        if(infoDB[index] === 'si'){
+                            servicios += informacion[0][index] +'\n';
+                            console.log(servicios);
+                        }
+                    }
                 }
+                textoStatus.innerText = statusCliente[24];
             }
-            //Recomendaciones a partir de giros
-            console.log(statusCliente);
+            //Recomendaciones 
+            serviciosAdq.innerHTML = servicios;
             if (cliente.tramite === 'Giros' && cliente.detalle === 'Recibo') {
                 textoRecomendacion.innerText = "Pago seguro";
                 textoRecomendacion2.innerText = "Repatriación";
@@ -397,8 +461,6 @@ function mostrarDatos(cliente) {
                 }
                 textoRecomendacion3.innerText = "";
             }
-            textoStatus.innerText = "" + statusCliente.status;
-            statusCliente.status = 'Es un cliente nuevo';
         }
     }
 
@@ -470,7 +532,7 @@ function mostrarDatos(cliente) {
 
 }
 
-function mostrarTurnos(cliente){
+function mostrarTurnos(cliente) {
     let turno = document.createElement('p');
     turno.innerText = cliente.turno;
 

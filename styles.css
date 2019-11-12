@@ -547,6 +547,7 @@ button {
   background: #00A9CE;
   width: 214px;
   height: 120px;
+  visibility: hidden;
 }
 
 .div-back h2 {
