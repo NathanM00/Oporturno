@@ -504,7 +504,7 @@ button{
 
         //BOTONES CON ICONOS----------------------------------------------------------------
 
-        .tramite, .pais, .credito, .seguro, .credioro, .divisa{
+        .tramite, .pais, .credito, .seguro, .credioro, .divisa   {
         background: #FAFAFA;
         border: 5px solid #0FADD0;
         box-sizing: border-box;
@@ -522,7 +522,7 @@ button{
         line-height: 1;
         }
 
-        .tramite:hover, .pais:hover, .credito:hover, .seguro:hover, .credioro:hover{
+        .tramite:hover, .pais:hover, .credito:hover, .seguro:hover, .credioro:hover, .divisa:hover{
         background: #00A9CE;
         border: 5px solid #28B2D1;
         box-sizing: border-box;
@@ -682,7 +682,7 @@ button{
           //-------------------------------------------------------------
 
           #envio-btn{
-            background-image: url(/src/encioIcon.png);
+            background-image: url(/src/envio-icon.png);
             background-repeat: no-repeat;
             background-position-y: center;
             background-position-x: 40px;
@@ -690,7 +690,135 @@ button{
         }
 
         #envio-btn:hover{
-            background-image: url(/src/encioIcon\ \(1\).png);
+            background-image: url(/src/envio-icon-w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+         //-------------------------------------------------------------
+
+         #recibo-btn{
+            background-image: url(/src/recibo-icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #recibo-btn:hover{
+            background-image: url(/src/recibo-icon-w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+         //-------------------------------------------------------------
+
+         #eu-btn{
+            background-image: url(/src/us.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+
+         //-------------------------------------------------------------
+
+         #chile-btn{
+            background-image: url(/src/chile.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+         //-------------------------------------------------------------
+
+         #panama-btn{
+            background-image: url(/src/panama.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        //-------------------------------------------------------------
+
+        #mexico-btn{
+            background-image: url(/src/mexico.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        //-------------------------------------------------------------
+
+        #ecuador-btn{
+            background-image: url(/src/ecuador.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        
+        //-------------------------------------------------------------
+
+        #ecuador-btn{
+            background-image: url(/src/ecuador.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        
+        //-------------------------------------------------------------
+        
+        #otro-paises-btn{
+            background-image: url(/src/worldwide.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+
+        //-------------------------------------------------------------
+
+        #compra-divisa-btn{
+            background-image: url(/src/compradivisas-icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #compra-divisa-btn:hover{
+            background-image: url(/src/compradivisas-icon-w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        //-------------------------------------------------------------
+
+        #venta-divisa-btn{
+            background-image: url(/src/ventadivisas-icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #venta-divisa-btn:hover{
+            background-image: url(/src/ventadivisas-icon-w.png);
             background-repeat: no-repeat;
             background-position-y: center;
             background-position-x: 40px;
@@ -987,27 +1115,42 @@ button{
     }
 
 
+    
+
     .ticket-img{
         width: 70%;
     }
 
-
+    
     .turno{
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-        margin-left: 400px;
+        flex-direction: row;
+        //margin-left: 400px;
     }
 
     .numTurno{
         position: absolute;
-        font-size: 200pt;
+        font-size: 150pt;
         color: #00A9CE;
         top: -150px;
-        left: 200px;
+        left: 115px;
         bottom: 500px;
     }
 
     .contenedor-ticket{
         position: relative;
+    }
+
+    .columna-mensaje-turno{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #FFDD00;
+    color: #404040;
+    font-size: 45pt;
+    height: 100%;
+    width: 80%;
+    margin-right: 150px;
     }

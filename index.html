@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!-- Esa ip deben cambiarla si van a hacer las pruebas, el puerto si es el 3000, pero la ip cambia segun la del pc-->
-    <script defer="" src="http://192.168.1.3:3000/socket.io/socket.io.js"></script>
+    <script defer="" src="http://172.30.178.78:3000/socket.io/socket.io.js"></script>
     <script defer="" src="client.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
 
@@ -132,12 +132,12 @@
                 <div class="girosEnvio">
                     <!--<h2>¿A qué país envías?</h2>-->
                     <div class="paises-internos">
-                        <button type="button" class="pais" id="eu-btn" value="Estados Unidos">Estados Unidos</button>
+                        <button type="button" class="pais" id="eu-btn" value="Estados Unidos">EE.UU.</button>
                         <button type="button" class="pais" id="chile-btn" value="Chile">Chile</button>
                         <button type="button" class="pais" id="panama-btn" value="Panamá">Panamá</button>
                         <button type="button" class="pais" id="mexico-btn" value="México">México</button>
                         <button type="button" class="pais" id="ecuador-btn" value="Ecuador">Ecuador</button>
-                        <button type="button" class="pais" id="otro-btn" value="Otro">Otro</button>
+                        <button type="button" class="pais" id="otro-paises-btn" value="Otro">Otro</button>
                     </div>
                 </div>
 
@@ -201,8 +201,8 @@
 
                 <!--<h2>¿Compras o vendes divisas?</h2>-->
 
-                <button type="button" class="divisa" value="Compra">Compra</button>
-                <button type="button" class="divisa" value="Venta">Venta</button>
+                <button type="button" id="compra-divisa-btn" class="divisa" value="Compra">Compra</button>
+                <button type="button" id="venta-divisa-btn" class="divisa" value="Venta">Venta</button>
             </div>
 
             <div class="seguros">
@@ -223,15 +223,16 @@
             </div>
 
             <div class="turno">
-                <div class="contenedor-ticket">
-                    <img class="ticket-img" src="src/ticket.png" alt="Su turno">
-                    <h1 class="numTurno"></h1>
-                </div>
 
-                <div>
+                <div class="columna-mensaje-turno">
                     <h2 class="turnoCliente"></h2>
                     <h2 class="turnoMensaje"></h2>
                 </div>
+
+                <div class="contenedor-ticket">
+                        <img class="ticket-img" src="src/ticket.png" alt="Su turno">
+                        <h1 class="numTurno"></h1>
+                    </div>
             </div>
 
         </form>
