@@ -589,7 +589,7 @@ button {
   padding-top: 20px;
 }
 
-.tramite, .pais, .credito, .seguro, .enviarUsuario, .credioro, .divisa {
+.enviarUsuario {
   background: #FAFAFA;
   border: 5px solid #0FADD0;
   -webkit-box-sizing: border-box;
@@ -600,17 +600,14 @@ button {
   width: 435px;
   height: 180px;
   margin: 20px;
-  /*display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;*/
   font-weight: bold;
   font-size: 45px;
   line-height: 75px;
+  text-align: center;
   color: #1093A5;
 }
 
-.tramite:hover, .pais:hover, .credito:hover, .seguro:hover, .enviarUsuario:hover, .credioro:hover {
+.enviarUsuario:hover {
   background: #00A9CE;
   border: 5px solid #28B2D1;
   -webkit-box-sizing: border-box;
@@ -620,6 +617,53 @@ button {
   border-radius: 10px;
   cursor: pointer;
   color: #FAFAFA;
+}
+
+.tramite, .pais, .credito, .seguro, .credioro, .divisa {
+  background: #FAFAFA;
+  border: 5px solid #0FADD0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 435px;
+  height: 180px;
+  margin: 20px;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 75px;
+  text-align: right;
+  color: #1093A5;
+  padding-right: 80px;
+}
+
+.tramite:hover, .pais:hover, .credito:hover, .seguro:hover, .credioro:hover {
+  background: #00A9CE;
+  border: 5px solid #28B2D1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  color: #FAFAFA;
+}
+
+#giros-btn {
+  background-image: url(/src/giros-icon.png);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 40px;
+  background-size: 100px;
+}
+
+#giros-btn:hover {
+  background-image: url(/src/giros-icon-w.png);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 40px;
+  background-size: 100px;
 }
 
 .giros {
