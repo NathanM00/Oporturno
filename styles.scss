@@ -475,7 +475,7 @@ button{
     }
 
     //BOTONES SIN ICONOS-----------------------------------------------------------
-    .enviarUsuario{
+    .enviarUsuario, .doc{
         background: #FAFAFA;
         border: 5px solid #0FADD0;
         box-sizing: border-box;
@@ -492,7 +492,7 @@ button{
 
         }
 
-    .enviarUsuario:hover{
+    .enviarUsuario:hover, .doc:hover{
         background: #00A9CE;
         border: 5px solid #28B2D1;
         box-sizing: border-box;
@@ -661,7 +661,7 @@ button{
 
           //-------------------------------------------------------------
 
-          #otros-btn{
+          #otros-btn, #otro_credito_btn, #otro_seguros_btn{
             background-image: url(/src/otros-icon.png);
             background-repeat: no-repeat;
             background-position-y: center;
@@ -669,7 +669,7 @@ button{
             background-size: 100px;
         }
 
-        #otros-btn:hover{
+        #otros-btn:hover, #otro_credito_btn:hover, #otro_seguros_btn:hover{
             background-image: url(/src/otros-icon-w.png);
             background-repeat: no-repeat;
             background-position-y: center;
@@ -843,9 +843,144 @@ button{
             background-size: 100px;
         }
 
+           //-------------------------------------------------------------
+
+           #tarjeta_credito_btn{
+            background-image: url(/src/trajetacredito-icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #tarjeta_credito_btn:hover{
+            background-image: url(/src/trajetacredito-icon-w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        
+           //-------------------------------------------------------------
+
+           #adquisicion_credi_btn{
+            background-image: url(/src/adquirir_icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #adquisicion_credi_btn:hover{
+            background-image: url(/src/adquirir_icon_w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        //-------------------------------------------------------------
+
+        #pago_credi_btn{
+            background-image: url(/src/pagar_credi_icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #pago_credi_btn:hover{
+            background-image: url(/src/pagar_credi_icon_w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+         //-------------------------------------------------------------
+
+         #repatriacion_btn{
+            background-image: url(/src/repatriacion_icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #repatriacion_btn:hover{
+            background-image: url(/src/repatriacion_icon_w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+         //-------------------------------------------------------------
+
+         #familia_segura_btn{
+            background-image: url(/src/familias_segura_icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #familia_segura_btn:hover{
+            background-image: url(/src/familias_segura_icon_w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+         //-------------------------------------------------------------
+
+         #vida_tranquila_btn{
+            background-image: url(/src/vidatranquila_icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #vida_tranquila_btn:hover{
+            background-image: url(/src/vidatranquila_icon_w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+            //-------------------------------------------------------------
+
+            #vida_grupo_btn{
+                background-image: url(/src/vidagrupo_icon.png);
+                background-repeat: no-repeat;
+                background-position-y: center;
+                background-position-x: 40px;
+                background-size: 100px;
+            }
+    
+            #vida_grupo_btn:hover{
+                background-image: url(/src/vidagrupo_icon_w.png);
+                background-repeat: no-repeat;
+                background-position-y: center;
+                background-position-x: 40px;
+                background-size: 100px;
+            }
+
+             //-------------------------------------------------------------
+
+    
+    
 
 
+        
 
+        
+        
+        
 
 
     .giros{
