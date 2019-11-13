@@ -825,6 +825,25 @@ button{
             background-size: 100px;
         }
 
+         //-------------------------------------------------------------
+
+         #credioro_btn{
+            background-image: url(/src/credioro-icon.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+        #credioro_btn:hover{
+            background-image: url(/src/credioro-icon-w.png);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 40px;
+            background-size: 100px;
+        }
+
+
 
 
 
