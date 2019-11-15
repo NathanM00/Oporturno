@@ -1,4 +1,4 @@
-const socket = io('http://172.30.178.78:3000');
+const socket = io('http://192.168.1.3:3000');
 //Chicos la ip aqui tambien cambia, son la misma ip en ambos archivos
 
 const enviarUsuario = document.querySelector('.enviarUsuario');
@@ -50,6 +50,10 @@ const turnoCliente = document.querySelector('.turnoCliente');
 const numTurno = document.querySelector('.numTurno');
 const turnoMensaje = document.querySelector('.turnoMensaje');
 
+const opcion1 = document.querySelector('.opcion1');
+const opcion2 = document.querySelector('.opcion2');
+const opcion3 = document.querySelector('.opcion3');
+
 const botonAtras = document.querySelector('.div-back');
 
 var usuario;
@@ -65,6 +69,7 @@ var statusCliente = {
 
 var pantallaActual;
 var pantallaAnterior;
+
 
 //Se define si es cliente o asesor al inicio de la jornada
 function definicionUsuario() {
@@ -353,8 +358,14 @@ function darTurno(turno) {
 
         if (tipoTramite === 'Asesoría') {
             turnoMensaje.innerHTML = 'Recuerda que por Teleágil puedes realizar diferentes tipos de consultas sin necesidad de coger un turno. Acércate a él, podría ser más rápido.';
+        } else if (tipoTramite === 'Cuenta de ahorros') {
+            turnoMensaje.innerHTML = 'Encontraras información útil sobre las cuentas de ahorros en los volantes dentro del cajón #1.';
+        } else if (tipoTramite === 'Seguros') {
+            turnoMensaje.innerHTML = 'Conoce mas sobre los seguros que Giros y finanzas ofrece para facilitar tu seguridad y la de tu familia, toma un volante del cajón #2.';
+        } else if (tipoTramite === 'Créditos') {
+            turnoMensaje.innerHTML = 'Infórmate sobre las opciones crediticias que en Giros y Finanzas tenemos para ti, toma un volante del cajón #3';
         } else if (tipoTramite === 'Recaudos') {
-            turnoMensaje.innerHTML = 'Recuerda tomar el volante donde se encuentran nuestros convenios para realizar recaudos.';
+            turnoMensaje.innerHTML = 'Recuerda tomar el volante donde se encuentran nuestros convenios para realizar recaudos, lo encontrarás en el cajon #4.';
         }
 
         function sleep(ms) {
@@ -468,9 +479,6 @@ function mostrarDatos(cliente) {
     let userInfo = document.querySelector('.userInfo');
     let tramiteInfo = document.querySelector('.tramiteInfo');
     let infoRecomen = document.querySelector('.recomendacion');
-    let opcion1 = document.querySelector('.opcion1');
-    let opcion2 = document.querySelector('.opcion2');
-    let opcion3 = document.querySelector('.opcion3');
     let infoList = document.querySelector('.listaClientes');
 
     //los datos del cliente, aqui ven que quieren que se vea o no etc etc
