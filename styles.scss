@@ -1,10 +1,10 @@
-html{
+html {
     height: 100%;
     width: 100%;
     font-family: 'Open Sans', sans-serif;
 }
 
-nav{
+nav {
     width: 100%;
     display: none;
     height: 120px;
@@ -14,7 +14,7 @@ nav{
     margin: 0;
 }
 
-.navBar{
+.navBar {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -23,34 +23,36 @@ nav{
     align-items: flex-start;
 }
 
-.textoNav{
-    text-align: center;    
+.textoNav {
+    text-align: center;
     color: #404040;
     font-size: 35pt;
     font-style: bold;
     margin: 25px 0 0 0;
     padding-left: 170px;
 }
-.usuarioCliente{
+
+.usuarioCliente {
     display: none;
     flex-direction: row;
     height: 100%;
     width: 100%;
 }
-.usuarioPantalla{
+
+.usuarioPantalla {
     display: none;
     width: 100%;
     height: 100%;
     margin: 0;
 }
 
-.pantallaDocumento{
+.pantallaDocumento {
     width: 100%;
     height: 100%;
     display: none;
     flex-direction: row;
 
-    .botonesDoc{
+    .botonesDoc {
         width: 40%;
         height: 100%;
         padding: 15px;
@@ -60,7 +62,7 @@ nav{
         text-align: center;
         //flex-basis: 50%;
 
-        #lineDoc{
+        #lineDoc {
             width: 50%;
             display: flex;
             flex-direction: row;
@@ -68,7 +70,7 @@ nav{
             text-align: center;
             margin-bottom: 50px;
 
-            #yellowDoc{
+            #yellowDoc {
                 width: 114px;
                 margin: 0;
                 margin-right: 5px;
@@ -76,7 +78,7 @@ nav{
 
             }
 
-            #greenDoc{
+            #greenDoc {
                 width: 249px;
                 margin: 0;
                 border: 2px solid #008CA0;
@@ -84,7 +86,7 @@ nav{
         }
     }
 
-    .tecladoDoc{
+    .tecladoDoc {
         display: none;
         flex-direction: column;
         align-items: center;
@@ -97,7 +99,7 @@ nav{
 }
 
 
-.docuType{
+.docuType {
     margin-bottom: 30px;
     font-style: normal;
     font-weight: 600;
@@ -106,7 +108,7 @@ nav{
     color: #008CA0;
 }
 
-.doc{
+.doc {
     width: 516px;
     height: 166px;
     background-color: white;
@@ -123,15 +125,16 @@ nav{
     color: #1093A5;
 }
 
-.docuNum{
+.docuNum {
     font-style: normal;
     font-weight: 600;
     font-size: 48px;
     line-height: 65px;
-    color: #008CA0;   
+    color: #008CA0;
 }
 
-.inputDoc, .inputCod{
+.inputDoc,
+.inputCod {
     width: 740px;
     height: 86px;
     border-radius: 9px;
@@ -139,7 +142,7 @@ nav{
     border-bottom-left-radius: 0;
     border: none;
     border-bottom: 2px solid #00A9CE;
-    margin-bottom: 50px; 
+    margin-bottom: 50px;
     margin-left: -40px;
     font-size: 25pt;
     padding-left: 10px;
@@ -147,7 +150,7 @@ nav{
     color: gray;
 }
 
-.girosRecibo{
+.girosRecibo {
     width: 100%;
     height: 100%;
     display: none;
@@ -157,29 +160,31 @@ nav{
     background-color: #F6F6F6;
 }
 
-.tecladoContainer, .teclasCodigo{
+.tecladoContainer,
+.teclasCodigo {
     display: flex;
     flex-direction: row;
 }
 
 
-.numKeys{
+.numKeys {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.fila{
+.fila {
     margin-bottom: 22px;
 }
 
-.columna{
+.columna {
     display: flex;
     flex-direction: column;
     margin-left: 20px;
 }
 
-.tecla, .teclaCodigo{
+.tecla,
+.teclaCodigo {
     width: 134px;
     height: 134px;
     margin-right: 40px;
@@ -201,7 +206,8 @@ nav{
 }*/
 
 //285px
-#cancelar, #codCancelar{
+#cancelar,
+#codCancelar {
     width: 200px;
     height: 134px;
     margin-bottom: 22px;
@@ -215,7 +221,8 @@ nav{
     color: #FFFFFF;
 }
 
-#corregir, #codCorregir{
+#corregir,
+#codCorregir {
     width: 200px;
     height: 134px;
     margin-bottom: 22px;
@@ -229,7 +236,8 @@ nav{
     color: #FFFFFF;
 }
 
-#ingresar, #codIngresar{
+#ingresar,
+#codIngresar {
     width: 200px;
     height: 134px;
     margin-bottom: 22px;
@@ -243,13 +251,14 @@ nav{
     color: #FFFFFF;
 }
 
-.tecladoCod{
+.tecladoCod {
     width: 50%;
     height: 100%;
     flex-basis: 50%;
     background-color: #F6F6F6;
 }
-.formularioCliente{
+
+.formularioCliente {
     width: 100%;
     height: 100%;
     display: none;
@@ -258,43 +267,45 @@ nav{
     //justify-content: center;
     //align-items: center;
 }
-.usuarioAsesor{
+
+.usuarioAsesor {
     display: none;
     flex-direction: row;
     height: 100%;
     width: 100%;
 }
 
-body{
+body {
     //font-family: 'Roboto', sans-serif;
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     height: 100%;
     width: 100%;
 }
-.giros{
+
+.giros {
     display: none;
     justify-content: center;
 
-    &Envio{
+    &Envio {
         display: none;
     }
 
-    &Recibo{
+    &Recibo {
         display: none;
     }
 }
 
-.creditos{
+.creditos {
     display: none;
     height: 100%;
     width: 100%;
 
-    &Indefinido{
+    &Indefinido {
         display: none;
     }
 
-    &Credioro{
+    &Credioro {
         display: none;
         height: 100%;
         width: 100%;
@@ -302,35 +313,39 @@ body{
         align-items: center;
     }
 }
-.tramites{
+
+.tramites {
     display: none;
 }
-.divisas{
+
+.divisas {
     display: none;
     width: 100%;
     height: 100%;
     align-items: center;
     justify-content: center;
 }
-.seguros{
+
+.seguros {
     display: none;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
 
-    .btnSegContainer{
+    .btnSegContainer {
         display: flex;
         flex-direction: column;
         //flex-wrap: wrap;
 
-        .filaBtinSeg{
+        .filaBtinSeg {
             display: flex;
             flex-direction: row;
         }
     }
 }
-.turno{
+
+.turno {
     display: none;
 
 }
@@ -340,14 +355,14 @@ body{
     border-radius: 30px;
 }*/
 
-button{
+button {
     box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.01);
     border-radius: 10px;
     width: 200px;
     background-color: white;
 }
 
-.splash{
+.splash {
     display: none;
     width: 100;
     height: 1200px;
@@ -357,25 +372,26 @@ button{
     align-items: center;
 
 
-    }
-    .splash-interno{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #F6F6F6;
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-        font-size: 50pt;
-        color: #00A9CE;
-        padding: 200px;
-        height: 500px;
-    }
+}
 
-    .splash-interno:hover{
-        cursor: pointer;
-    }
+.splash-interno {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F6F6F6;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    font-size: 50pt;
+    color: #00A9CE;
+    padding: 200px;
+    height: 500px;
+}
 
-.deficionUsuario{
+.splash-interno:hover {
+    cursor: pointer;
+}
+
+.deficionUsuario {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -383,15 +399,17 @@ button{
     font-size: 250%;
 }
 
-.selectorUser_client{
+.selectorUser_client {
     display: flex;
     flex-direction: row;
-    
+
 }
-.enviar{
+
+.enviar {
     display: none;
 }
-.selectorUsuario{
+
+.selectorUsuario {
     width: 700px;
     margin-right: 10px;
     border-radius: 5px;
@@ -399,22 +417,22 @@ button{
     font-size: 40pt;
 }
 
-.div-logos{
+.div-logos {
     display: flex;
 }
 
-#giros-logo{    
-    
+#giros-logo {
+
     width: 139px;
     height: 81px;
     margin: 20px;
     margin-left: 50px;
 
- 
-    }
-    
-    #western-logo{
-    
+
+}
+
+#western-logo {
+
     width: 134.35px;
     height: 71px;
     /*position: absolute;*/
@@ -422,580 +440,599 @@ button{
     padding-left: 20px;
     margin-right: 20px;
     border-left: solid black 2px;
-  
-    
-  
-    }
 
-    .div-back{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #00A9CE;
-        width: 214px;
-        height: 120px;
-        visibility: hidden;
-        h2{
-            color: white;
-            margin-left: 20px;
-        }
-    }
 
-    #back-vector{
-        width: 20px;
-        height: 34px;
+
+}
+
+.div-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #00A9CE;
+    width: 214px;
+    height: 120px;
+    visibility: hidden;
+
+    h2 {
+        color: white;
+        margin-left: 20px;
     }
-    
-    #signo-interrogacion{
-    
+}
+
+#back-vector {
+    width: 20px;
+    height: 34px;
+}
+
+#signo-interrogacion {
+
     width: 60px;
     height: 64px;
- 
-    }
-    
-    #line-div{
-        
-        width: 83px;
-        height: 0px;   
-        border: 1px solid #595959;
-        transform: rotate(90deg);
-    }
 
-    .tramites{
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-    }
-    .botonesTramites{
-        width: 1450px;
-        padding-left: 15px;
-        padding-top: 20px;
- 
-    }
+}
 
-    //BOTONES SIN ICONOS-----------------------------------------------------------
-    .enviarUsuario, .doc{
-        background: #FAFAFA;
-        border: 5px solid #0FADD0;
-        box-sizing: border-box;
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
-        width: 435px;
-        height: 180px;
-        margin: 20px;  
-        font-weight: bold;
-        font-size: 45px;
-        line-height: 75px;
-        text-align: center;
-        color: #1093A5;
+#line-div {
 
-        }
+    width: 83px;
+    height: 0px;
+    border: 1px solid #595959;
+    transform: rotate(90deg);
+}
 
-    .enviarUsuario:hover, .doc:hover{
-        background: #00A9CE;
-        border: 5px solid #28B2D1;
-        box-sizing: border-box;
-        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.15);
-        border-radius: 10px;
-        cursor: pointer;
-        color: #FAFAFA;
-        }
+.tramites {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
 
-        //BOTONES CON ICONOS----------------------------------------------------------------
+.botonesTramites {
+    width: 1450px;
+    padding-left: 15px;
+    padding-top: 20px;
 
-        .tramite, .pais, .credito, .seguro, .credioro, .divisa   {
-        background: #FAFAFA;
-        border: 5px solid #0FADD0;
-        box-sizing: border-box;
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
-        width: 435px;
-        height: 180px;
-        margin: 20px;  
-        font-weight: bold;
-        font-size: 45px;
-        line-height: 75px;
-        text-align: right;
-        color: #1093A5;
-        padding-right: 50px;
-        line-height: 1;
-        }
+}
 
-        .tramite:hover, .pais:hover, .credito:hover, .seguro:hover, .credioro:hover, .divisa:hover{
-        background: #00A9CE;
-        border: 5px solid #28B2D1;
-        box-sizing: border-box;
-        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.15);
-        border-radius: 10px;
-        cursor: pointer;
-        color: #FAFAFA;
-        }
+//BOTONES SIN ICONOS-----------------------------------------------------------
+.enviarUsuario,
+.doc {
+    background: #FAFAFA;
+    border: 5px solid #0FADD0;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    width: 435px;
+    height: 180px;
+    margin: 20px;
+    font-weight: bold;
+    font-size: 45px;
+    line-height: 75px;
+    text-align: center;
+    color: #1093A5;
+
+}
+
+.enviarUsuario:hover,
+.doc:hover {
+    background: #00A9CE;
+    border: 5px solid #28B2D1;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    cursor: pointer;
+    color: #FAFAFA;
+}
+
+//BOTONES CON ICONOS----------------------------------------------------------------
+
+.tramite,
+.pais,
+.credito,
+.seguro,
+.credioro,
+.divisa {
+    background: #FAFAFA;
+    border: 5px solid #0FADD0;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    width: 435px;
+    height: 180px;
+    margin: 20px;
+    font-weight: bold;
+    font-size: 45px;
+    line-height: 75px;
+    text-align: right;
+    color: #1093A5;
+    padding-right: 50px;
+    line-height: 1;
+}
+
+.tramite:hover,
+.pais:hover,
+.credito:hover,
+.seguro:hover,
+.credioro:hover,
+.divisa:hover {
+    background: #00A9CE;
+    border: 5px solid #28B2D1;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    cursor: pointer;
+    color: #FAFAFA;
+}
 
 
-        //ICONOS DE LOS BOTONES ------------------------------------------------------
+//ICONOS DE LOS BOTONES ------------------------------------------------------
 
-        #giros-btn{
-            background-image: url(/src/giros-icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-    
-        #giros-btn:hover{
-            background-image: url(/src/giros-icon-w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
+#giros-btn {
+    background-image: url(/src/giros-icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#giros-btn:hover {
+    background-image: url(/src/giros-icon-w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
 
 //-------------------------------------------------------------
 
-        #divisas-btn{
-            background-image: url(/src/divisas-icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #divisas-btn:hover{
-            background-image: url(/src/divisas-icon-w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-
-        //-------------------------------------------------------------
-        #creditos-btn{
-            background-image: url(/src/creditos-icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #creditos-btn:hover{
-            background-image: url(/src/creditos-icon-w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-        //-------------------------------------------------------------
-
-        #seguros-btn{
-            background-image: url(/src/seguros-icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #seguros-btn:hover{
-            background-image: url(/src/seguros-icon-w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-         //-------------------------------------------------------------
-
-         #recaudos-btn{
-            background-image: url(/src/recaudos-icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #recaudos-btn:hover{
-            background-image: url(/src/recaudos-icon-w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-          //-------------------------------------------------------------
-
-          #ahorros-btn{
-            background-image: url(/src/ahorros-icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #ahorros-btn:hover{
-            background-image: url(/src/ahorros-icon-w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        
-          //-------------------------------------------------------------
-
-          #asesoria-btn{
-            background-image: url(/src/asesoria-icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #asesoria-btn:hover{
-            background-image: url(/src/asesoria-icon-w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-          //-------------------------------------------------------------
-
-          #otros-btn, #otro_credito_btn, #otro_seguros_btn{
-            background-image: url(/src/otros-icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #otros-btn:hover, #otro_credito_btn:hover, #otro_seguros_btn:hover{
-            background-image: url(/src/otros-icon-w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-
-
-          //-------------------------------------------------------------
-
-          #envio-btn{
-            background-image: url(/src/envio-icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #envio-btn:hover{
-            background-image: url(/src/envio-icon-w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-         //-------------------------------------------------------------
-
-         #recibo-btn{
-            background-image: url(/src/recibo-icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #recibo-btn:hover{
-            background-image: url(/src/recibo-icon-w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-         //-------------------------------------------------------------
-
-         #eu-btn{
-            background-image: url(/src/us.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-
-         //-------------------------------------------------------------
-
-         #chile-btn{
-            background-image: url(/src/chile.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-         //-------------------------------------------------------------
-
-         #panama-btn{
-            background-image: url(/src/panama.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        //-------------------------------------------------------------
-
-        #mexico-btn{
-            background-image: url(/src/mexico.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        //-------------------------------------------------------------
-
-        #ecuador-btn{
-            background-image: url(/src/ecuador.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        
-        //-------------------------------------------------------------
-
-        #ecuador-btn{
-            background-image: url(/src/ecuador.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        
-        //-------------------------------------------------------------
-        
-        #otro-paises-btn{
-            background-image: url(/src/worldwide.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-
-        //-------------------------------------------------------------
-
-        #compra-divisa-btn{
-            background-image: url(/src/compradivisas-icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #compra-divisa-btn:hover{
-            background-image: url(/src/compradivisas-icon-w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        //-------------------------------------------------------------
-
-        #venta-divisa-btn{
-            background-image: url(/src/ventadivisas-icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #venta-divisa-btn:hover{
-            background-image: url(/src/ventadivisas-icon-w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-         //-------------------------------------------------------------
-
-         #credioro_btn{
-            background-image: url(/src/credioro-icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #credioro_btn:hover{
-            background-image: url(/src/credioro-icon-w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-           //-------------------------------------------------------------
-
-           #tarjeta_credito_btn{
-            background-image: url(/src/trajetacredito-icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #tarjeta_credito_btn:hover{
-            background-image: url(/src/trajetacredito-icon-w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        
-           //-------------------------------------------------------------
-
-           #adquisicion_credi_btn{
-            background-image: url(/src/adquirir_icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #adquisicion_credi_btn:hover{
-            background-image: url(/src/adquirir_icon_w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        //-------------------------------------------------------------
-
-        #pago_credi_btn{
-            background-image: url(/src/pagar_credi_icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #pago_credi_btn:hover{
-            background-image: url(/src/pagar_credi_icon_w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-         //-------------------------------------------------------------
-
-         #repatriacion_btn{
-            background-image: url(/src/repatriacion_icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #repatriacion_btn:hover{
-            background-image: url(/src/repatriacion_icon_w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-         //-------------------------------------------------------------
-
-         #familia_segura_btn{
-            background-image: url(/src/familias_segura_icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #familia_segura_btn:hover{
-            background-image: url(/src/familias_segura_icon_w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-         //-------------------------------------------------------------
-
-         #vida_tranquila_btn{
-            background-image: url(/src/vidatranquila_icon.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-        #vida_tranquila_btn:hover{
-            background-image: url(/src/vidatranquila_icon_w.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: 40px;
-            background-size: 100px;
-        }
-
-            //-------------------------------------------------------------
-
-            #vida_grupo_btn{
-                background-image: url(/src/vidagrupo_icon.png);
-                background-repeat: no-repeat;
-                background-position-y: center;
-                background-position-x: 40px;
-                background-size: 100px;
-            }
-    
-            #vida_grupo_btn:hover{
-                background-image: url(/src/vidagrupo_icon_w.png);
-                background-repeat: no-repeat;
-                background-position-y: center;
-                background-position-x: 40px;
-                background-size: 100px;
-            }
-
-             //-------------------------------------------------------------
-
-    
-    
-
-
-        
-
-        
-        
-        
-
-
-    .giros{
-        width: 100%;
-    }
-
-    .girosIndefinido{
-
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        width: 100%;
-        padding-top: 20px;
-
-        .giro{
+#divisas-btn {
+    background-image: url(/src/divisas-icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#divisas-btn:hover {
+    background-image: url(/src/divisas-icon-w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+
+//-------------------------------------------------------------
+#creditos-btn {
+    background-image: url(/src/creditos-icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#creditos-btn:hover {
+    background-image: url(/src/creditos-icon-w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#seguros-btn {
+    background-image: url(/src/seguros-icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#seguros-btn:hover {
+    background-image: url(/src/seguros-icon-w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#recaudos-btn {
+    background-image: url(/src/recaudos-icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#recaudos-btn:hover {
+    background-image: url(/src/recaudos-icon-w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#ahorros-btn {
+    background-image: url(/src/ahorros-icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#ahorros-btn:hover {
+    background-image: url(/src/ahorros-icon-w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+
+//-------------------------------------------------------------
+
+#asesoria-btn {
+    background-image: url(/src/asesoria-icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#asesoria-btn:hover {
+    background-image: url(/src/asesoria-icon-w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#otros-btn,
+#otro_credito_btn,
+#otro_seguros_btn {
+    background-image: url(/src/otros-icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#otros-btn:hover,
+#otro_credito_btn:hover,
+#otro_seguros_btn:hover {
+    background-image: url(/src/otros-icon-w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+
+
+//-------------------------------------------------------------
+
+#envio-btn {
+    background-image: url(/src/envio-icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#envio-btn:hover {
+    background-image: url(/src/envio-icon-w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#recibo-btn {
+    background-image: url(/src/recibo-icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#recibo-btn:hover {
+    background-image: url(/src/recibo-icon-w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#eu-btn {
+    background-image: url(/src/us.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+
+//-------------------------------------------------------------
+
+#chile-btn {
+    background-image: url(/src/chile.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#panama-btn {
+    background-image: url(/src/panama.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#mexico-btn {
+    background-image: url(/src/mexico.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#ecuador-btn {
+    background-image: url(/src/ecuador.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+
+//-------------------------------------------------------------
+
+#ecuador-btn {
+    background-image: url(/src/ecuador.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+
+//-------------------------------------------------------------
+
+#otro-paises-btn {
+    background-image: url(/src/worldwide.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+
+//-------------------------------------------------------------
+
+#compra-divisa-btn {
+    background-image: url(/src/compradivisas-icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#compra-divisa-btn:hover {
+    background-image: url(/src/compradivisas-icon-w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#venta-divisa-btn {
+    background-image: url(/src/ventadivisas-icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#venta-divisa-btn:hover {
+    background-image: url(/src/ventadivisas-icon-w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#credioro_btn {
+    background-image: url(/src/credioro-icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#credioro_btn:hover {
+    background-image: url(/src/credioro-icon-w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#tarjeta_credito_btn {
+    background-image: url(/src/trajetacredito-icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#tarjeta_credito_btn:hover {
+    background-image: url(/src/trajetacredito-icon-w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+
+//-------------------------------------------------------------
+
+#adquisicion_credi_btn {
+    background-image: url(/src/adquirir_icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#adquisicion_credi_btn:hover {
+    background-image: url(/src/adquirir_icon_w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#pago_credi_btn {
+    background-image: url(/src/pagar_credi_icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#pago_credi_btn:hover {
+    background-image: url(/src/pagar_credi_icon_w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#repatriacion_btn {
+    background-image: url(/src/repatriacion_icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#repatriacion_btn:hover {
+    background-image: url(/src/repatriacion_icon_w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#familia_segura_btn {
+    background-image: url(/src/familias_segura_icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#familia_segura_btn:hover {
+    background-image: url(/src/familias_segura_icon_w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#vida_tranquila_btn {
+    background-image: url(/src/vidatranquila_icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#vida_tranquila_btn:hover {
+    background-image: url(/src/vidatranquila_icon_w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+#vida_grupo_btn {
+    background-image: url(/src/vidagrupo_icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+#vida_grupo_btn:hover {
+    background-image: url(/src/vidagrupo_icon_w.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+    background-size: 100px;
+}
+
+//-------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+.giros {
+    width: 100%;
+}
+
+.girosIndefinido {
+
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 20px;
+
+    .giro {
         background: #FAFAFA;
         border: 5px solid #0FADD0;
         box-sizing: border-box;
@@ -1012,9 +1049,9 @@ button{
         color: #1093A5;
 
 
-        }
+    }
 
-        .giro:hover {
+    .giro:hover {
         background: #00A9CE;
         border: 5px solid #28B2D1;
         box-sizing: border-box;
@@ -1022,67 +1059,329 @@ button{
         border-radius: 10px;
         cursor: pointer;
         color: #FAFAFA;
-        }
+    }
+}
+
+.informacionCliente {
+    width: 30%;
+    height: 100%;
+    margin: 0;
+    padding: 15px;
+
+    .asClientListTitle {
+        margin-top: 10px;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 41px;
+        color: #008CA0;
     }
 
-    .informacionCliente{
-        width: 30%;
-        height: 100%;
-        margin: 0;
-        padding: 15px;
-
-        .asClientListTitle{
-            margin-top: 10px;
-            font-family: Open Sans;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 25px;
-            line-height: 41px;
-            color: #008CA0;
-        }
-    }
-
-    .paises-internos{
-        width: 1450px;
-        height: 450px;
-        padding-left: 15px;
-        padding-top: 20px;
-    }
-
-    .creditosIndefinido{
+    .clienteVentanilla {
         width: 100%;
-        height: 100%;
-        align-items: center;
-        justify-content: center;
+        height: 9%;
+        margin-bottom: 40px;
+        background: #00A9CE;
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
     }
 
-    .perfilacion{
-        width: 70%;
-        height: 100%;
-        padding: 15px;
-        padding-left: 20px;
-        background-color: #F3F3F3;
+    .separarListas {
+        margin-bottom: 30px;
+    }
 
-        .clientData{
-            width: 100%;
-            height: 35%;
+    .cola {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .pasarTurno {
+        width: 100%;
+        height: 8%;
+        justify-content: center;
+        align-items: center;
+        background: #FFFFFF;
+        border: 3px solid #20B4D4;
+        box-sizing: border-box;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 45.5px;
+
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 41px;
+        display: flex;
+        align-items: center;
+
+        color: #008CA0;
+    }
+
+    .pasarTurno:hover{
+        background: #00A9CE;
+        color: #FFFFFF;
+    }
+}
+
+.paises-internos {
+    width: 1450px;
+    height: 450px;
+    padding-left: 15px;
+    padding-top: 20px;
+}
+
+.creditosIndefinido {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.perfilacion {
+    width: 70%;
+    height: 100%;
+    padding: 15px;
+    padding-left: 20px;
+    background-color: #F3F3F3;
+
+    .clientData {
+        width: 100%;
+        height: 35%;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 40px;
+
+        .cliente {
+            width: 38%;
+            margin-right: 40px;
+
+            .infoCliente {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 68%;
+
+            }
+        }
+
+        .servicios {
+            display: flex;
+            flex-direction: column;
+            width: 62%;
+
+            .adqContainer {
+                display: flex;
+                flex-direction: row;
+                height: 68%;
+
+                .serviciosAdq {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 28%;
+                    height: 100%;
+                    margin-bottom: 0;
+                    padding: 15px;
+                    margin-right: 15px;
+
+                }
+
+                /*.user{
+                        display: flex;
+                        flex-direction: row;
+                        margin-bottom: 10px;
+        
+                        .userInfo{
+                            margin-left: 15px;
+                        }
+                    }
+        
+                    .separarInfo{
+                        width: 100%;
+                        border: 0.5px solid #ACACAC;
+                    }
+        
+                    .descripTramite{
+                        margin-top: 10px;
+                    }*/
+            }
+        }
+    }
+
+    .perfilacionTitulo,
+    .clienteTitulo,
+    .clienteProduc {
+        margin-top: 10px;
+        margin-bottom: 0;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 41px;
+
+        color: #008CA0;
+    }
+
+    .clienteTitulo,
+    .clienteProduc {
+        margin-bottom: 20px;
+    }
+
+    .colorLine {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 28px;
+
+        .yellow {
+            width: 40px;
+            margin: 0;
+            margin-right: 5px;
+            border: 2px solid #FFDD00;
+
+        }
+
+        .green {
+            width: 85px;
+            margin: 0;
+            border: 2px solid #008CA0;
+        }
+    }
+
+    .recomendacion {
+        height: 25%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+
+        .opcion1,
+        .opcion2,
+        .opcion3 {
+            display: flex;
+            flex-direction: column;
+            height: 85%;
+            width: 40%;
+            padding: 15px;
+            margin-right: 10px;
+            align-items: center;
+            background: #FFFFFF;
+            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+
+            .ofrecerTitulo {
+                margin-top: 0;
+                margin-bottom: 7px;
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 25px;
+                line-height: 41px;
+
+                color: #FFE220;
+            }
+
+            .opcionTitulo {
+                margin: 0;
+                margin-bottom: 5px;
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 34px;
+
+                color: #AAAAAA;
+            }
+
+            hr {
+                width: 100%;
+                border: 0.5px solid #ACACAC;
+            }
+
+            .textoRecomendacion {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 25px;
+                line-height: 38px;
+
+                color: #008CA0;
+            }
+
+        }
+
+        .opcion3 {
+            margin-right: 0;
+        }
+    }
+
+    .informacion {
+        margin-bottom: 25px;
+        padding: 15px 25px 15px 25px;
+        background: #FFFFFF;
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+
+        .user {
             display: flex;
             flex-direction: row;
-            margin-bottom: 40px;
+            margin-bottom: 10px;
 
-            .cliente{
-                width: 38%;
-                margin-right: 40px;
-            }
-
-            .servicios{
-                width: 62%;
+            .userInfo {
+                margin-left: 15px;
             }
         }
 
-        .perfilacionTitulo, .clienteTitulo, .clienteProduc{
+        .separarInfo {
+            width: 100%;
+            border: 0.5px solid #ACACAC;
+        }
+
+        .descripTramite {
             margin-top: 10px;
-            margin-bottom: 0;
+
+            .tramiteInfo {
+                font-style: normal;
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 41px;
+
+                color: #878787;
+            }
+        }
+
+        .cedulaInfo {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 34px;
+
+            color: #008CA0;
+
+        }
+
+        .detalleInfo {
+            margin: 0;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 25px;
+            line-height: 41px;
+
+            color: #878787;
+        }
+
+        .extraInfo {
+            margin: 0;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 25px;
+            line-height: 41px;
+
+            color: #AAAAAA;
+        }
+
+        .informacionTitulo {
+            margin-top: 0;
+            margin-bottom: 15px;
             font-style: normal;
             font-weight: bold;
             font-size: 25px;
@@ -1090,213 +1389,38 @@ button{
 
             color: #008CA0;
         }
-
-        .clienteTitulo, .clienteProduc{
-            margin-bottom: 20px;
-        }
-
-        .colorLine{
-            display: flex;
-            flex-direction: row;
-            margin-bottom: 28px;
-
-            .yellow{
-                width: 40px;
-                margin: 0;
-                margin-right: 5px;
-                border: 2px solid #FFDD00;
-
-            }
-
-            .green{
-                width: 85px;
-                margin: 0;
-                border: 2px solid #008CA0;
-            }
-        }
-
-        .recomendacion{
-            height: 25%;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            margin-bottom: 20px;
-
-            .opcion1, .opcion2, .opcion3{
-                display: flex;
-                flex-direction: column;
-                height: 85%;
-                width: 40%;
-                padding: 15px;
-                margin-right: 10px;
-                align-items: center;
-                background: #FFFFFF;
-                box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
-                border-radius: 10px;
-
-                .ofrecerTitulo{
-                    margin-top: 0;
-                    margin-bottom: 7px;
-                    font-family: Open Sans;
-                    font-style: normal;
-                    font-weight: bold;
-                    font-size: 25px;
-                    line-height: 41px;
-                
-                    color: #FFE220;
-                }
-
-                .opcionTitulo{
-                    margin: 0;
-                    margin-bottom: 5px;
-                    font-family: Open Sans;
-                    font-style: normal;
-                    font-weight: bold;
-                    font-size: 20px;
-                    line-height: 34px;
-                    
-                    color: #AAAAAA;
-                }
-
-                hr{
-                    width: 100%;
-                    border: 0.5px solid #ACACAC;
-                }
-
-                .textoRecomendacion{
-                    font-family: Open Sans;
-                    font-style: normal;
-                    font-weight: bold;
-                    font-size: 25px;
-                    line-height: 38px;
-
-                    color: #008CA0;
-                }
-
-            }
-
-            .opcion3{
-                margin-right: 0;
-            }
-        }
-
-        #infoCliente{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 85%;
-            height: 68%;
-            margin-bottom: 0;
-            padding: 15px;
-
-            .user{
-                display: flex;
-                flex-direction: row;
-                margin-bottom: 10px;
-
-                .userInfo{
-                    margin-left: 15px;
-                }
-            }
-
-            .separarInfo{
-                width: 100%;
-                border: 0.5px solid #ACACAC;
-            }
-
-            .descripTramite{
-                margin-top: 10px;
-            }
-        }
-
-        .informacion{
-            margin-bottom: 25px;
-            padding: 15px 25px 15px 25px;
-            background: #FFFFFF;
-            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-
-            .informacionTitulo{
-                margin-top: 0;
-                margin-bottom: 15px;
-                font-style: normal;
-                font-weight: bold;
-                font-size: 25px;
-                line-height: 41px;
-
-                color: #008CA0;
-            }
-
-            .cedulaInfo{
-                font-style: normal;
-                font-weight: bold;
-                font-size: 20px;
-                line-height: 34px;
-
-                color: #008CA0;
-
-            }
-
-            .tramiteInfo{
-                font-style: normal;
-                font-weight: bold;
-                font-size: 20px;
-                line-height: 41px;
-               
-                color: #878787;
-            }
-
-            .detalleInfo{
-                margin: 0;
-                font-style: normal;
-                font-weight: bold;
-                font-size: 25px;
-                line-height: 41px;
-
-                color: #878787;
-            }
-
-            .extraInfo{
-                margin: 0;
-                font-style: normal;
-                font-weight: bold;
-                font-size: 25px;
-                line-height: 41px;
-
-                color: #AAAAAA;
-            }
-        }
     }
+}
 
 
-    
 
-    .ticket-img{
-        width: 70%;
-    }
 
-    
-    .turno{
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        //margin-left: 400px;
-    }
+.ticket-img {
+    width: 70%;
+}
 
-    .numTurno{
-        position: absolute;
-        font-size: 150pt;
-        color: #00A9CE;
-        top: -150px;
-        left: 115px;
-        bottom: 500px;
-    }
 
-    .contenedor-ticket{
-        position: relative;
-    }
+.turno {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    //margin-left: 400px;
+}
 
-    .columna-mensaje-turno{
+.numTurno {
+    position: absolute;
+    font-size: 150pt;
+    color: #00A9CE;
+    top: -150px;
+    left: 115px;
+    bottom: 500px;
+}
+
+.contenedor-ticket {
+    position: relative;
+}
+
+.columna-mensaje-turno {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1307,4 +1431,4 @@ button{
     height: 100%;
     width: 80%;
     margin-right: 150px;
-    }
+}

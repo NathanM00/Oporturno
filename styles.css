@@ -167,7 +167,8 @@ nav {
   color: #008CA0;
 }
 
-.inputDoc, .inputCod {
+.inputDoc,
+.inputCod {
   width: 740px;
   height: 86px;
   border-radius: 9px;
@@ -200,7 +201,8 @@ nav {
   background-color: #F6F6F6;
 }
 
-.tecladoContainer, .teclasCodigo {
+.tecladoContainer,
+.teclasCodigo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -238,7 +240,8 @@ nav {
   margin-left: 20px;
 }
 
-.tecla, .teclaCodigo {
+.tecla,
+.teclaCodigo {
   width: 134px;
   height: 134px;
   margin-right: 40px;
@@ -259,7 +262,8 @@ nav {
 /*.teclas, .teclasCodigo{
     display: contents;
 }*/
-#cancelar, #codCancelar {
+#cancelar,
+#codCancelar {
   width: 200px;
   height: 134px;
   margin-bottom: 22px;
@@ -272,7 +276,8 @@ nav {
   color: #FFFFFF;
 }
 
-#corregir, #codCorregir {
+#corregir,
+#codCorregir {
   width: 200px;
   height: 134px;
   margin-bottom: 22px;
@@ -285,7 +290,8 @@ nav {
   color: #FFFFFF;
 }
 
-#ingresar, #codIngresar {
+#ingresar,
+#codIngresar {
   width: 200px;
   height: 134px;
   margin-bottom: 22px;
@@ -590,7 +596,8 @@ button {
   padding-top: 20px;
 }
 
-.enviarUsuario, .doc {
+.enviarUsuario,
+.doc {
   background: #FAFAFA;
   border: 5px solid #0FADD0;
   -webkit-box-sizing: border-box;
@@ -608,7 +615,8 @@ button {
   color: #1093A5;
 }
 
-.enviarUsuario:hover, .doc:hover {
+.enviarUsuario:hover,
+.doc:hover {
   background: #00A9CE;
   border: 5px solid #28B2D1;
   -webkit-box-sizing: border-box;
@@ -620,7 +628,12 @@ button {
   color: #FAFAFA;
 }
 
-.tramite, .pais, .credito, .seguro, .credioro, .divisa {
+.tramite,
+.pais,
+.credito,
+.seguro,
+.credioro,
+.divisa {
   background: #FAFAFA;
   border: 5px solid #0FADD0;
   -webkit-box-sizing: border-box;
@@ -640,7 +653,12 @@ button {
   line-height: 1;
 }
 
-.tramite:hover, .pais:hover, .credito:hover, .seguro:hover, .credioro:hover, .divisa:hover {
+.tramite:hover,
+.pais:hover,
+.credito:hover,
+.seguro:hover,
+.credioro:hover,
+.divisa:hover {
   background: #00A9CE;
   border: 5px solid #28B2D1;
   -webkit-box-sizing: border-box;
@@ -764,7 +782,9 @@ button {
   background-size: 100px;
 }
 
-#otros-btn, #otro_credito_btn, #otro_seguros_btn {
+#otros-btn,
+#otro_credito_btn,
+#otro_seguros_btn {
   background-image: url(/src/otros-icon.png);
   background-repeat: no-repeat;
   background-position-y: center;
@@ -772,7 +792,9 @@ button {
   background-size: 100px;
 }
 
-#otros-btn:hover, #otro_credito_btn:hover, #otro_seguros_btn:hover {
+#otros-btn:hover,
+#otro_credito_btn:hover,
+#otro_seguros_btn:hover {
   background-image: url(/src/otros-icon-w.png);
   background-repeat: no-repeat;
   background-position-y: center;
@@ -1092,6 +1114,57 @@ button {
   color: #008CA0;
 }
 
+.informacionCliente .clienteVentanilla {
+  width: 100%;
+  height: 9%;
+  margin-bottom: 40px;
+  background: #00A9CE;
+  -webkit-box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.informacionCliente .separarListas {
+  margin-bottom: 30px;
+}
+
+.informacionCliente .cola {
+  width: 100%;
+  padding: 10px;
+}
+
+.informacionCliente .pasarTurno {
+  width: 100%;
+  height: 8%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #FFFFFF;
+  border: 3px solid #20B4D4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 45.5px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 41px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  color: #008CA0;
+}
+
+.informacionCliente .pasarTurno:hover {
+  background: #00A9CE;
+  color: #FFFFFF;
+}
+
 .paises-internos {
   width: 1450px;
   height: 450px;
@@ -1136,11 +1209,84 @@ button {
   margin-right: 40px;
 }
 
+.perfilacion .clientData .cliente .infoCliente {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 68%;
+}
+
 .perfilacion .clientData .servicios {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 62%;
 }
 
-.perfilacion .perfilacionTitulo, .perfilacion .clienteTitulo, .perfilacion .clienteProduc {
+.perfilacion .clientData .servicios .adqContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 68%;
+  /*.user{
+                        display: flex;
+                        flex-direction: row;
+                        margin-bottom: 10px;
+        
+                        .userInfo{
+                            margin-left: 15px;
+                        }
+                    }
+        
+                    .separarInfo{
+                        width: 100%;
+                        border: 0.5px solid #ACACAC;
+                    }
+        
+                    .descripTramite{
+                        margin-top: 10px;
+                    }*/
+}
+
+.perfilacion .clientData .servicios .adqContainer .serviciosAdq {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 28%;
+  height: 100%;
+  margin-bottom: 0;
+  padding: 15px;
+  margin-right: 15px;
+}
+
+.perfilacion .perfilacionTitulo,
+.perfilacion .clienteTitulo,
+.perfilacion .clienteProduc {
   margin-top: 10px;
   margin-bottom: 0;
   font-style: normal;
@@ -1150,7 +1296,8 @@ button {
   color: #008CA0;
 }
 
-.perfilacion .clienteTitulo, .perfilacion .clienteProduc {
+.perfilacion .clienteTitulo,
+.perfilacion .clienteProduc {
   margin-bottom: 20px;
 }
 
@@ -1191,7 +1338,9 @@ button {
   margin-bottom: 20px;
 }
 
-.perfilacion .recomendacion .opcion1, .perfilacion .recomendacion .opcion2, .perfilacion .recomendacion .opcion3 {
+.perfilacion .recomendacion .opcion1,
+.perfilacion .recomendacion .opcion2,
+.perfilacion .recomendacion .opcion3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1212,7 +1361,9 @@ button {
   border-radius: 10px;
 }
 
-.perfilacion .recomendacion .opcion1 .ofrecerTitulo, .perfilacion .recomendacion .opcion2 .ofrecerTitulo, .perfilacion .recomendacion .opcion3 .ofrecerTitulo {
+.perfilacion .recomendacion .opcion1 .ofrecerTitulo,
+.perfilacion .recomendacion .opcion2 .ofrecerTitulo,
+.perfilacion .recomendacion .opcion3 .ofrecerTitulo {
   margin-top: 0;
   margin-bottom: 7px;
   font-family: Open Sans;
@@ -1223,7 +1374,9 @@ button {
   color: #FFE220;
 }
 
-.perfilacion .recomendacion .opcion1 .opcionTitulo, .perfilacion .recomendacion .opcion2 .opcionTitulo, .perfilacion .recomendacion .opcion3 .opcionTitulo {
+.perfilacion .recomendacion .opcion1 .opcionTitulo,
+.perfilacion .recomendacion .opcion2 .opcionTitulo,
+.perfilacion .recomendacion .opcion3 .opcionTitulo {
   margin: 0;
   margin-bottom: 5px;
   font-family: Open Sans;
@@ -1234,12 +1387,16 @@ button {
   color: #AAAAAA;
 }
 
-.perfilacion .recomendacion .opcion1 hr, .perfilacion .recomendacion .opcion2 hr, .perfilacion .recomendacion .opcion3 hr {
+.perfilacion .recomendacion .opcion1 hr,
+.perfilacion .recomendacion .opcion2 hr,
+.perfilacion .recomendacion .opcion3 hr {
   width: 100%;
   border: 0.5px solid #ACACAC;
 }
 
-.perfilacion .recomendacion .opcion1 .textoRecomendacion, .perfilacion .recomendacion .opcion2 .textoRecomendacion, .perfilacion .recomendacion .opcion3 .textoRecomendacion {
+.perfilacion .recomendacion .opcion1 .textoRecomendacion,
+.perfilacion .recomendacion .opcion2 .textoRecomendacion,
+.perfilacion .recomendacion .opcion3 .textoRecomendacion {
   font-family: Open Sans;
   font-style: normal;
   font-weight: bold;
@@ -1252,24 +1409,16 @@ button {
   margin-right: 0;
 }
 
-.perfilacion #infoCliente {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 85%;
-  height: 68%;
-  margin-bottom: 0;
-  padding: 15px;
+.perfilacion .informacion {
+  margin-bottom: 25px;
+  padding: 15px 25px 15px 25px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
-.perfilacion #infoCliente .user {
+.perfilacion .informacion .user {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1280,36 +1429,25 @@ button {
   margin-bottom: 10px;
 }
 
-.perfilacion #infoCliente .user .userInfo {
+.perfilacion .informacion .user .userInfo {
   margin-left: 15px;
 }
 
-.perfilacion #infoCliente .separarInfo {
+.perfilacion .informacion .separarInfo {
   width: 100%;
   border: 0.5px solid #ACACAC;
 }
 
-.perfilacion #infoCliente .descripTramite {
+.perfilacion .informacion .descripTramite {
   margin-top: 10px;
 }
 
-.perfilacion .informacion {
-  margin-bottom: 25px;
-  padding: 15px 25px 15px 25px;
-  background: #FFFFFF;
-  -webkit-box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-
-.perfilacion .informacion .informacionTitulo {
-  margin-top: 0;
-  margin-bottom: 15px;
+.perfilacion .informacion .descripTramite .tramiteInfo {
   font-style: normal;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 41px;
-  color: #008CA0;
+  color: #878787;
 }
 
 .perfilacion .informacion .cedulaInfo {
@@ -1318,14 +1456,6 @@ button {
   font-size: 20px;
   line-height: 34px;
   color: #008CA0;
-}
-
-.perfilacion .informacion .tramiteInfo {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 41px;
-  color: #878787;
 }
 
 .perfilacion .informacion .detalleInfo {
@@ -1344,6 +1474,16 @@ button {
   font-size: 25px;
   line-height: 41px;
   color: #AAAAAA;
+}
+
+.perfilacion .informacion .informacionTitulo {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 41px;
+  color: #008CA0;
 }
 
 .ticket-img {

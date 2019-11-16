@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!-- Esa ip deben cambiarla si van a hacer las pruebas, el puerto si es el 3000, pero la ip cambia segun la del pc-->
-    <script defer="" src="http://192.168.1.3:3000/socket.io/socket.io.js"></script>
+    <script defer="" src="http://192.168.1.53:3000/socket.io/socket.io.js"></script>
     <script defer="" src="client.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
 
@@ -110,11 +110,13 @@
                 <!--<h2>¿Qué trámite vienes a realizar?</h2>-->
                 <div class="botonesTramites">
                     <button type="button" class="tramite" id="giros-btn" value="Giros">Giros</button>
-                    <button type="button" class="tramite" id="divisas-btn" value="Cambio de divisas">Cambio de divisas</button>
+                    <button type="button" class="tramite" id="divisas-btn" value="Cambio de divisas">Cambio de
+                        divisas</button>
                     <button type="button" class="tramite" id="creditos-btn" value="Créditos">Créditos</button>
                     <button type="button" class="tramite" id="seguros-btn" value="Seguros">Seguros</button>
                     <button type="button" class="tramite" id="recaudos-btn" value="Recaudos">Recaudos</button>
-                    <button type="button" class="tramite" id="ahorros-btn" value="Cuenta de ahorros">Cuenta de ahorros</button>
+                    <button type="button" class="tramite" id="ahorros-btn" value="Cuenta de ahorros">Cuenta de
+                        ahorros</button>
                     <button type="button" class="tramite" id="asesoria-btn" value="Asesoría">Asesoría</button>
                     <button type="button" class="tramite" id="otros-btn" value="Otros">Otros</button>
                 </div>
@@ -185,13 +187,15 @@
                 <div class="creditosIndefinido">
                     <!--<h2>Selecciona el tipo de crédito</h2>-->
                     <button type="button" class="credito" id="credioro_btn" value="Credioro">Credioro</button>
-                    <button type="button" class="credito" id="tarjeta_credito_btn" value="Tarjeta de crédito">Tarjeta de crédito</button>
+                    <button type="button" class="credito" id="tarjeta_credito_btn" value="Tarjeta de crédito">Tarjeta de
+                        crédito</button>
                     <button type="button" class="credito" id="otro_credito_btn" value="Otro">Otro</button>
                 </div>
 
                 <div class="creditosCredioro">
                     <!--<h2>¿Deseas adquirir o pagar Credioro?</h2>-->
-                    <button type="button" class="credioro" id="adquisicion_credi_btn" value="Adquisición">Adquirir</button>
+                    <button type="button" class="credioro" id="adquisicion_credi_btn"
+                        value="Adquisición">Adquirir</button>
                     <button type="button" class="credioro" id="pago_credi_btn" value="Pago">Pagar</button>
                 </div>
 
@@ -209,9 +213,12 @@
                 <!--<h2> Selecciona el tipo de seguro</h2>-->
                 <div class="btnSegContainer">
                     <div class="filaBtnSeg">
-                        <button type="button" class="seguro" id="repatriacion_btn" value="Repatriación">Repatriación</button>
-                        <button type="button" class="seguro" id="familia_segura_btn" value="Familia segura">Familia segura</button>
-                        <button type="button" class="seguro" id="vida_tranquila_btn" value="Vida tranquila">Vida tranquila</button>
+                        <button type="button" class="seguro" id="repatriacion_btn"
+                            value="Repatriación">Repatriación</button>
+                        <button type="button" class="seguro" id="familia_segura_btn" value="Familia segura">Familia
+                            segura</button>
+                        <button type="button" class="seguro" id="vida_tranquila_btn" value="Vida tranquila">Vida
+                            tranquila</button>
 
                     </div>
 
@@ -230,9 +237,9 @@
                 </div>
 
                 <div class="contenedor-ticket">
-                        <img class="ticket-img" src="src/ticket.png" alt="Su turno">
-                        <h1 class="numTurno"></h1>
-                    </div>
+                    <img class="ticket-img" src="src/ticket.png" alt="Su turno">
+                    <h1 class="numTurno"></h1>
+                </div>
             </div>
 
         </form>
@@ -240,10 +247,18 @@
 
     <div class="usuarioAsesor">
         <div class="informacionCliente">
-            <h2 class="asClientListTitle">Lista clientes</h2>
-            <div class="listaClientes">
+            <h2 class="asClientListTitle">En ventanilla</h2>
+            <div class="clienteVentanilla"></div>
+            <hr class="separarListas">
 
-            </div>
+            <section class="cola">
+                <h2 class="asClientListTitle">En cola...</h2>
+                <div class="listaClientes">
+
+                </div>
+            </section>
+
+            <button class="pasarTurno">Pasar turno</button>
 
         </div>
 
@@ -253,7 +268,7 @@
                 <section class="cliente">
                     <h2 class="clienteTitulo">Cliente</h2>
 
-                    <div class="informacion" id="infoCliente">
+                    <div class="informacion infoCliente">
                         <section class="user">
                             <img src="images/user.png">
                             <section class="userInfo"></section>
@@ -271,7 +286,11 @@
                 <section class="servicios">
                     <h2 class="clienteProduc">Servicios adquiridos</h2>
 
-                    <div class="informacion serviciosAdq" id="infoCliente"></div>
+                    <div class="adqContainer">
+                        <div class="informacion serviciosAdq"></div>
+                        <div class="informacion serviciosAdq"></div>
+                        <div class="informacion serviciosAdq"></div>
+                    </div>
 
                 </section>
             </section>

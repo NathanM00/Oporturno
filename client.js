@@ -1,4 +1,4 @@
-const socket = io('http://192.168.1.3:3000');
+const socket = io('http://192.168.1.53:3000');
 //Chicos la ip aqui tambien cambia, son la misma ip en ambos archivos
 
 const enviarUsuario = document.querySelector('.enviarUsuario');
@@ -514,7 +514,7 @@ function mostrarDatos(cliente) {
     textoRecomendacion2.className = 'textoRecomendacion';
     textoRecomendacion3.className = 'textoRecomendacion';
 
-    infoCliente.appendChild(textoStatus);
+    //infoCliente.appendChild(textoStatus);
     userInfo.appendChild(textoCedula);
     tramiteInfo.appendChild(textoTramite);
     tramiteInfo.appendChild(textoDetalle);
