@@ -1,4 +1,4 @@
-const socket = io('http://192.168.1.53:3000');
+const socket = io('http://192.168.1.3:3000');
 //Chicos la ip aqui tambien cambia, son la misma ip en ambos archivos
 
 const enviarUsuario = document.querySelector('.enviarUsuario');
@@ -45,7 +45,7 @@ const pantallaSeguros = document.querySelector('.seguros');
 const pantallaCreditos = document.querySelector('.creditos');
 const pantallaTurno = document.querySelector('.turno');
 
-const serviciosAdq= document.querySelector('.serviciosAdq');
+const serviciosAdq = document.querySelector('.serviciosAdq');
 const turnoCliente = document.querySelector('.turnoCliente');
 const numTurno = document.querySelector('.numTurno');
 const turnoMensaje = document.querySelector('.turnoMensaje');
@@ -55,6 +55,8 @@ const opcion2 = document.querySelector('.opcion2');
 const opcion3 = document.querySelector('.opcion3');
 
 const botonAtras = document.querySelector('.div-back');
+const pasarTurnoBtn = document.querySelector('.pasarTurno');
+const infoList = document.querySelector('.listaClientes');
 
 var usuario;
 
@@ -70,6 +72,7 @@ var statusCliente = {
 var pantallaActual;
 var pantallaAnterior;
 
+var clientesArray = [];
 
 //Se define si es cliente o asesor al inicio de la jornada
 function definicionUsuario() {
@@ -150,45 +153,52 @@ function definicionDocumento() {
     }
 }
 
-
 function irAtras() {
-    if (pantallaDocumento.style.display !== 'none') {
+    if (pantallaDocumento.style.display === 'flex') {
         pantallaAnterior = splash;
         pantallaActual = pantallaDocumento;
-    } else if (pantallaTramite.style.display !== 'none') {
+    } else if (pantallaTramite.style.display === 'flex') {
+        console.log('atras');
         pantallaAnterior = pantallaDocumento;
         pantallaActual = pantallaTramite;
         pantallaDoc1.style.display = 'flex';
         pantallaDoc2.style.display = 'flex';
-    } else if (pantallaGiros.style.display !== 'none') {
+    } else if (pantallaCreditos.style.display === 'flex') {
 
-        if (pantallaEnvio.style.display !== 'none') {
+        if (pantallaCredioro.style.display === 'flex') {
+            console.log('atras');
+            pantallaAnterior = pantallaCreInde;
+            pantallaActual = pantallaCredioro;
+        } else {
+            console.log('atras');
+            pantallaAnterior = pantallaTramite;
+            pantallaActual = pantallaCreditos;
+        }
+
+    } else if (pantallaSeguros.style.display === 'flex') {
+        console.log('atras');
+        pantallaSeguros.style.display = 'none';
+        pantallaAnterior = pantallaTramite;
+        pantallaActual = pantallaSeguros;
+
+    } else if (pantallaDivisas.style.display === 'flex') {
+        console.log('atras');
+        pantallaAnterior = pantallaTramite;
+        pantallaActual = pantallaDivisas;
+        pantallaDivisas.style.display = 'none';
+
+    } else if (pantallaGiros.style.display === 'flex') {
+        console.log('atras');
+        if (pantallaEnvio.style.display === 'flex') {
             pantallaAnterior = pantallaGiroInde;
             pantallaActual = pantallaEnvio;
-        } else if (pantallaRecibo.style.display !== 'none') {
+        } else if (pantallaRecibo.style.display === 'flex') {
             pantallaAnterior = pantallaGiroInde;
             pantallaActual = pantallaRecibo;
         } else {
             pantallaAnterior = pantallaTramite;
             pantallaActual = pantallaGiros;
         }
-
-    } else if (pantallaCreditos.style.display !== 'none') {
-
-        if (pantallaCredioro.style.display !== 'none') {
-            pantallaAnterior = pantallaCreInde;
-            pantallaActual = pantallaCredioro;
-        } else {
-            pantallaAnterior = pantallaTramite;
-            pantallaActual = pantallaCreditos;
-        }
-
-    } else if (pantallaSeguros.style.display !== 'none') {
-        pantallaAnterior = pantallaTramite;
-        pantallaActual = pantallaSeguros;
-    } else if (pantallaDivisas.style.display !== 'none') {
-        pantallaAnterior = pantallaTramite;
-        pantallaActual = pantallaDivisas;
     }
 
     pantallaActual.style.display = 'none';
@@ -303,7 +313,6 @@ function extrasGiro(tipoGiro) {
     }
 }
 
-
 //Se definen cosas como el codigo o pais del giro
 function extrasCredito(tipoCredito) {
 
@@ -326,13 +335,6 @@ function extrasCredito(tipoCredito) {
 }
 
 //Todo lo que tiene que ver con el envio de informacion
-socket.on('envioAlCliente', data => {
-    if (data.cedula !== undefined) {
-        mostrarDatos(data);
-        mostrarTurnos(data);
-    }
-});
-
 function enviarDatosCliente() {
     var data = {
         cedula: numeroDocumento,
@@ -340,10 +342,20 @@ function enviarDatosCliente() {
         detalle: detalleTramite,
         extras: extrasTramite,
         turno: 1,
+        atendiendo: false,
     }
     socket.emit('enviarALServer', data);
     data = '';
 }
+
+socket.on('envioAlCliente', arregloClientes => {
+    if (arregloClientes[0].cedula !== undefined) {
+        clientesArray = arregloClientes;
+        mostrarDatos();
+        mostrarTurnos();
+        agregarListaClientes();
+    }
+});
 
 socket.on('envioDeTurnoCliente', turno => {
     darTurno(turno);
@@ -386,9 +398,15 @@ function darTurno(turno) {
     }
 }
 
-function mostrarDatos(cliente) {
+function mostrarTurnos() {
+    let turno = document.createElement('p');
+    turno.innerText = clientesArray[0].turno;
+    turnero.appendChild(turno);
+}
 
-    let dataCliente = cliente;
+function mostrarDatos() {
+    let dataCliente = clientesArray[0];
+    console.log(clientesArray);
     //Cargar el archivo
     $.ajax({
         url: "/dataBaseClientes.csv",
@@ -399,7 +417,7 @@ function mostrarDatos(cliente) {
 
         let arregloDeLista;
         let dataLinea;
-        let servicios='';
+        let servicios = '';
 
         //Division por saltos de linea
         var datosFila = data.split("\n");
@@ -422,9 +440,8 @@ function mostrarDatos(cliente) {
                     textoStatus.innerText = statusCliente[24];
                     textoNombre.innerText = statusCliente[2];
                     for (let index = 13; index < 24; index++) {
-                        if(infoDB[index] === 'si'){
-                            servicios += informacion[0][index] +'\n';
-                            console.log(servicios);
+                        if (infoDB[index] === 'si') {
+                            servicios = informacion[0][index] + '\n';
                         }
                     }
                 }
@@ -432,7 +449,7 @@ function mostrarDatos(cliente) {
             }
             //Recomendaciones 
             serviciosAdq.innerHTML = servicios;
-            if (cliente.tramite === 'Giros' && cliente.detalle === 'Recibo') {
+            if (dataCliente.tramite === 'Giros' && dataCliente.detalle === 'Recibo') {
                 textoRecomendacion.innerText = "Pago seguro";
                 textoRecomendacion2.innerText = "Repatriación";
                 if (statusCliente[13] > 2) {
@@ -440,15 +457,15 @@ function mostrarDatos(cliente) {
                 } else {
                     textoRecomendacion3.innerText = "";
                 }
-            } else if (cliente.tramite === 'Divisas' || (cliente.tramite === 'Giros' && cliente.detalle === 'Envío')) {
+            } else if (dataCliente.tramite === 'Divisas' || (dataCliente.tramite === 'Giros' && dataCliente.detalle === 'Envío')) {
                 textoRecomendacion.innerText = "Cuenta de ahorro";
                 textoRecomendacion2.innerText = "Repatriación";
                 textoRecomendacion3.innerText = "";
-            } else if (cliente.tramite === 'Seguros') {
+            } else if (dataCliente.tramite === 'Seguros') {
                 textoRecomendacion.innerText = "Vida grupo";
                 textoRecomendacion2.innerText = "Cuenta de ahorro";
                 textoRecomendacion3.innerText = "Vida tranquila";
-            } else if (cliente.tramite === 'Créditos') {
+            } else if (dataCliente.tramite === 'Créditos') {
 
                 if (statusCliente[21] === 'si' || statusCliente[22] === 'si' || statusCliente[23] === 'si') {
                     textoRecomendacion.innerText = "Vida grupo";
@@ -459,11 +476,11 @@ function mostrarDatos(cliente) {
                 }
                 textoRecomendacion3.innerText = "";
 
-            } else if (cliente.tramite === 'Repatriación') {
+            } else if (dataCliente.tramite === 'Repatriación') {
                 textoRecomendacion.innerText = "Giros";
                 textoRecomendacion2.innerText = "Cuenta de ahorro";
                 textoRecomendacion3.innerText = "";
-            } else if (cliente.tramite === 'Cuenta de ahorro') {
+            } else if (dataCliente.tramite === 'Cuenta de ahorro') {
                 textoRecomendacion.innerText = "Seguros";
                 if (statusCliente[15] > 1000000) {
                     textoRecomendacion2.innerText = "CDT";
@@ -475,74 +492,65 @@ function mostrarDatos(cliente) {
         }
     }
 
-    let infoCliente = document.querySelector('.informacion');
-    let userInfo = document.querySelector('.userInfo');
-    let tramiteInfo = document.querySelector('.tramiteInfo');
-    let infoRecomen = document.querySelector('.recomendacion');
-    let infoList = document.querySelector('.listaClientes');
+    let textoTramite = document.querySelector('.tramiteInfooo');
+    let textoDetalle = document.querySelector('.detalleInfo');
+    let textoExtra = document.querySelector('.extraInfo');
+    let textoCedula = document.querySelector('.cedulaInfo');
+
+    let textoRecomendacion = document.querySelector('.recomendacion1');
+    let textoRecomendacion2 = document.querySelector('.recomendacion2');
+    let textoRecomendacion3 = document.querySelector('.recomendacion3');
+
+    let ventanillaTurno = document.querySelector('.clienteVentanilla-turno');
+    let ventanillaNombre = document.querySelector('.clienteVentanilla-nombre');
+    let ventanillaTramite = document.querySelector('.clienteVentanilla-tramite');
 
     //los datos del cliente, aqui ven que quieren que se vea o no etc etc
-    let textoCedula = document.createElement('p');
-    textoCedula.className = 'cedulaInfo';
-    textoCedula.innerText = 'C.C ' + cliente.cedula;
 
     let textoNombre = document.createElement('p');
 
-    let textoTramite = document.createElement('p');
-    textoTramite.className = 'tramiteInfo';
-    textoTramite.innerText = cliente.tramite;
+    textoTramite.innerText = dataCliente.tramite;
+    textoDetalle.innerText = dataCliente.detalle;
+    textoExtra.innerText = "" + dataCliente.extras;
+    textoCedula.innerText = 'C.C ' + dataCliente.cedula;
 
-    let textoDetalle = document.createElement('p');
-    textoDetalle.className = 'detalleInfo';
-    textoDetalle.innerText = cliente.detalle;
-
-    let textoExtra = document.createElement('p');
-    textoExtra.className = 'extraInfo';
-    textoExtra.innerText = "" + cliente.extras;
+    ventanillaTurno.innerText = dataCliente.turno;
+    if (dataCliente.nombre !== undefined) {
+        ventanillaNombre.innerText = textoNombre;
+    } else {
+        ventanillaNombre.innerText = 'Cliente Nuevo';
+    }
+    ventanillaTramite.innerText = dataCliente.tramite;
 
     let textoTurno = document.createElement('p');
-    textoTurno.innerText = "" + cliente.turno;
+    textoTurno.innerText = "" + dataCliente.turno;
 
     let textoStatus = document.createElement('p');
     textoStatus.className = 'statusCliente';
 
-    let textoRecomendacion = document.createElement('p');
-    let textoRecomendacion2 = document.createElement('p');
-    let textoRecomendacion3 = document.createElement('p');
+}
 
-    textoRecomendacion.className = 'textoRecomendacion';
-    textoRecomendacion2.className = 'textoRecomendacion';
-    textoRecomendacion3.className = 'textoRecomendacion';
-
-    //infoCliente.appendChild(textoStatus);
-    userInfo.appendChild(textoCedula);
-    tramiteInfo.appendChild(textoTramite);
-    tramiteInfo.appendChild(textoDetalle);
-    tramiteInfo.appendChild(textoExtra);
-    /*infoCliente.appendChild(textoCedula);
-    infoCliente.appendChild(textoTramite);
-    infoCliente.appendChild(textoDetalle);
-    infoCliente.appendChild(textoExtra);*/
-
+function agregarListaClientes(){
     let trajetaCliente = document.createElement('div');
     trajetaCliente.className = 'tarjetaCliente';
-    trajetaCliente.appendChild(textoNombre);
-    trajetaCliente.appendChild(textoTramite);
+    let trajetaClienteNombre = document.createElement('p');
 
+    if (clientesArray[clientesArray.length - 1].nombre !== undefined) {
+        trajetaClienteNombre.innerText = clientesArray[clientesArray.length - 1].nombre;
+    } else {
+        trajetaClienteNombre.innerText = 'Cliente nuevo';
+    }
+    trajetaCliente.appendChild(trajetaClienteNombre);
     infoList.appendChild(trajetaCliente);
-    /*infoRecomen.appendChild(textoRecomendacion);
-    infoRecomen.appendChild(textoRecomendacion2);
-    infoRecomen.appendChild(textoRecomendacion3);*/
-
-    opcion1.appendChild(textoRecomendacion);
-    opcion2.appendChild(textoRecomendacion2);
-    opcion3.appendChild(textoRecomendacion3);
-
 }
 
-function mostrarTurnos(cliente) {
-    let turno = document.createElement('p');
-    turno.innerText = cliente.turno;
-
-    turnero.appendChild(turno);
+function pasarTurno() {
+    clientesArray.shift();
+    socket.emit('enviarClientesServer', clientesArray);
+    console.log(infoList.childNodes);
+    infoList.removeChild(infoList.lastChild);
+    if(clientesArray.length <0){
+        mostrarDatos();
+    }
 }
+pasarTurnoBtn.addEventListener('click', pasarTurno);

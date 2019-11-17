@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!-- Esa ip deben cambiarla si van a hacer las pruebas, el puerto si es el 3000, pero la ip cambia segun la del pc-->
-    <script defer="" src="http://192.168.1.53:3000/socket.io/socket.io.js"></script>
+    <script defer="" src="http://192.168.1.3:3000/socket.io/socket.io.js"></script>
     <script defer="" src="client.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
 
@@ -248,7 +248,11 @@
     <div class="usuarioAsesor">
         <div class="informacionCliente">
             <h2 class="asClientListTitle">En ventanilla</h2>
-            <div class="clienteVentanilla"></div>
+            <div class="clienteVentanilla">
+                <p class="clienteVentanilla-turno">#</p>
+                <p class="clienteVentanilla-nombre">Nombre cliente</p>
+                <p class="clienteVentanilla-tramite">Tramite</p>
+            </div>
             <hr class="separarListas">
 
             <section class="cola">
@@ -271,13 +275,20 @@
                     <div class="informacion infoCliente">
                         <section class="user">
                             <img src="images/user.png">
-                            <section class="userInfo"></section>
+                            <section class="userInfo">
+                                <p class="cedulaInfo"></p>
+                            </section>
                         </section>
 
                         <hr class="separarInfo">
 
                         <section class="descripTramite">
-                            <div class="tramiteInfo"></div>
+                            <div class="tramiteInfo">
+                                <p class="detalleInfo"></p>
+                                <p class="extraInfo"></p>
+                                <p class="tramiteInfooo"></p>
+
+                            </div>
                         </section>
                     </div>
 
@@ -289,7 +300,7 @@
                     <div class="adqContainer">
                         <div class="informacion serviciosAdq">
                             <img class="adqIcon" src="images/ahorrosAdq.png" alt="">
-                            <p  class="tituloProdAdq">Cuenta de ahorros</p>
+                            <p class="tituloProdAdq">Cuenta de ahorros</p>
                         </div>
 
                         <div class="informacion serviciosAdq">
@@ -320,18 +331,21 @@
                     <h2 class="ofrecerTitulo">Ofrecer:</h2>
                     <p class="opcionTitulo">Opción 1</p>
                     <hr>
+                    <p class="recomendacion1 textoRecomendacion"></p>
                 </div>
 
                 <div class="opcion2">
                     <h2 class="ofrecerTitulo">Ofrecer:</h2>
                     <p class="opcionTitulo">Opción 2</p>
                     <hr>
+                    <p class="recomendacion2 textoRecomendacion"></p>
                 </div>
 
                 <div class="opcion3">
                     <h2 class="ofrecerTitulo">Ofrecer:</h2>
                     <p class="opcionTitulo">Opción 3</p>
                     <hr>
+                    <p class="recomendacion3 textoRecomendacion"></p>
                 </div>
 
             </div>
