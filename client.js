@@ -45,7 +45,7 @@ const pantallaSeguros = document.querySelector('.seguros');
 const pantallaCreditos = document.querySelector('.creditos');
 const pantallaTurno = document.querySelector('.turno');
 
-const serviciosAdq = document.querySelector('.serviciosAdq');
+const serviciosAdq = document.querySelectorAll('.tituloProdAdq');
 const turnoCliente = document.querySelector('.turnoCliente');
 const numTurno = document.querySelector('.numTurno');
 const turnoMensaje = document.querySelector('.turnoMensaje');
@@ -442,18 +442,24 @@ function mostrarDatos() {
                 if (infoDB[1] === dataCliente.cedula) {
                     statusCliente = infoDB;
                     statusCliente[24] = 'Es un cliente antiguo';
-                    textoStatus.innerText = statusCliente[24];
-                    textoNombre.innerText = statusCliente[2];
                     for (let index = 13; index < 24; index++) {
                         if (infoDB[index] === 'si') {
                             servicios = informacion[0][index] + '\n';
+                            console.log(servicios);
                         }
                     }
                 }
-                textoStatus.innerText = statusCliente[24];
+                console.log(statusCliente[2]);
+                if (statusCliente[24] === 'Es un cliente antiguo') {
+                    ventanillaNombre.innerText = statusCliente[2];
+                    clientesArray[clientesArray.length - 1].nombre = statusCliente[2];
+                } else {
+                    ventanillaNombre.innerText = 'Cliente Nuevo';
+                }
             }
             //Recomendaciones 
-            serviciosAdq.innerHTML = servicios;
+            console.log(servicios);
+            serviciosAdq.innerText = servicios;
             if (dataCliente.tramite === 'Giros' && dataCliente.detalle === 'Recibo') {
                 textoRecomendacion.innerText = "Pago seguro";
                 textoRecomendacion2.innerText = "Repatriación";
@@ -512,7 +518,6 @@ function mostrarDatos() {
 
     //los datos del cliente, aqui ven que quieren que se vea o no etc etc
 
-    let textoNombre = document.createElement('p');
 
     textoTramite.innerText = dataCliente.tramite;
     textoDetalle.innerText = dataCliente.detalle;
@@ -520,33 +525,27 @@ function mostrarDatos() {
     textoCedula.innerText = 'C.C ' + dataCliente.cedula;
 
     ventanillaTurno.innerText = dataCliente.turno;
-    if (dataCliente.nombre !== undefined) {
-        ventanillaNombre.innerText = textoNombre;
-    } else {
-        ventanillaNombre.innerText = 'Cliente Nuevo';
-    }
     ventanillaTramite.innerText = dataCliente.tramite;
 
     let textoTurno = document.createElement('p');
     textoTurno.innerText = "" + dataCliente.turno;
 
-    let textoStatus = document.createElement('p');
-    textoStatus.className = 'statusCliente';
-
 }
 
 function agregarListaClientes() {
-    let trajetaCliente = document.createElement('div');
-    trajetaCliente.className = 'tarjetaCliente';
-    let trajetaClienteNombre = document.createElement('p');
-
-    if (clientesArray[clientesArray.length - 1].nombre !== undefined) {
-        trajetaClienteNombre.innerText = clientesArray[clientesArray.length - 1].nombre;
-    } else {
-        trajetaClienteNombre.innerText = 'Cliente nuevo';
+    if(clientesArray.length>1){
+        let trajetaCliente = document.createElement('div');
+        trajetaCliente.className = 'tarjetaCliente';
+        let trajetaClienteNombre = document.createElement('p');
+    
+        if (clientesArray[clientesArray.length - 1].nombre !== undefined) {
+            trajetaClienteNombre.innerText = clientesArray[clientesArray.length - 1].nombre;
+        } else {
+            trajetaClienteNombre.innerText = 'Cliente nuevo';
+        }
+        trajetaCliente.appendChild(trajetaClienteNombre);
+        infoList.appendChild(trajetaCliente);
     }
-    trajetaCliente.appendChild(trajetaClienteNombre);
-    infoList.appendChild(trajetaCliente);
 }
 
 function generarGuiaDeVenta(event) {
