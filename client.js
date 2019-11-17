@@ -58,6 +58,11 @@ const botonAtras = document.querySelector('.div-back');
 const pasarTurnoBtn = document.querySelector('.pasarTurno');
 const infoList = document.querySelector('.listaClientes');
 
+const oferta1 = document.querySelector('.opcion1');
+const oferta2 = document.querySelector('.opcion2');
+const oferta3 = document.querySelector('.opcion3');
+const guiaContainer = document.querySelector('.guiaDeVenta');
+
 var usuario;
 
 var numeroDocumento = '';
@@ -530,7 +535,7 @@ function mostrarDatos() {
 
 }
 
-function agregarListaClientes(){
+function agregarListaClientes() {
     let trajetaCliente = document.createElement('div');
     trajetaCliente.className = 'tarjetaCliente';
     let trajetaClienteNombre = document.createElement('p');
@@ -544,12 +549,64 @@ function agregarListaClientes(){
     infoList.appendChild(trajetaCliente);
 }
 
+function generarGuiaDeVenta(event) {
+    let objetivo = event.target;
+    console.log(objetivo.className);
+    var oferta;
+    if (objetivo.className === 'opcion1 ofertaOpcion') {
+        oferta = objetivo.childNodes[7].innerText;
+        console.log('Le di afuera');
+    } else if (objetivo.className === 'textoRecomendacion') {
+        oferta = objetivo.innerText;
+        console.log('Le di al mismo texto');
+    } else{
+        oferta = objetivo.parentElement.childNodes[7].innerText;
+        console.log('Le di a los demas');
+    }
+
+    if (oferta === 'Cuenta de ahorro') {
+
+        guiaContainer.innerText = "Monto mínimo de apertura $100.000.\nRentabilidad diaria. A mayor saldo mayor tasa.\nRetiros exentos del 4x1.000 hasta $9.619.750 mensuales.\nPodrás escoger si tienes tu Cuenta con Tarjeta Débito o sin ella.\nSin cuota de manejo, siempre y cuando no utilices durante el mes tu Tarjeta Débito.\nAbonar tus Giros Western Union sin costo alguno y con disponibilidad inmediata.\nCuenta con el Seguro de Depósitos de Fogafín.";
+
+    } else if (oferta === 'Repatriación') {
+
+        guiaContainer.innerText = "Muerte accidental\nSe indemniza a los beneficiarios designados o de ley.Hasta por el valor acordado previamente, siempre y cuando la causa del fallecimiento esté amparada por la póliza.\nAsistencia de repatriación.\nOfrece la posibilidad de repatriar el cuerpo de un ser querido que viva en el exterior.\nCubre los trámites legales, el traslado del cuerpo de la persona que se encuentra fuera del país y los gastos funerarios en Colombia.\nAhorro: El costo de repatriar un cuerpo a Colombia está alrededor de los $ 35 millones de pesos, puedes ahorratelo con nuestro seguro.\nCobertura: Repatriación desde cualquier parte del mundo **.Cobertura de gastos para imprevistos por $800.000 en caso de muerte del designado de repatriación.\nEl asegurado principal en Colombia podrá tener hasta 20 asegurados agregados.";
+
+    } else if (oferta === 'Pago seguro') {
+
+        guiaContainer.innerText = "Amparos básicos\nIncluye las siguientes coberturas por consecuencia del hurto calificado del dinero y / o divisas correspondiente a operaciones de Giros Internacionales y Cuenta de Ahorros: \nPor hurto: \nEl dinero que quede bajo este seguro quedará protegido hasta por 3 horas después de haber realizado el retiro.\nPara iniciar el trámite de reclamación debes: \nPresentar la denuncia ante la Fiscalía dentro de las siguientes 24 horas de ocurrido el evento\nDentro de los tres(3) días siguientes debes dar aviso en la oficina de Giros y Finanzas C.F.S.A.donde realizaste el retiro afectado en el hurto.\nPor muerte accidental\nSe indemniza a los beneficiarios designados o de ley\nHasta por el valor acordado previamente(valor asegurado máximo de $ 5.000.000), siempre y cuando la causa del fallecimiento esté amparada por la póliza.\nPérdida de documentos personales\nEn el evento que el asegurado como consecuencia del hurto calificado pierda además los documentos personales como la licencia de conducción, cédula de ciudadanía o libreta militar, se indemnizará con el monto de $50.000.\nReposición de bolso y / o billetera\nEn el evento que el asegurado pierda su bolso y / o billetera en el hurto se reconocerá un valor de hasta $50.000 para la reposición de estos elementos.";
+
+    } else if (oferta === 'Credioro') {
+        guiaContainer.innerText = "Análisis y respuesta inmediata.\nDesembolso del crédito al instante y en efectivo.*\nTasa de interés competitiva frente a las líneas que ofrece el mercado.\nNo requiere experiencia crediticia.\nAsignación de cupo de crédito rotativo con garantía en joyas de oro.\nPlazo de financiación a 6 meses prorrogables. Puede extender el plazo tanto como lo desee**\nAbono de cuotas extras o prepagos en cualquier momento, sin sanción alguna.\nPóliza de seguro de vida gratis para para el deudor.***\nProducto disponible en algunas oficinas del país, con cobertura en 20 municipios del territorio nacional.";
+
+    } else if (oferta === 'Tarjeta la 14') {
+        guiaContainer.innerText = "Avances en efectivo en cajeros automáticos y próximamente en las oficinas de Giros y Finanzas C.F S.A.\nComodidad  para efectuar el pago en cualquier oficina de Giros y Finanzas en todo el país.\nTasas de interés competitivas.\nBeneficios adicionales en promociones.";
+
+    } else if (oferta === 'Vida grupo') {
+        guiaContainer.innerText = "Muerte por cualquier causa: ampara al asegurado principal en caso de cualquier causa de muerte* incluye homicidio y suicidio desde el primer día de la vigencia.\nIncapacidad total y permanente: protege al asegurado en caso de una incapacidad total y permanente por accidente o por enfermedad, siempre y cuando el evento generador se produzca dentro de la vigencia de la póliza.\nEnfermedades graves: se indemnizara hasta el 50% del valor asegurado como anexo en caso de que se diagnostique alguna de las enfermedades graves amparadas por la póliza.\nRentas por hospitalización: se pagara al asegurado principal  un valor diario por su estadía centro hospitalario siempre y cuando este sea mayor a 24 horas.\nAuxilio canasta: se pagara un dinero para gastos al asegurado principal en caso de incapacidad total y permanente o a su familia en caso de muerte.\nAuxilio funerario: se indemnizara a la familia con un dinero para las honras fúnebres del asegurado principal. ";
+
+    } else if (oferta === 'Vida tranquila') {
+        guiaContainer.innerText = "";
+
+    } else if (oferta === 'Giros') {
+        guiaContainer.innerText = "Te ofrecemos el servicio de Abono Directo a Cuenta Bancaria, como una forma fácil, rápida y segura de reclamar tus giros. Sin salir de tu casa y sin costos adicionales, puedes solicitar el abono del giro a tu Cuenta de Ahorros de Giros y Finanzas o de cualquier entidad, llamando a nuestra Línea de Servicio al Cliente:";
+
+    } else if (oferta === 'CDT') {
+
+        guiaContainer.innerText = "Excelente rentabilidad.\nDiferentes plazos, a partir de 30 días.\nServicio de prórroga automática.\nNegociable en la Bolsa de Valores de Colombia y endosable a solicitud del titular.\nCuenta con el Seguro de Depósitos de Fogafín";
+
+    }
+}
+oferta1.addEventListener('click', generarGuiaDeVenta);
+oferta2.addEventListener('click', generarGuiaDeVenta);
+oferta3.addEventListener('click', generarGuiaDeVenta);
+
 function pasarTurno() {
     clientesArray.shift();
     socket.emit('enviarClientesServer', clientesArray);
     console.log(infoList.childNodes);
     infoList.removeChild(infoList.lastChild);
-    if(clientesArray.length <0){
+    if (clientesArray.length > 0) {
         mostrarDatos();
     }
 }
