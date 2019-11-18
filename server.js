@@ -2,6 +2,7 @@ const io = require('socket.io')(3000);
 var turnoA = 0;
 var turnoB = 0;
 var arreglo = [];
+var turnoPantalla=[]; 
 
 io.on('connection', socket => {
     console.log('Un cliente inicio');
@@ -20,7 +21,15 @@ io.on('connection', socket => {
             data.turno = 'A'+turnoA;  
         }
         arreglo.push(data);
+        turnoPantalla.push(data.turno);
+        console.log(turnoPantalla[0]);
         socket.broadcast.emit('envioAlCliente', arreglo);
         socket.emit('envioDeTurnoCliente', data.turno);
+        socket.broadcast.emit('envioDeTurnoC', turnoPantalla[0] );
+    });
+
+    socket.on('envioDeTurno', turno => {
+        turnoPantalla.shift();
+        socket.broadcast.emit('envioDeTurnoC', turnoPantalla[0] );
     });
 });
