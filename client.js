@@ -325,6 +325,8 @@ function extrasCredito(tipoCredito) {
         }
     } else {
         extrasTramite = 'Ningun extra';
+        pantallaCredioro.style.display = 'none';
+        pantallaCreditos.style.display = 'none';
         enviarDatosCliente();
     }
 }
