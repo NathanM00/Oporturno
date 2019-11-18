@@ -364,8 +364,8 @@ button {
 
 .splash {
     display: none;
-    width: 100;
-    height: 1200px;
+    width: 100%;
+    height: 100%;
     background-color: #ffdc05;
     flex-basis: 90%;
     justify-content: center;
@@ -488,7 +488,10 @@ button {
 }
 
 .botonesTramites {
-    width: 1450px;
+    display: flex;
+    width: 60%;
+    max-width: 1448px;
+    flex-wrap: wrap;
     padding-left: 15px;
     padding-top: 20px;
 
@@ -1454,4 +1457,9 @@ button {
     height: 100%;
     width: 80%;
     margin-right: 150px;
+}
+
+.girosEnvio{
+    justify-content: center;
+    align-items: center;
 }
