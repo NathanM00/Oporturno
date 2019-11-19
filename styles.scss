@@ -4,6 +4,11 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 
+body{
+    overflow-y: hidden;
+    scroll: none;
+}
+
 nav {
     width: 100%;
     display: none;
@@ -1734,8 +1739,8 @@ button {
     position: absolute;
     font-size: 150pt;
     color: #00A9CE;
-    top: -150px;
-    left: 115px;
+    top: -65px;
+    left: 200px;
     bottom: 500px;
 }
 
@@ -1760,4 +1765,17 @@ button {
     background: #F3F3F3;
     justify-content: center;
     align-items: center;
+}
+
+#familia_segura_btn, #repatriacion_btn, #vida_tranquila_btn, #vida_grupo_btn, #otro_seguros_btn{
+width: 512px;
+}
+
+.div-back:hover{
+    cursor: pointer;
+}
+
+.tecla{
+    cursor: pointer;
+
 }

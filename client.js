@@ -1,4 +1,4 @@
-const socket = io('http://192.168.1.53:3000');
+const socket = io('http://172.30.147.226:3000');
 //Chicos la ip aqui tambien cambia, son la misma ip en ambos archivos
 
 const enviarUsuario = document.querySelector('.enviarUsuario');
@@ -133,6 +133,7 @@ function definicionDocumento() {
                 pantallaDoc2.style.display = 'none';
                 pantallaTramite.style.display = 'flex';
                 numeroDocumento = inputDoc.value;
+                textoNav.innerHTML = '¿Qué trámite deseas realizar?';
             } else {
                 inputDoc.value += valor;
             }
@@ -363,6 +364,7 @@ function darTurno(turno) {
         numTurno.innerHTML = turno;
         turnoCliente.innerHTML = 'Tu turno es: ' + turno;
         botonAtras.style.visibility = 'hidden';
+        textoNav.innerHTML = '¡Muchas Gracias!';
 
         if (tipoTramite === 'Asesoría') {
             turnoMensaje.innerHTML = 'Recuerda que por Teleágil puedes realizar diferentes tipos de consultas sin necesidad de coger un turno. Acércate a él, podría ser más rápido.';
@@ -388,6 +390,7 @@ function darTurno(turno) {
             turnoMensaje.innerHTML = '';
             inputDoc.value = '';
             inputCod.value = '';
+            textoNav.innerHTML = '';
         }
         pausa();
     }
