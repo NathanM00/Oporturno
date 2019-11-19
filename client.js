@@ -1,4 +1,4 @@
-const socket = io('http://192.168.1.3:3000');
+const socket = io('http://192.168.1.53:3000');
 //Chicos la ip aqui tambien cambia, son la misma ip en ambos archivos
 
 const enviarUsuario = document.querySelector('.enviarUsuario');
@@ -95,7 +95,7 @@ function definicionUsuario() {
         textoNav.innerHTML = 'Clientes';
     } else if (usuario === 'Pantalla') {
         noSeUser.style.display = 'none';
-        pantallaUser.style.display = 'block';
+        pantallaUser.style.display = 'flex';
         navBar.style.display = 'flex';
         textoNav.innerHTML = 'Turnos';
     }
@@ -518,16 +518,26 @@ function mostrarDatos() {
 function agregarListaClientes() {
     console.log('bbbbbb');
     if (clientesArray.length > 1) {
+        let tarjetaClienteContainer = document.createElement('div');
+        tarjetaClienteContainer.className = 'tarjetaClienteContainer';
         let trajetaCliente = document.createElement('div');
         trajetaCliente.className = 'tarjetaCliente';
+        let turnoCola = document.createElement('div');
+        turnoCola.className = 'turnoCola';
         let trajetaClienteNombre = document.createElement('p');
+        trajetaClienteNombre.className = 'tarjetaClienteNombre';
+        let trajetaClienteSeparador = document.createElement('hr');
+        trajetaClienteSeparador.className = 'trajetaClienteSeparador';
         if (clientesArray[clientesArray.length - 1].nombre !== undefined) {
             trajetaClienteNombre.innerText = clientesArray[clientesArray.length - 1].nombre;
         } else {
             trajetaClienteNombre.innerText = 'Cliente nuevo';
         }
+        trajetaCliente.appendChild(turnoCola);
         trajetaCliente.appendChild(trajetaClienteNombre);
-        infoList.appendChild(trajetaCliente);
+        tarjetaClienteContainer.appendChild(trajetaCliente);
+        tarjetaClienteContainer.appendChild(trajetaClienteSeparador);
+        infoList.appendChild(tarjetaClienteContainer);
     }
 }
 

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!-- Esa ip deben cambiarla si van a hacer las pruebas, el puerto si es el 3000, pero la ip cambia segun la del pc-->
-    <script defer="" src="http://192.168.1.3:3000/socket.io/socket.io.js"></script>
+    <script defer="" src="http://192.168.1.53:3000/socket.io/socket.io.js"></script>
     <script defer="" src="client.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
 
@@ -248,11 +248,20 @@
     <div class="usuarioAsesor">
         <div class="informacionCliente">
             <h2 class="asClientListTitle">En ventanilla</h2>
+
             <div class="clienteVentanilla">
-                <p class="clienteVentanilla-turno">#</p>
-                <p class="clienteVentanilla-nombre">Nombre cliente</p>
-                <p class="clienteVentanilla-tramite">Tramite</p>
+                <section class="clienteVentanilla-cliente">
+                    <div class="turnoContainer">
+                        <p class="clienteVentanilla-turno">#</p>
+                    </div>
+                    <p class="clienteVentanilla-nombre">Nombre cliente</p>
+                </section>
+
+                <section class="clienteVentanilla-infoTramite">
+                    <p class="clienteVentanilla-tramite">Tramite</p>
+                </section>
             </div>
+
             <hr class="separarListas">
 
             <section class="cola">
@@ -276,6 +285,7 @@
                         <section class="user">
                             <img src="images/user.png">
                             <section class="userInfo">
+                                <p class="nombreInfo">Nombre cliente</p>
                                 <p class="cedulaInfo"></p>
                             </section>
                         </section>
@@ -284,10 +294,11 @@
 
                         <section class="descripTramite">
                             <div class="tramiteInfo">
-                                <p class="detalleInfo"></p>
-                                <p class="extraInfo"></p>
                                 <p class="tramiteInfooo"></p>
-
+                                <div class="contenedorDetalles">
+                                    <p class="detalleInfo"></p>
+                                    <p class="extraInfo"></p>
+                                </div>
                             </div>
                         </section>
                     </div>
@@ -359,13 +370,30 @@
 
     <div class="usuarioPantalla">
 
-        <div class="turnero">
-            <p class="turno1"></p>
-        </div>
+        <section class="turnos_caja">
+            <div class="turnos_caja-container">
+                <div class="turnero">
+                    <h1 class="turnero-titulo">Turnos</h1>
 
-        <div class="cajas">
-            <p class="caja1">Caja 1</p>
-        </div>
+                    <div class="turno1Container">
+                        <p class="turno1"></p>
+                    </div>
+                </div>
+
+                <div class="cajas">
+                    <h1 class="caja-titulo">Caja</h1>
+
+                    <div class="caja1Container">
+                        <p class="caja1">Caja 1</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="publicidad">
+            <img class="imgPublicidad" src="images/imgPublicidad.png" alt="">
+        </section>
+
     </div>
 
 
