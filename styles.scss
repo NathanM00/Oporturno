@@ -412,6 +412,7 @@ body {
 }
 
 .giros {
+    background: #F3F3F3;
     display: none;
     justify-content: center;
 
@@ -439,6 +440,7 @@ body {
         width: 100%;
         justify-content: center;
         align-items: center;
+        background: #F3F3F3;
     }
 }
 
@@ -452,6 +454,7 @@ body {
     height: 100%;
     align-items: center;
     justify-content: center;
+    background: #F3F3F3;
 }
 
 .seguros {
@@ -460,6 +463,7 @@ body {
     justify-content: center;
     width: 100%;
     height: 100%;
+    background: #F3F3F3;
 
     .btnSegContainer {
         display: flex;
@@ -475,6 +479,45 @@ body {
 
 .turno {
     display: none;
+    width: 100%;
+    height: 100%;
+
+    .columna-ticket {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: content-box;
+        padding: 15px;
+        width: 60%;
+        height: 100%;
+        background: #F3F3F3;
+
+        .mensajeContainer {
+            box-sizing: border-box;
+            padding: 20px;
+            margin-bottom: 40px;
+            background: #FAFAFA;
+            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 18px 18px 22px 17px;
+
+            .turnoMensaje {
+                margin: 0;
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 45px;
+                line-height: 61px;
+                display: flex;
+                align-items: center;
+
+                color: #646464;
+
+            }
+
+        }
+
+    }
 
 }
 
@@ -613,11 +656,12 @@ button {
     height: 100%;
     justify-content: center;
     align-items: center;
+    background: #F3F3F3;
 }
 
 .botonesTramites {
     display: flex;
-    width: 60%;
+    width: 100%;
     max-width: 1448px;
     flex-wrap: wrap;
     padding-left: 15px;
@@ -1156,7 +1200,7 @@ button {
 }
 
 .girosIndefinido {
-
+    background: #F3F3F3;
     align-items: center;
     align-content: center;
     justify-content: center;
@@ -1358,6 +1402,7 @@ button {
     height: 100%;
     align-items: center;
     justify-content: center;
+    background: #F3F3F3;
 }
 
 .perfilacion {
@@ -1707,11 +1752,12 @@ button {
     color: #404040;
     font-size: 45pt;
     height: 100%;
-    width: 80%;
-    margin-right: 150px;
+    width: 40%;
+    //margin-right: 150px;
 }
 
-.girosEnvio{
+.girosEnvio {
+    background: #F3F3F3;
     justify-content: center;
     align-items: center;
 }
